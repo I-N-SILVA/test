@@ -1,0 +1,14 @@
+[
+    { "id": "brazil", "name": "Brazil", "flag": "🇧🇷", "appearances": 22 },
+    { "id": "germany", "name": "Germany", "flag": "🇩🇪", "appearances": 20 },
+    { "id": "italy", "name": "Italy", "flag": "🇮🇹", "appearances": 18 },
+    { "id": "argentina", "name": "Argentina", "flag": "🇦🇷", "appearances": 18 },
+    { "id": "france", "name": "France", "flag": "🇫🇷", "appearances": 16 },
+    { "id": "england", "name": "England", "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "appearances": 16 },
+    { "id": "spain", "name": "Spain", "flag": "🇪🇸", "appearances": 16 },
+    { "id": "uruguay", "name": "Uruguay", "flag": "🇺🇾", "appearances": 14 },
+    { "id": "netherlands", "name": "Netherlands", "flag": "🇳🇱", "appearances": 11 },
+    { "id": "hungary", "name": "Hungary", "flag": "🇭🇺", "appearances": 9 },
+    { "id": "portugal", "name": "Portugal", "flag": "🇵🇹", "appearances": 8 },
+    { "id": "croatia", "name": "Croatia", "flag": "🇭🇷", "appearances": 6 }
+]
