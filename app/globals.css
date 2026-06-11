@@ -1,40 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500;1,700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+    /* PLYAZ "Kinetic Order" tokens.
+       Root = paper (editorial surfaces). .dark = ink (the game). */
     :root {
-        /* Kinetic Order tokens (ported from PLYAZ) — 48-0 is dark-first */
-        --background: 160 30% 4%; /* near-black pitch green */
+        --background: 45 31% 98%; /* paper #FBFAF7 */
+        --foreground: 0 0% 0%; /* obsidian */
+
+        --card: 0 0% 100%;
+        --card-foreground: 0 0% 0%;
+
+        --popover: 0 0% 100%;
+        --popover-foreground: 0 0% 0%;
+
+        --primary: 18 100% 50%; /* flame #FF4D00 */
+        --primary-foreground: 0 0% 100%;
+
+        --secondary: 40 24% 90%; /* bone */
+        --secondary-foreground: 0 0% 15%;
+
+        --muted: 40 25% 93%; /* paper-warm */
+        --muted-foreground: 30 4% 46%; /* graphite-stone */
+
+        --accent: 33 100% 60%; /* flame-1 */
+        --accent-foreground: 0 0% 0%;
+
+        --destructive: 12 100% 45%; /* flame-3 */
+        --destructive-foreground: 0 0% 100%;
+
+        --border: 0 0% 0% / 0.1; /* hairline */
+        --input: 0 0% 0% / 0.18;
+        --ring: 18 100% 50%;
+        --radius: 0.25rem;
+    }
+
+    .dark {
+        --background: 0 0% 0%; /* obsidian */
         --foreground: 0 0% 100%;
 
-        --card: 160 20% 8%;
+        --card: 0 0% 5%;
         --card-foreground: 0 0% 100%;
 
-        --popover: 160 25% 5%;
+        --popover: 0 0% 4%;
         --popover-foreground: 0 0% 100%;
 
-        --primary: 51 100% 50%; /* WORLD CUP GOLD #FFD700 */
-        --primary-foreground: 0 0% 0%;
+        --primary: 18 100% 50%;
+        --primary-foreground: 0 0% 100%;
 
         --secondary: 0 0% 15%;
         --secondary-foreground: 0 0% 100%;
 
-        --muted: 160 15% 12%;
-        --muted-foreground: 0 0% 65%;
+        --muted: 0 0% 9%;
+        --muted-foreground: 33 4% 65%;
 
-        --accent: 51 100% 50%;
+        --accent: 33 100% 60%;
         --accent-foreground: 0 0% 0%;
 
-        --destructive: 0 72% 45%;
+        --destructive: 12 100% 45%;
         --destructive-foreground: 0 0% 100%;
 
-        --border: 160 12% 16%;
-        --input: 160 12% 16%;
-        --ring: 51 100% 50%;
-        --radius: 0.75rem;
+        --border: 0 0% 100% / 0.16; /* hairline on dark */
+        --input: 0 0% 100% / 0.24;
+        --ring: 33 100% 60%;
     }
 }
 
@@ -43,7 +75,7 @@
         @apply border-border;
     }
     body {
-        @apply bg-background text-foreground;
+        @apply bg-background text-foreground font-sans antialiased;
         font-feature-settings:
             'rlig' 1,
             'calt' 1;
@@ -55,8 +87,8 @@
     h4,
     h5,
     h6 {
-        @apply font-display font-bold uppercase tracking-tight;
-        line-height: 0.95;
+        @apply font-sans font-semibold tracking-tight;
+        text-wrap: balance;
     }
 }
 
@@ -69,22 +101,49 @@
         scrollbar-width: none;
     }
 
-    .bg-gold-gradient {
-        background: linear-gradient(135deg, #ffe066 0%, #ffd700 45%, #d4af37 100%);
+    /* The Plyaz Gradient. Used surgically: CTAs and hot moments only. */
+    .bg-flame-gradient {
+        background: linear-gradient(135deg, #ffa132 0%, #ff4d00 100%);
     }
-
-    .text-gold-gradient {
-        background: linear-gradient(135deg, #ffe066 0%, #ffd700 45%, #d4af37 100%);
+    .bg-flame-gradient-strong {
+        background: linear-gradient(135deg, #ff8a1e 0%, #ff3d00 60%, #e62e00 100%);
+    }
+    .text-flame-gradient {
+        background: linear-gradient(135deg, #ffa132 0%, #ff4d00 100%);
         @apply bg-clip-text text-transparent;
     }
 
-    .bg-pitch-texture {
-        background-image: repeating-linear-gradient(
-            0deg,
-            #0b6e4f 0px,
-            #0b6e4f 40px,
-            #0a6347 40px,
-            #0a6347 80px
-        );
+    /* Editorial accent: Playfair italic, flame. Only for the key word. */
+    .serif-accent {
+        @apply font-serif italic font-bold;
+        background: linear-gradient(135deg, #ffa132 0%, #ff4d00 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    /* Mono micro-caps. System voice: labels, data, phase indicators. */
+    .caption-mono {
+        @apply font-mono text-xs uppercase tracking-caps;
+    }
+
+    /* Display headers: tight, uppercase, architectural. */
+    .display-caps {
+        @apply font-sans font-bold uppercase tracking-display;
+        line-height: 0.92;
+    }
+
+    /* The architectural grid, on ink. */
+    .bg-grid-ink {
+        background-image:
+            linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 64px 64px;
+    }
+    .bg-grid-paper {
+        background-image:
+            linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+        background-size: 64px 64px;
     }
 }

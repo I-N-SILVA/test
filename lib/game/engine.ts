@@ -166,7 +166,7 @@ export function isChampion(matches: MatchResult[]): boolean {
     return final.outcome === 'win' || (final.outcome === 'draw' && !!final.wonOnPens);
 }
 
-/** The 48-0 badge: champion, every match won outright, zero goals conceded. */
+/** The Perfect Run: champion, every match won outright, zero goals conceded. */
 export function isPerfectRun(matches: MatchResult[]): boolean {
     return (
         matches.length === ROUNDS.length &&

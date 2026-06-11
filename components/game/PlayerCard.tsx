@@ -28,37 +28,37 @@ export function PlayerCard({ player, showRating, onPick }: PlayerCardProps) {
             type="button"
             onClick={onPick}
             className={cn(
-                'group flex w-full flex-col gap-2 rounded-xl border border-border bg-card p-4 text-left transition-all animate-slide-up',
-                'hover:border-primary-main hover:shadow-[0_0_20px_rgba(255,215,0,0.15)]',
+                'group flex w-full flex-col gap-2.5 rounded-md border border-white/15 bg-white/[0.03] p-4 text-left transition-all duration-300 ease-expo animate-slide-up',
+                'hover:border-flame-1 hover:bg-flame-2/[0.06]',
             )}
         >
-            <div className="flex items-start justify-between gap-2">
+            <div className="flex items-start justify-between gap-3">
                 <div>
-                    <p className="font-display text-xl uppercase leading-none">{player.name}</p>
-                    <p className="mt-1 text-xs text-muted-foreground">
+                    <p className="text-lg font-semibold leading-tight">{player.name}</p>
+                    <p className="caption-mono mt-1.5 text-white/50">
                         {getNation(player.nation)?.flag} {player.nation} · {player.world_cup_year}
                     </p>
                 </div>
                 {showRating && (
-                    <span className="font-display text-3xl text-primary-main">{player.overall_rating}</span>
+                    <span className="font-mono text-2xl font-medium text-flame-1">
+                        {player.overall_rating}
+                    </span>
                 )}
             </div>
             <div className="flex flex-wrap items-center gap-1.5">
                 {player.position.map((pos) => (
-                    <Badge key={pos} variant="outline" className="text-[10px]">
+                    <Badge key={pos} variant="outline">
                         {pos}
                     </Badge>
                 ))}
-                <Badge variant="secondary" className="text-[10px]">
-                    {ERA_LABELS[player.era]}
-                </Badge>
-                <span className="ml-auto text-xs font-semibold text-primary-light">{keyStat}</span>
+                <Badge variant="secondary">{ERA_LABELS[player.era]}</Badge>
+                <span className="ml-auto font-mono text-xs text-white/70">{keyStat}</span>
             </div>
             {player.fun_fact && (
-                <p className="text-xs italic text-muted-foreground">“{player.fun_fact}”</p>
+                <p className="font-serif text-sm italic text-white/50">“{player.fun_fact}”</p>
             )}
-            <span className="mt-1 hidden text-center text-xs font-bold uppercase tracking-wide text-primary-main group-hover:block">
-                Tap to draft →
+            <span className="caption-mono mt-1 hidden text-flame-1 group-hover:block">
+                Draft →
             </span>
         </button>
     );

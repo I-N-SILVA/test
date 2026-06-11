@@ -1,6 +1,6 @@
 {
-    "name": "worldcup-48-0",
-    "description": "48-0 — World Cup Draft Challenge. Unofficial fan game: spin the wheel, draft World Cup legends (1930–2026), simulate a 7-match run.",
+    "name": "perfect-run",
+    "description": "Perfect Run. Unofficial fan game: spin the wheel, draft World Cup legends (1930-2026), win all 8 matches without conceding.",
     "version": "0.1.0",
     "private": true,
     "scripts": {

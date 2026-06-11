@@ -13,7 +13,7 @@ import type { Player } from '@/lib/game/types';
 export function DraftScreen() {
     const { state, dispatch } = useGame();
     const formation = getFormation(state.formationId);
-    const showRatings = state.difficulty !== 'legend';
+    const showRatings = state.showRatings;
     const drafted = Object.keys(state.squad).length;
     const total = formation.slots.length;
 
@@ -44,25 +44,25 @@ export function DraftScreen() {
     const spunNationMeta = state.spunNation ? getNation(state.spunNation) : null;
 
     return (
-        <div className="mx-auto grid w-full max-w-5xl gap-6 lg:grid-cols-2">
+        <div className="mx-auto grid w-full max-w-5xl gap-8 lg:grid-cols-2">
             <div className="order-2 lg:order-1">
-                <div className="mb-2 flex items-center justify-between text-sm">
-                    <span className="font-semibold">
+                <div className="caption-mono mb-2 flex items-center justify-between">
+                    <span className="text-white/70">
                         {drafted}/{total} drafted
                     </span>
-                    <span className="text-muted-foreground">
-                        Rerolls: <span className="font-bold text-primary-main">{state.rerolls}</span>
+                    <span className="text-white/50">
+                        Rerolls <span className="text-flame-1">{state.rerolls}</span>
                     </span>
                 </div>
                 <div
-                    className="mb-3 h-1.5 w-full overflow-hidden rounded-full bg-muted"
+                    className="mb-4 h-px w-full bg-white/15"
                     role="progressbar"
                     aria-valuenow={drafted}
                     aria-valuemin={0}
                     aria-valuemax={total}
                 >
                     <div
-                        className="h-full bg-gold-gradient transition-all"
+                        className="h-px bg-flame-gradient transition-all duration-500 ease-expo"
                         style={{ width: `${(drafted / total) * 100}%` }}
                     />
                 </div>
@@ -74,9 +74,13 @@ export function DraftScreen() {
                     onSlotClick={placing ? handleSlotClick : undefined}
                 />
                 {placing && (
-                    <p className="mt-2 text-center text-sm text-primary-main">
-                        Choose a highlighted slot for {placing.name} — or{' '}
-                        <button type="button" className="underline" onClick={() => setPlacing(null)}>
+                    <p className="mt-3 text-center text-sm text-flame-1">
+                        Choose a highlighted slot for {placing.name}, or{' '}
+                        <button
+                            type="button"
+                            className="underline underline-offset-4"
+                            onClick={() => setPlacing(null)}
+                        >
                             cancel
                         </button>
                     </p>
@@ -86,7 +90,7 @@ export function DraftScreen() {
             <div className="order-1 flex flex-col items-center gap-4 lg:order-2">
                 {!state.spunNation && !placing && (
                     <SpinWheel
-                        label={`Spin to draft your next legend (${total - drafted} to go)`}
+                        label={`${total - drafted} pick${total - drafted === 1 ? '' : 's'} to go`}
                         onSpin={() => spinWheel(formation.slots, state)}
                         onLanded={(nation) => dispatch({ type: 'spun', nation: nation.name })}
                     />
@@ -94,8 +98,8 @@ export function DraftScreen() {
 
                 {state.spunNation && !placing && (
                     <div className="w-full animate-slide-up">
-                        <div className="mb-3 flex items-center justify-between">
-                            <h2 className="text-2xl">
+                        <div className="mb-4 flex items-center justify-between border-b border-white/15 pb-3">
+                            <h2 className="text-2xl font-semibold">
                                 {spunNationMeta?.flag} {state.spunNation}
                             </h2>
                             {state.rerolls > 0 && (

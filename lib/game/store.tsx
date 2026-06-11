@@ -5,7 +5,7 @@ import { getFormation } from './formations';
 import { simulateMatch, isRunOver, isChampion, ROUNDS } from './engine';
 import type { Difficulty, EraFilter, Player, RunState } from './types';
 
-const STORAGE_KEY = 'fortyeight_run_v1';
+const STORAGE_KEY = 'perfect_run_v1';
 
 export const REROLLS_BY_DIFFICULTY: Record<Difficulty, number> = {
     easy: 3,
@@ -18,6 +18,7 @@ const initialState: RunState = {
     formationId: '4-3-3',
     difficulty: 'normal',
     eraFilter: 'all',
+    showRatings: true,
     squad: {},
     rerolls: 1,
     spunNation: null,
@@ -27,7 +28,13 @@ const initialState: RunState = {
 };
 
 type Action =
-    | { type: 'configure'; formationId: string; difficulty: Difficulty; eraFilter: EraFilter }
+    | {
+          type: 'configure';
+          formationId: string;
+          difficulty: Difficulty;
+          eraFilter: EraFilter;
+          showRatings: boolean;
+      }
     | { type: 'spun'; nation: string }
     | { type: 'reroll'; nation: string }
     | { type: 'pick'; player: Player; slotId: string }
@@ -46,6 +53,7 @@ function reducer(state: RunState, action: Action): RunState {
                 formationId: action.formationId,
                 difficulty: action.difficulty,
                 eraFilter: action.eraFilter,
+                showRatings: action.showRatings,
                 rerolls: REROLLS_BY_DIFFICULTY[action.difficulty],
             };
         case 'spun':
@@ -78,7 +86,7 @@ function reducer(state: RunState, action: Action): RunState {
         case 'reset':
             return { ...initialState };
         case 'hydrate':
-            return action.state;
+            return { ...initialState, ...action.state };
         default:
             return state;
     }

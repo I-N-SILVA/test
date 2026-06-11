@@ -1,28 +1,23 @@
 // @ts-check
 const { fontFamily } = require('tailwindcss/defaultTheme');
 
-// Design system ported from PLYAZ League ("Kinetic Order"), re-themed for 48-0:
-// gold primary, charcoal secondary, pitch-green surface accents.
-const gold = {
-    lighter: '#FFF3C4',
-    light: '#FFE066',
-    main: '#FFD700',
-    dark: '#D4AF37',
-    darker: '#8A7019',
+// PLYAZ Design System, "Kinetic Order": obsidian + flame, structure + spark.
+// Paper canvas for editorial surfaces, ink for the game. Flame used surgically.
+const flame = {
+    1: '#FFA132', // sunset amber
+    2: '#FF4D00', // deep flame
+    3: '#E62E00', // hottest moments only
+    ember: '#FFD9B3',
 };
-const charcoal = {
-    lighter: '#9CA3AF',
-    light: '#4B5563',
-    main: '#262626',
-    dark: '#171717',
-    darker: '#0A0A0A',
-};
-const pitch = {
-    lighter: '#34D399',
-    light: '#0E9F6E',
-    main: '#0B6E4F',
-    dark: '#08503A',
-    darker: '#042A1F',
+const neutral = {
+    obsidian: '#000000',
+    charcoal: '#262626',
+    graphite: '#4A4A4A',
+    stone: '#8A8580',
+    pebble: '#C9C4BC',
+    bone: '#ECE7DD',
+    paperwarm: '#F3EFE7',
+    paper: '#FBFAF7',
 };
 
 /** @type {import("tailwindcss").Config } */
@@ -32,46 +27,25 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['General Sans', ...fontFamily.sans],
-                display: ['Bebas Neue', 'General Sans', ...fontFamily.sans],
+                sans: ['General Sans', 'Plus Jakarta Sans', ...fontFamily.sans],
+                serif: ['Playfair Display', 'Georgia', ...fontFamily.serif],
+                mono: ['JetBrains Mono', ...fontFamily.mono],
             },
             colors: {
-                primary: {
-                    lighter: gold.lighter,
-                    light: gold.light,
-                    main: gold.main,
-                    dark: gold.dark,
-                    darker: gold.darker,
-                    100: gold.lighter,
-                    200: gold.lighter,
-                    300: gold.light,
-                    400: gold.light,
-                    500: gold.main,
-                    600: gold.main,
-                    700: gold.dark,
-                    800: gold.dark,
-                    900: gold.darker,
-                },
-                secondary: {
-                    lighter: charcoal.lighter,
-                    light: charcoal.light,
-                    main: charcoal.main,
-                    dark: charcoal.dark,
-                    darker: charcoal.darker,
-                    100: charcoal.lighter,
-                    200: charcoal.lighter,
-                    300: charcoal.light,
-                    400: charcoal.light,
-                    500: charcoal.main,
-                    600: charcoal.main,
-                    700: charcoal.dark,
-                    800: charcoal.dark,
-                    900: charcoal.darker,
-                },
-                pitch,
+                flame,
+                obsidian: neutral.obsidian,
+                charcoal: neutral.charcoal,
+                graphite: neutral.graphite,
+                stone: neutral.stone,
+                pebble: neutral.pebble,
+                bone: neutral.bone,
+                paper: neutral.paper,
+                paperwarm: neutral.paperwarm,
+                cobalt: '#2A6FDB',
+                success: '#1F8A5B',
                 border: 'hsl(var(--border))',
                 input: 'hsl(var(--input))',
-                ring: gold.dark,
+                ring: flame[2],
                 background: 'hsl(var(--background))',
                 foreground: 'hsl(var(--foreground))',
                 destructive: {
@@ -95,10 +69,25 @@ module.exports = {
                     foreground: 'hsl(var(--popover-foreground))',
                 },
             },
+            // The system is mostly square. Pill is reserved for actions.
             borderRadius: {
-                lg: 'var(--radius)',
-                md: 'calc(var(--radius) - 2px)',
-                sm: 'calc(var(--radius) - 4px)',
+                lg: '8px',
+                md: '4px',
+                sm: '2px',
+            },
+            letterSpacing: {
+                caps: '0.22em',
+                display: '-0.045em',
+            },
+            boxShadow: {
+                1: '0 1px 2px rgba(0,0,0,.04)',
+                2: '0 6px 16px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04)',
+                3: '0 12px 40px rgba(0,0,0,.10), 0 2px 4px rgba(0,0,0,.04)',
+                flame: '0 12px 40px rgba(255, 77, 0, .22)',
+            },
+            transitionTimingFunction: {
+                expo: 'cubic-bezier(0.19, 1, 0.22, 1)',
+                'out-soft': 'cubic-bezier(0.22, 1, 0.36, 1)',
             },
             keyframes: {
                 'score-pop': {
@@ -112,8 +101,8 @@ module.exports = {
                 },
             },
             animation: {
-                'score-pop': 'score-pop 0.5s cubic-bezier(0.16, 1, 0.3, 1) both',
-                'slide-up': 'slide-up 0.35s ease-out both',
+                'score-pop': 'score-pop 0.5s cubic-bezier(0.19, 1, 0.22, 1) both',
+                'slide-up': 'slide-up 0.4s cubic-bezier(0.19, 1, 0.22, 1) both',
             },
         },
     },

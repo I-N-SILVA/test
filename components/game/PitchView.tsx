@@ -13,6 +13,7 @@ interface PitchViewProps {
     className?: string;
 }
 
+// Blueprint pitch: ink surface, hairline markings, flame for filled slots.
 export function PitchView({
     formation,
     squad,
@@ -24,16 +25,16 @@ export function PitchView({
     return (
         <div
             className={cn(
-                'relative aspect-[3/4] w-full overflow-hidden rounded-2xl border-2 border-pitch-light/40 bg-pitch-texture shadow-2xl',
+                'relative aspect-[3/4] w-full overflow-hidden rounded-lg border border-white/15 bg-[#0a0a0a]',
                 className,
             )}
         >
-            {/* Pitch markings */}
-            <div className="pointer-events-none absolute inset-3 rounded-lg border-2 border-white/30" />
-            <div className="pointer-events-none absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white/30" />
-            <div className="pointer-events-none absolute left-1/2 top-1/2 h-px w-[calc(100%-1.5rem)] -translate-x-1/2 bg-white/30" />
-            <div className="pointer-events-none absolute bottom-3 left-1/2 h-16 w-40 -translate-x-1/2 border-2 border-b-0 border-white/30" />
-            <div className="pointer-events-none absolute left-1/2 top-3 h-16 w-40 -translate-x-1/2 border-2 border-t-0 border-white/30" />
+            {/* Pitch markings as hairlines */}
+            <div className="pointer-events-none absolute inset-3 rounded-sm border border-white/15" />
+            <div className="pointer-events-none absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/15" />
+            <div className="pointer-events-none absolute left-1/2 top-1/2 h-px w-[calc(100%-1.5rem)] -translate-x-1/2 bg-white/15" />
+            <div className="pointer-events-none absolute bottom-3 left-1/2 h-16 w-40 -translate-x-1/2 border border-b-0 border-white/15" />
+            <div className="pointer-events-none absolute left-1/2 top-3 h-16 w-40 -translate-x-1/2 border border-t-0 border-white/15" />
 
             {formation.slots.map((slot) => {
                 const player = squad[slot.id];
@@ -46,18 +47,19 @@ export function PitchView({
                         onClick={() => onSlotClick?.(slot.id)}
                         aria-label={player ? `${slot.label}: ${player.name}` : `Empty ${slot.label} slot`}
                         className={cn(
-                            'absolute flex -translate-x-1/2 translate-y-1/2 flex-col items-center gap-0.5 transition-transform',
+                            'absolute flex -translate-x-1/2 translate-y-1/2 flex-col items-center gap-1 transition-transform duration-300 ease-expo',
                             onSlotClick && 'cursor-pointer hover:scale-110',
                         )}
                         style={{ left: `${slot.x}%`, bottom: `${slot.y}%` }}
                     >
                         <span
                             className={cn(
-                                'flex h-10 w-10 items-center justify-center rounded-full border-2 text-[10px] font-bold sm:h-12 sm:w-12',
+                                'flex h-10 w-10 items-center justify-center rounded-full border font-mono text-[10px] sm:h-12 sm:w-12',
                                 player
-                                    ? 'border-primary-main bg-black/80 text-primary-main'
-                                    : 'border-dashed border-white/50 bg-black/30 text-white/60',
-                                highlighted && 'animate-pulse border-primary-light ring-2 ring-primary-main',
+                                    ? 'border-flame-2 bg-flame-2/15 text-flame-1'
+                                    : 'border-dashed border-white/30 bg-white/[0.03] text-white/50',
+                                highlighted &&
+                                    'animate-pulse border-flame-1 ring-2 ring-flame-1/60',
                             )}
                         >
                             {player ? (
@@ -67,10 +69,10 @@ export function PitchView({
                             )}
                         </span>
                         {player && (
-                            <span className="max-w-[72px] truncate rounded bg-black/70 px-1 text-[9px] font-semibold text-white sm:text-[10px]">
+                            <span className="max-w-[76px] truncate rounded-sm bg-black/80 px-1.5 py-px font-mono text-[9px] text-white sm:text-[10px]">
                                 {player.name.split(' ').slice(-1)[0]}
                                 {showRatings && (
-                                    <span className="ml-1 text-primary-main">{player.overall_rating}</span>
+                                    <span className="ml-1 text-flame-1">{player.overall_rating}</span>
                                 )}
                             </span>
                         )}

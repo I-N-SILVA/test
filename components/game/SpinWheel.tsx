@@ -14,7 +14,8 @@ interface SpinWheelProps {
     label: string;
 }
 
-const SEGMENT_COLORS = ['#0B6E4F', '#171717', '#0E9F6E', '#262626'];
+// Ink wheel: alternating obsidian tones, flame pointer and hub.
+const SEGMENT_COLORS = ['#0A0A0A', '#1C1C1C', '#101010', '#262626'];
 
 export function SpinWheel({ onSpin, onLanded, disabled, label }: SpinWheelProps) {
     const [rotation, setRotation] = React.useState(0);
@@ -43,12 +44,14 @@ export function SpinWheel({ onSpin, onLanded, disabled, label }: SpinWheelProps)
         <div className="flex flex-col items-center gap-4">
             <div className="relative h-64 w-64 sm:h-72 sm:w-72">
                 {/* Pointer */}
-                <div className="absolute -top-1 left-1/2 z-10 h-0 w-0 -translate-x-1/2 border-x-8 border-t-[14px] border-x-transparent border-t-primary-main" />
+                <div className="absolute -top-1 left-1/2 z-10 h-0 w-0 -translate-x-1/2 border-x-8 border-t-[14px] border-x-transparent border-t-flame-2" />
                 <div
-                    className="h-full w-full rounded-full border-4 border-primary-dark shadow-[0_0_40px_rgba(255,215,0,0.25)]"
+                    className="h-full w-full rounded-full border border-white/20 shadow-flame"
                     style={{
                         transform: `rotate(${rotation}deg)`,
-                        transition: spinning ? 'transform 3s cubic-bezier(0.12, 0.8, 0.2, 1)' : 'none',
+                        transition: spinning
+                            ? 'transform 3s cubic-bezier(0.12, 0.8, 0.2, 1)'
+                            : 'none',
                         background: `conic-gradient(${NATIONS.map(
                             (_, i) =>
                                 `${SEGMENT_COLORS[i % SEGMENT_COLORS.length]} ${i * segment}deg ${(i + 1) * segment}deg`,
@@ -76,15 +79,15 @@ export function SpinWheel({ onSpin, onLanded, disabled, label }: SpinWheelProps)
                     onClick={handleSpin}
                     disabled={spinning || disabled}
                     className={cn(
-                        'absolute left-1/2 top-1/2 z-10 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-gold-gradient font-display text-lg uppercase text-black shadow-lg transition-transform',
+                        'absolute left-1/2 top-1/2 z-10 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-flame-gradient font-mono text-xs uppercase tracking-caps text-white shadow-flame transition-transform duration-300 ease-expo',
                         !spinning && !disabled && 'hover:scale-105 active:scale-95',
                         (spinning || disabled) && 'opacity-60',
                     )}
                 >
-                    {spinning ? '...' : 'Spin'}
+                    {spinning ? '···' : 'Spin'}
                 </button>
             </div>
-            <p className="text-sm text-muted-foreground">{label}</p>
+            <p className="caption-mono text-white/50">{label}</p>
         </div>
     );
 }

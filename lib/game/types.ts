@@ -64,6 +64,8 @@ export interface RunState {
     formationId: string;
     difficulty: Difficulty;
     eraFilter: EraFilter;
+    /** Blind mode: when false, player overalls stay hidden during the draft. */
+    showRatings: boolean;
     /** slot id → player */
     squad: Record<string, Player>;
     rerolls: number;
