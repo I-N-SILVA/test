@@ -5,7 +5,7 @@ description: "48 teams. 8 matches. One impossible challenge: win the 2026 World 
 date: "2026-06-12"
 author: "Ian Silva"
 canonical: "https://test-mauve-three-70.vercel.app"
-ogImage: "/og/perfect-run.png"
+ogImage: "https://test-mauve-three-70.vercel.app/og/perfect-run.png"
 tags:
   - World Cup 2026
   - football
