@@ -3,7 +3,7 @@ title: "Can You Go 48-0? The World Cup Draft Game Where Winning Isn't Enough"
 slug: "can-you-go-48-0"
 description: "48 teams. 8 matches. One impossible challenge: win the 2026 World Cup without conceding a single goal. Spin the wheel, draft legends from 1930 to 2026, and find out if you can do the Perfect Run."
 date: "2026-06-12"
-author: "Ian Baldassi"
+author: "Ian Silva"
 canonical: "https://test-mauve-three-70.vercel.app"
 ogImage: "/og/perfect-run.png"
 tags:
