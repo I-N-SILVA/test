@@ -1,6 +1,7 @@
 import nationsData from '@/data/nations.json';
 import playersData from '@/data/players.json';
 import type { EraFilter, FormationSlot, Nation, Player, RunState } from './types';
+import { createRng, type Rng } from './rng';
 
 export const NATIONS = nationsData as Nation[];
 export const PLAYERS = playersData as Player[];
@@ -53,6 +54,7 @@ export function spinnableNations(
 
 /** Weighted random spin — nations with more World Cup appearances come up more often. */
 export function spinWheel(
+    rng: Rng,
     slots: FormationSlot[],
     state: Pick<RunState, 'squad' | 'eraFilter'>,
     excludeNation?: string | null,
@@ -60,12 +62,34 @@ export function spinWheel(
     const pool = spinnableNations(slots, state, excludeNation);
     if (pool.length === 0) return null;
     const total = pool.reduce((sum, n) => sum + n.appearances, 0);
-    let roll = Math.random() * total;
+    let roll = rng.next() * total;
     for (const nation of pool) {
         roll -= nation.appearances;
         if (roll <= 0) return nation;
     }
     return pool[pool.length - 1];
+}
+
+export interface SpinResult {
+    nation: Nation;
+    /** PRNG state to persist after this spin, keeping the run deterministic. */
+    rngState: number;
+}
+
+/**
+ * Deterministic spin from the run's live PRNG state. Pure: it reads `rngState`
+ * but does not mutate `state`, so a component can peek the result, play its
+ * animation, then commit the new `rngState` on landing.
+ */
+export function rollNation(
+    state: Pick<RunState, 'squad' | 'eraFilter' | 'rngState'>,
+    slots: FormationSlot[],
+    excludeNation?: string | null,
+): SpinResult | null {
+    const rng = createRng(state.rngState);
+    const nation = spinWheel(rng, slots, state, excludeNation);
+    if (!nation) return null;
+    return { nation, rngState: rng.state() };
 }
 
 /** Open slots a given player can be placed into. */

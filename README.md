@@ -17,8 +17,20 @@ START → Pick Formation → Spin Wheel (Nation) → Pick Player → Fill XI →
 - **Difficulty:** Easy (3 rerolls), Normal (1), Legend (0 rerolls)
 - **Blind mode:** hide ratings during the draft, independent of difficulty
 - **Era filter:** Classic (to 1990), Modern (1990-2010), Contemporary (2010-2026)
+- **Modes:** Free play (random seed) or the **Daily Challenge** — everyone gets
+  the same wheel and the same opponents each day, so runs are directly comparable
 - The wheel is weighted by World Cup appearances; Brazil and Germany come up more often
-- Chemistry bonus for players sharing a nation or era
+- **Chemistry** rewards nation-stacking strongly and shared eras weakly — it's a
+  genuine risk/reward lever, not a flat bonus
+- **Line-based simulation:** your attack (forwards + midfield) drives goals scored,
+  your defence + goalkeeper drives clean sheets, so squad shape and formation matter
+
+## Seeds & sharing
+
+Every run derives from a single seed via a deterministic PRNG (mulberry32), so a
+run can be persisted mid-flight and replayed exactly. The results screen renders a
+shareable run-card PNG client-side (no dependencies) and, where the seed is known,
+a `?seed=` deep link a friend can open to play the identical run.
 
 ## Stack
 
@@ -36,6 +48,7 @@ START → Pick Formation → Spin Wheel (Nation) → Pick Player → Fill XI →
 npm install
 npm run dev        # http://localhost:6048
 npm run typecheck
+npm test           # Vitest — engine, RNG and wheel logic
 npm run build
 ```
 
@@ -46,6 +59,8 @@ app/            landing page + /game flow
 components/ui   PLYAZ-themed primitives (button, badge, card)
 components/game SpinWheel, PitchView, PlayerCard, screens per phase
 lib/game/       types, formations, wheel logic, simulation engine, store
+                rng.ts (seeded PRNG), shareCard.ts (canvas run-card)
+lib/game/*.test.ts  Vitest coverage for the engine, RNG and wheel
 data/           players.json (100 legends, 12 nations), nations.json
 docs/PRD.md     full product requirements document
 ```

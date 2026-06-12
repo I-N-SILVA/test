@@ -3,9 +3,10 @@
 import * as React from 'react';
 import { getFormation } from './formations';
 import { simulateMatch, isRunOver, isChampion, ROUNDS } from './engine';
-import type { Difficulty, EraFilter, Player, RunState } from './types';
+import { createRng, randomSeed } from './rng';
+import type { Difficulty, EraFilter, GameMode, Player, RunState } from './types';
 
-const STORAGE_KEY = 'perfect_run_v1';
+const STORAGE_KEY = 'perfect_run_v2';
 
 export const REROLLS_BY_DIFFICULTY: Record<Difficulty, number> = {
     easy: 3,
@@ -19,6 +20,10 @@ const initialState: RunState = {
     difficulty: 'normal',
     eraFilter: 'all',
     showRatings: true,
+    mode: 'free',
+    seed: 0,
+    seedLabel: '',
+    rngState: 0,
     squad: {},
     rerolls: 1,
     spunNation: null,
@@ -34,9 +39,12 @@ type Action =
           difficulty: Difficulty;
           eraFilter: EraFilter;
           showRatings: boolean;
+          mode: GameMode;
+          seed: number;
+          seedLabel: string;
       }
-    | { type: 'spun'; nation: string }
-    | { type: 'reroll'; nation: string }
+    | { type: 'spun'; nation: string; rngState: number }
+    | { type: 'reroll'; nation: string; rngState: number }
     | { type: 'pick'; player: Player; slotId: string }
     | { type: 'startSim' }
     | { type: 'playMatch' }
@@ -54,12 +62,21 @@ function reducer(state: RunState, action: Action): RunState {
                 difficulty: action.difficulty,
                 eraFilter: action.eraFilter,
                 showRatings: action.showRatings,
+                mode: action.mode,
+                seed: action.seed,
+                seedLabel: action.seedLabel,
+                rngState: action.seed,
                 rerolls: REROLLS_BY_DIFFICULTY[action.difficulty],
             };
         case 'spun':
-            return { ...state, spunNation: action.nation };
+            return { ...state, spunNation: action.nation, rngState: action.rngState };
         case 'reroll':
-            return { ...state, spunNation: action.nation, rerolls: Math.max(0, state.rerolls - 1) };
+            return {
+                ...state,
+                spunNation: action.nation,
+                rngState: action.rngState,
+                rerolls: Math.max(0, state.rerolls - 1),
+            };
         case 'pick': {
             const squad = { ...state.squad, [action.slotId]: action.player };
             const full = Object.keys(squad).length >= getFormation(state.formationId).slots.length;
@@ -69,13 +86,15 @@ function reducer(state: RunState, action: Action): RunState {
             if (state.eliminated || state.matches.length >= ROUNDS.length) return state;
             const formation = getFormation(state.formationId);
             const players = Object.values(state.squad);
-            const result = simulateMatch(players, formation, ROUNDS[state.matches.length]);
+            const rng = createRng(state.rngState);
+            const result = simulateMatch(rng, players, formation, ROUNDS[state.matches.length]);
             const matches = [...state.matches, result];
             const eliminated = isRunOver(matches);
             const champion = isChampion(matches);
             return {
                 ...state,
                 matches,
+                rngState: rng.state(),
                 eliminated,
                 champion,
                 phase: eliminated || champion ? 'sim' : state.phase,

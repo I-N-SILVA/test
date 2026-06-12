@@ -7,7 +7,7 @@ import { SpinWheel } from './SpinWheel';
 import { PlayerCard } from './PlayerCard';
 import { useGame } from '@/lib/game/store';
 import { getFormation } from '@/lib/game/formations';
-import { eligiblePlayers, fittingSlots, getNation, spinWheel } from '@/lib/game/wheel';
+import { eligiblePlayers, fittingSlots, getNation, rollNation } from '@/lib/game/wheel';
 import type { Player } from '@/lib/game/types';
 
 export function DraftScreen() {
@@ -91,8 +91,14 @@ export function DraftScreen() {
                 {!state.spunNation && !placing && (
                     <SpinWheel
                         label={`${total - drafted} pick${total - drafted === 1 ? '' : 's'} to go`}
-                        onSpin={() => spinWheel(formation.slots, state)}
-                        onLanded={(nation) => dispatch({ type: 'spun', nation: nation.name })}
+                        onSpin={() => rollNation(state, formation.slots)}
+                        onLanded={(result) =>
+                            dispatch({
+                                type: 'spun',
+                                nation: result.nation.name,
+                                rngState: result.rngState,
+                            })
+                        }
                     />
                 )}
 
@@ -107,8 +113,17 @@ export function DraftScreen() {
                                     variant="outline"
                                     size="sm"
                                     onClick={() => {
-                                        const next = spinWheel(formation.slots, state, state.spunNation);
-                                        if (next) dispatch({ type: 'reroll', nation: next.name });
+                                        const next = rollNation(
+                                            state,
+                                            formation.slots,
+                                            state.spunNation,
+                                        );
+                                        if (next)
+                                            dispatch({
+                                                type: 'reroll',
+                                                nation: next.nation.name,
+                                                rngState: next.rngState,
+                                            });
                                     }}
                                 >
                                     Re-spin ({state.rerolls})

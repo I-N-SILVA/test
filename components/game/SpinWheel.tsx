@@ -2,14 +2,13 @@
 
 import * as React from 'react';
 import { cn, triggerHaptic } from '@/lib/utils';
-import { NATIONS } from '@/lib/game/wheel';
-import type { Nation } from '@/lib/game/types';
+import { NATIONS, type SpinResult } from '@/lib/game/wheel';
 
 interface SpinWheelProps {
-    /** Called when the wheel needs a result; returns the nation to land on, or null if none. */
-    onSpin: () => Nation | null;
-    /** Fires after the spin animation settles on a nation. */
-    onLanded: (nation: Nation) => void;
+    /** Called when the wheel needs a result; returns the spin to land on, or null if none. */
+    onSpin: () => SpinResult | null;
+    /** Fires after the spin animation settles. */
+    onLanded: (result: SpinResult) => void;
     disabled?: boolean;
     label: string;
 }
@@ -24,10 +23,11 @@ export function SpinWheel({ onSpin, onLanded, disabled, label }: SpinWheelProps)
 
     const handleSpin = () => {
         if (spinning || disabled) return;
-        const nation = onSpin();
-        if (!nation) return;
-        const index = NATIONS.findIndex((n) => n.id === nation.id);
+        const result = onSpin();
+        if (!result) return;
+        const index = NATIONS.findIndex((n) => n.id === result.nation.id);
         // Land the chosen segment under the top pointer after 4–6 full turns.
+        // The turn count is purely cosmetic, so plain Math.random is fine here.
         const target =
             360 * (4 + Math.floor(Math.random() * 3)) + (360 - index * segment - segment / 2);
         setSpinning(true);
@@ -36,7 +36,7 @@ export function SpinWheel({ onSpin, onLanded, disabled, label }: SpinWheelProps)
         window.setTimeout(() => {
             setSpinning(false);
             triggerHaptic('success');
-            onLanded(nation);
+            onLanded(result);
         }, 3000);
     };
 

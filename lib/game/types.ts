@@ -59,6 +59,8 @@ export interface MatchResult {
     flavour: string;
 }
 
+export type GameMode = 'free' | 'daily';
+
 export interface RunState {
     phase: 'setup' | 'draft' | 'sim' | 'results';
     formationId: string;
@@ -66,6 +68,14 @@ export interface RunState {
     eraFilter: EraFilter;
     /** Blind mode: when false, player overalls stay hidden during the draft. */
     showRatings: boolean;
+    /** Free play (random seed) or the shared Daily Challenge seed. */
+    mode: GameMode;
+    /** Seed the whole run derives from — wheel spins and match sim alike. */
+    seed: number;
+    /** Human label for the seed, e.g. the daily date. */
+    seedLabel: string;
+    /** Live PRNG state, advanced on every spin and simulated match. */
+    rngState: number;
     /** slot id → player */
     squad: Record<string, Player>;
     rerolls: number;
