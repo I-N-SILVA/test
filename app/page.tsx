@@ -231,6 +231,9 @@ export default function LandingPage() {
                         >
                             Feedback &amp; bugs
                         </a>
+                        <span className="caption-mono ml-auto text-white/50">
+                            Built by the <span className="text-white">PLYAZ team</span>
+                        </span>
                     </div>
                     <p className="max-w-4xl text-xs leading-relaxed">
                         Perfect Run is an independent, fan-made game. It is not affiliated with,

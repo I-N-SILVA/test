@@ -86,3 +86,8 @@ entries, de-dupes, derives eras, and validates positional coverage.
 
 See [docs/PRD.md](docs/PRD.md). Phase 2 adds the full dataset, leaderboard (Supabase),
 shareable run-card images and PWA install.
+
+## Credits
+
+Designed and built by the **PLYAZ team**, on the PLYAZ "Kinetic Order" design
+system. Unofficial fan project — not affiliated with FIFA or any federation.

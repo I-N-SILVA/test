@@ -43,7 +43,7 @@ export function GET() {
                     <span style={{ color: '#ffffff' }}>PERFECT</span>
                     <span style={{ color: FLAME_2, marginLeft: 8 }}>· RUN</span>
                     <span style={{ color: 'rgba(255,255,255,0.5)', marginLeft: 20 }}>
-                        UNOFFICIAL WORLD CUP DRAFT GAME
+                        BUILT BY THE PLYAZ TEAM
                     </span>
                 </div>
 

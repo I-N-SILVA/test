@@ -28,4 +28,6 @@ Play it (free, no signup) and tell me how far you get — I genuinely want to kn
 
 🔗 https://test-mauve-three-70.vercel.app
 
+Built by the PLYAZ team with Fable.
+
 #BuildInPublic #AI #WorldCup2026 #ProductDevelopment #Startups

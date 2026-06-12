@@ -68,4 +68,4 @@ Most people can't. That's the whole point.
 Try it and reply with how far you got 👇
 https://test-mauve-three-70.vercel.app
 
-(built with Fable)
+(built by the PLYAZ team with Fable)
