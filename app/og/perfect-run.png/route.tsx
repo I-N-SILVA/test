@@ -39,12 +39,31 @@ export function GET() {
                 />
 
                 {/* eyebrow */}
-                <div style={{ display: 'flex', alignItems: 'center', fontSize: 26, letterSpacing: 4 }}>
-                    <span style={{ color: '#ffffff' }}>PERFECT</span>
-                    <span style={{ color: FLAME_2, marginLeft: 8 }}>· RUN</span>
-                    <span style={{ color: 'rgba(255,255,255,0.5)', marginLeft: 20 }}>
-                        BUILT BY THE PLYAZ TEAM
-                    </span>
+                <div
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        fontSize: 26,
+                        letterSpacing: 4,
+                    }}
+                >
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                        <span style={{ color: '#ffffff' }}>PERFECT</span>
+                        <span style={{ color: FLAME_2, marginLeft: 8 }}>· RUN</span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                        <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: 20, marginRight: 16 }}>
+                            BUILT BY THE PLYAZ TEAM
+                        </span>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                            src="https://plyaz.net/_astro/logo.BgIjVXPl.png"
+                            alt="PLYAZ"
+                            width={153}
+                            height={34}
+                        />
+                    </div>
                 </div>
 
                 {/* headline */}

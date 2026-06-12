@@ -231,9 +231,16 @@ export default function LandingPage() {
                         >
                             Feedback &amp; bugs
                         </a>
-                        <span className="caption-mono ml-auto text-white/50">
-                            Built by the <span className="text-white">PLYAZ team</span>
-                        </span>
+                        <a
+                            href="https://plyaz.net"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="caption-mono ml-auto flex items-center gap-2 text-white/60 transition-colors hover:text-white"
+                        >
+                            Built by the PLYAZ team
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img src="/plyaz/plyaz-wordmark.png" alt="PLYAZ" className="h-4 w-auto" />
+                        </a>
                     </div>
                     <p className="max-w-4xl text-xs leading-relaxed">
                         Perfect Run is an independent, fan-made game. It is not affiliated with,

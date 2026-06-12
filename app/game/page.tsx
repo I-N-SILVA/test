@@ -22,12 +22,25 @@ function GameFlow() {
         <div className="dark min-h-screen bg-obsidian bg-grid-ink text-white">
             <header className="border-b border-white/15">
                 <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4">
-                    <Link
-                        href="/"
-                        className="text-lg font-bold uppercase tracking-display text-white"
-                    >
-                        Perfect<span className="text-flame-1">.</span>Run
-                    </Link>
+                    <div className="flex items-center gap-3">
+                        <Link
+                            href="/"
+                            className="text-lg font-bold uppercase tracking-display text-white"
+                        >
+                            Perfect<span className="text-flame-1">.</span>Run
+                        </Link>
+                        <span aria-hidden className="hidden h-4 w-px bg-white/15 sm:block" />
+                        <a
+                            href="https://plyaz.net"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="caption-mono hidden items-center gap-1.5 text-white/40 transition-colors hover:text-white sm:flex"
+                        >
+                            by
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img src="/plyaz/plyaz-wordmark.png" alt="PLYAZ" className="h-3 w-auto" />
+                        </a>
+                    </div>
                     <div className="flex items-center gap-4">
                         <ol className="hidden items-center gap-3 sm:flex" aria-label="Game phase">
                             {PHASES.map((p, i) => (

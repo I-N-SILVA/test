@@ -27,6 +27,8 @@ export interface ShareCardData {
     accent: boolean; // flame treatment for champion / perfect runs
     stats: { label: string; value: string }[];
     seedLabel: string; // e.g. daily date, shared-seed text, or ''
+    /** PLYAZ wordmark, drawn in the footer when provided (browser only). */
+    logo?: CanvasImageSource;
 }
 
 const DISPLAY = '800 {px}px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif';
@@ -371,13 +373,29 @@ export function drawShareCard(ctx: CanvasRenderingContext2D, data: ShareCardData
     ctx.font = sans(22, 600);
     ctx.fillText('Can you go 48-0?', M, 1326);
 
+    // Right: PLYAZ credit (logo when available, text otherwise).
     ctx.textAlign = 'right';
     ctx.fillStyle = MUTE;
-    ctx.font = mono(20, 500);
-    ctx.fillText('BUILT BY THE PLYAZ TEAM', W - M, 1296);
-    ctx.fillStyle = 'rgba(255,255,255,0.35)';
     ctx.font = mono(18, 500);
-    ctx.fillText('test-mauve-three-70.vercel.app', W - M, 1324);
+    ctx.fillText('BUILT BY THE PLYAZ TEAM', W - M, 1284);
+    if (data.logo) {
+        const lw = 150;
+        const lh = (lw * 160) / 720; // wordmark aspect 720×160
+        ctx.drawImage(data.logo, W - M - lw, 1298, lw, lh);
+    } else {
+        ctx.fillStyle = 'rgba(255,255,255,0.35)';
+        ctx.font = mono(18, 500);
+        ctx.fillText('plyaz.net', W - M, 1320);
+    }
+}
+
+function loadImage(src: string): Promise<CanvasImageSource | undefined> {
+    return new Promise((resolve) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = () => resolve(undefined);
+        img.src = src;
+    });
 }
 
 /** Render the run card. Returns a PNG Blob, or null if canvas is unavailable. */
@@ -388,6 +406,7 @@ export async function renderShareCard(data: ShareCardData): Promise<Blob | null>
     canvas.height = H;
     const ctx = canvas.getContext('2d');
     if (!ctx) return null;
-    drawShareCard(ctx, data);
+    const logo = data.logo ?? (await loadImage('/plyaz/plyaz-wordmark.png'));
+    drawShareCard(ctx, { ...data, logo });
     return new Promise((resolve) => canvas.toBlob((b) => resolve(b), 'image/png'));
 }

@@ -198,6 +198,27 @@ export function ResultsScreen() {
                     Run it back
                 </Button>
             </div>
+
+            <a
+                href="https://plyaz.net"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex w-full items-center justify-between gap-4 rounded-lg border border-white/15 bg-white/[0.03] px-5 py-4 transition-colors hover:border-flame-1 hover:bg-flame-2/[0.06]"
+            >
+                <span className="flex flex-col">
+                    <span className="caption-mono text-white/50">Built by the PLYAZ team</span>
+                    <span className="mt-1 text-sm text-white/70">
+                        Keep football dreams alive — explore the platform
+                    </span>
+                </span>
+                <span className="flex items-center gap-3">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/plyaz/plyaz-wordmark.png" alt="PLYAZ" className="h-5 w-auto" />
+                    <span aria-hidden className="text-flame-1 transition-transform group-hover:translate-x-0.5">
+                        →
+                    </span>
+                </span>
+            </a>
         </div>
     );
 }
