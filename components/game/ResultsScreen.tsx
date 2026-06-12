@@ -6,6 +6,7 @@ import { PitchView } from './PitchView';
 import { useGame } from '@/lib/game/store';
 import { getFormation } from '@/lib/game/formations';
 import { isPerfectRun, squadAverage, starRating } from '@/lib/game/engine';
+import { renderShareCard } from '@/lib/game/shareCard';
 
 export function ResultsScreen() {
     const { state, dispatch } = useGame();
@@ -40,6 +41,18 @@ export function ResultsScreen() {
             ? `${last.goalsFor}–${last.goalsAgainst} vs ${last.opponent}. Football is cruel.`
             : '';
 
+    const seedTag =
+        state.mode === 'daily'
+            ? `Daily ${state.seedLabel}`
+            : state.seedLabel
+              ? `Seed ${state.seedLabel}`
+              : '';
+
+    const shareUrl =
+        typeof window !== 'undefined' && state.seedLabel
+            ? `${window.location.origin}/game?seed=${encodeURIComponent(state.seedLabel)}`
+            : undefined;
+
     const shareText = [
         perfect
             ? 'THE PERFECT RUN. 8 wins, 0 conceded. World Cup, flawless. 🏆'
@@ -47,32 +60,86 @@ export function ResultsScreen() {
               ? 'I won the World Cup! 🏆'
               : `My World Cup run ended at the ${last?.round ?? 'group stage'}.`,
         `${formation.name} · ${goalsFor} goals · ${cleanSheets} clean sheets · ${'★'.repeat(stars)}${'☆'.repeat(5 - stars)}`,
-        'Think you can do the Perfect Run? Draft World Cup legends and find out.',
-    ].join('\n');
+        state.mode === 'daily' ? `Daily Challenge ${state.seedLabel}.` : '',
+        shareUrl
+            ? `Beat my run on the same seed: ${shareUrl}`
+            : 'Think you can do the Perfect Run? Draft World Cup legends and find out.',
+    ]
+        .filter(Boolean)
+        .join('\n');
 
-    const [copied, setCopied] = React.useState(false);
+    const [status, setStatus] = React.useState<'idle' | 'working' | 'copied'>('idle');
+
+    const buildCard = () =>
+        renderShareCard({
+            headline,
+            subline,
+            formation,
+            squad: state.squad,
+            showRatings: true,
+            stars,
+            accent: perfect || state.champion,
+            stats: [
+                ['Goals', goalsFor],
+                ['Clean sheets', cleanSheets],
+                ['Avg rating', avgRating],
+                ['Best player', bestPlayer],
+            ].map(([label, value]) => ({ label: String(label), value: String(value) })),
+            seedLabel: seedTag,
+        });
+
     const handleShare = async () => {
+        setStatus('working');
+        let blob: Blob | null = null;
         try {
+            blob = await buildCard();
+        } catch {
+            blob = null;
+        }
+
+        const file = blob ? new File([blob], 'perfect-run.png', { type: 'image/png' }) : null;
+        try {
+            if (
+                file &&
+                navigator.canShare?.({ files: [file] }) &&
+                navigator.share
+            ) {
+                await navigator.share({ title: 'Perfect Run', text: shareText, files: [file] });
+                setStatus('idle');
+                return;
+            }
             if (navigator.share) {
                 await navigator.share({ title: 'Perfect Run', text: shareText });
+                setStatus('idle');
                 return;
             }
         } catch {
-            // Fall through to clipboard when share is cancelled/unsupported.
+            // Cancelled or unsupported — fall through to download + clipboard.
+        }
+
+        if (blob) {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'perfect-run.png';
+            a.click();
+            URL.revokeObjectURL(url);
         }
         try {
             await navigator.clipboard.writeText(shareText);
-            setCopied(true);
-            window.setTimeout(() => setCopied(false), 2000);
         } catch {
-            // Clipboard unavailable — nothing else to do.
+            // Clipboard unavailable — the image download is still the main payload.
         }
+        setStatus('copied');
+        window.setTimeout(() => setStatus('idle'), 2000);
     };
 
     return (
         <div className="mx-auto flex w-full max-w-xl flex-col items-center gap-8">
             <div className="text-center">
-                <p className="caption-mono text-white/50">Full time</p>
+                <p className="caption-mono text-white/50">
+                    Full time{seedTag && <span className="text-white/40"> · {seedTag}</span>}
+                </p>
                 <h1
                     className={
                         perfect || state.champion
@@ -109,8 +176,18 @@ export function ResultsScreen() {
             </dl>
 
             <div className="flex w-full flex-col gap-3 sm:flex-row">
-                <Button size="xl" variant="flame" className="flex-1" onClick={handleShare}>
-                    {copied ? 'Copied!' : 'Share your run'}
+                <Button
+                    size="xl"
+                    variant="flame"
+                    className="flex-1"
+                    onClick={handleShare}
+                    disabled={status === 'working'}
+                >
+                    {status === 'working'
+                        ? 'Building card…'
+                        : status === 'copied'
+                          ? 'Saved · text copied'
+                          : 'Share your run'}
                 </Button>
                 <Button
                     size="xl"

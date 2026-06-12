@@ -1,5 +1,6 @@
-import type { Formation, MatchResult, Player } from './types';
+import type { Formation, MatchResult, Player, Position } from './types';
 import { NATIONS } from './wheel';
+import type { Rng } from './rng';
 
 export interface Round {
     name: string;
@@ -24,31 +25,94 @@ export const ROUNDS: Round[] = [
 /** Points needed after 3 group matches to reach the knockouts. */
 export const QUALIFICATION_POINTS = 4;
 
-const rand = (min: number, max: number) => min + Math.random() * (max - min);
+// All sim tuning lives here so balance is adjustable in one place.
+const TUNING = {
+    chemistryMax: 0.05, // up to +5% for a fully linked squad
+    eraChemWeight: 0.15, // shared era counts far less than shared nation
+    yourRngLow: 0.85,
+    yourRngHigh: 1.15,
+    oppRngLow: 0.8,
+    oppRngHigh: 1.2,
+    drawMargin: 0.05,
+    maxGoals: 5,
+    // How attack/defence lines combine into a single power number.
+    attackFromMid: 0.35,
+    defenceFromGk: 0.4,
+    // Goal scaling.
+    winGoalGain: 6, // goals scale with how far your attack outguns their defence
+    cleanSheetBase: 0.25,
+    cleanSheetGain: 0.9, // clean-sheet odds rise with defensive superiority
+} as const;
+
+const rand = (rng: Rng, min: number, max: number) => rng.range(min, max);
 
 export function squadAverage(players: Player[]): number {
     if (players.length === 0) return 0;
     return players.reduce((sum, p) => sum + p.overall_rating, 0) / players.length;
 }
 
-/** Bonus for players sharing a nation or era — max +5%. */
+type Line = 'gk' | 'def' | 'mid' | 'att';
+
+function lineOf(position: Position): Line {
+    if (position === 'GK') return 'gk';
+    if (position === 'RB' || position === 'CB' || position === 'LB') return 'def';
+    if (position === 'LW' || position === 'RW' || position === 'ST') return 'att';
+    return 'mid'; // CDM, CM, CAM
+}
+
+export interface LineRatings {
+    gk: number;
+    def: number;
+    mid: number;
+    att: number;
+    attack: number;
+    defence: number;
+}
+
+/**
+ * Per-line strength from a squad. Empty lines fall back to the squad average so
+ * a missing specialist weakens rather than nullifies that line.
+ */
+export function lineRatings(players: Player[]): LineRatings {
+    const fallback = squadAverage(players);
+    const buckets: Record<Line, number[]> = { gk: [], def: [], mid: [], att: [] };
+    for (const p of players) buckets[lineOf(p.position[0])].push(p.overall_rating);
+    const avg = (xs: number[]) => (xs.length ? xs.reduce((s, x) => s + x, 0) / xs.length : fallback);
+
+    const gk = avg(buckets.gk);
+    const def = avg(buckets.def);
+    const mid = avg(buckets.mid);
+    const att = avg(buckets.att);
+    return {
+        gk,
+        def,
+        mid,
+        att,
+        attack: att * (1 - TUNING.attackFromMid) + mid * TUNING.attackFromMid,
+        defence: def * (1 - TUNING.defenceFromGk) + gk * TUNING.defenceFromGk,
+    };
+}
+
+/**
+ * Squad cohesion bonus. Sharing a nation is the real prize; sharing only an era
+ * barely moves the needle — so nation-stacking is a genuine risk/reward lever,
+ * not the near-constant it used to be.
+ */
 export function chemistryBonus(players: Player[]): number {
+    let score = 0;
     let pairs = 0;
     for (let i = 0; i < players.length; i++) {
         for (let j = i + 1; j < players.length; j++) {
-            if (
-                players[i].nation === players[j].nation ||
-                players[i].era === players[j].era
-            ) {
-                pairs += 1;
-            }
+            pairs += 1;
+            if (players[i].nation === players[j].nation) score += 1;
+            else if (players[i].era === players[j].era) score += TUNING.eraChemWeight;
         }
     }
-    const maxPairs = (players.length * (players.length - 1)) / 2 || 1;
-    return 1 + 0.05 * (pairs / maxPairs);
+    if (pairs === 0) return 1;
+    return 1 + TUNING.chemistryMax * (score / pairs);
 }
 
-function pickScorers(players: Player[], count: number): string[] {
+function pickScorers(rng: Rng, players: Player[], count: number): string[] {
     const attackers = players.filter((p) => p.position[0] !== 'GK');
     const weighted = attackers.flatMap((p) => {
         const attacking = ['ST', 'LW', 'RW', 'CAM'].includes(p.position[0]) ? 3 : 1;
@@ -56,7 +120,7 @@ function pickScorers(players: Player[], count: number): string[] {
     });
     const scorers: string[] = [];
     for (let i = 0; i < count; i++) {
-        scorers.push(weighted[Math.floor(Math.random() * weighted.length)]?.name ?? 'Own goal');
+        scorers.push(weighted.length ? rng.pick(weighted).name : 'Own goal');
     }
     return scorers;
 }
@@ -70,58 +134,70 @@ const FLAVOUR_WIN = [
 const FLAVOUR_DRAW = ['Honours even after a tense ninety minutes.', 'Deadlock — neither side blinks.'];
 const FLAVOUR_LOSS = ['Heartbreak. The dream ends here.', 'Outclassed on the day — the run is over.'];
 
+const clampGoals = (n: number) => Math.max(0, Math.min(TUNING.maxGoals, n));
+
 export function simulateMatch(
+    rng: Rng,
     players: Player[],
     formation: Formation,
     round: Round,
 ): MatchResult {
-    const opponentNation = NATIONS[Math.floor(Math.random() * NATIONS.length)];
-    const opponentRating = Math.round(rand(round.min, round.max));
+    const opponentNation = rng.pick(NATIONS);
+    const opponentRating = Math.round(rand(rng, round.min, round.max));
 
-    // PRD formula: squad strength × formation bonus × chemistry × RNG vs difficulty × RNG.
-    const yourScore = squadAverage(players) * formation.bonus * chemistryBonus(players) * rand(0.85, 1.15);
-    const oppScore = opponentRating * rand(0.8, 1.2);
+    const chem = chemistryBonus(players);
+    const lines = lineRatings(players);
+    const overall = (lines.attack + lines.defence) / 2;
 
+    // Overall strength decides win/draw/loss so run pacing stays balanced...
+    const yourScore = overall * formation.bonus * chem * rand(rng, TUNING.yourRngLow, TUNING.yourRngHigh);
+    const oppScore = opponentRating * rand(rng, TUNING.oppRngLow, TUNING.oppRngHigh);
     const diff = yourScore - oppScore;
     const margin = Math.abs(diff) / oppScore;
 
     let outcome: MatchResult['outcome'];
-    if (margin <= 0.05) outcome = 'draw';
+    if (margin <= TUNING.drawMargin) outcome = 'draw';
     else if (diff > 0) outcome = 'win';
     else outcome = 'loss';
+
+    // ...but the scoreline reflects the line battle: your attack vs their
+    // defence drives goals for, your defence + GK drives the clean sheet.
+    const attackIndex = (lines.attack * formation.bonus * chem) / opponentRating;
+    const defenceIndex = (lines.defence * formation.bonus) / opponentRating;
+    const cleanSheetChance = Math.max(
+        0.05,
+        Math.min(0.9, TUNING.cleanSheetBase + (defenceIndex - 1) * TUNING.cleanSheetGain),
+    );
 
     let goalsFor: number;
     let goalsAgainst: number;
     if (outcome === 'win') {
-        goalsFor = Math.min(5, 1 + Math.floor(margin * 12) + (Math.random() < 0.3 ? 1 : 0));
-        goalsAgainst = Math.random() < 0.55 ? 0 : Math.max(0, goalsFor - 1 - Math.floor(Math.random() * 2));
+        goalsFor = clampGoals(1 + Math.floor((attackIndex - 1) * TUNING.winGoalGain + margin * 4));
+        goalsAgainst = rng.next() < cleanSheetChance ? 0 : Math.max(1, goalsFor - 1 - rng.int(0, 1));
     } else if (outcome === 'loss') {
-        goalsAgainst = Math.min(4, 1 + Math.floor(margin * 10));
-        goalsFor = Math.random() < 0.5 ? 0 : Math.max(0, goalsAgainst - 1 - Math.floor(Math.random() * 2));
+        goalsAgainst = clampGoals(1 + Math.floor(margin * 8));
+        goalsFor = rng.next() < 0.5 ? 0 : Math.max(0, goalsAgainst - 1 - rng.int(0, 1));
     } else {
-        goalsFor = Math.floor(Math.random() * 3);
+        goalsFor = rng.int(0, 2);
         goalsAgainst = goalsFor;
     }
 
     let wonOnPens: boolean | undefined;
     if (outcome === 'draw' && round.isKnockout) {
         // Penalties slightly favour the stronger squad.
-        wonOnPens = Math.random() < 0.5 + Math.min(0.2, diff / 200);
+        wonOnPens = rng.next() < 0.5 + Math.min(0.2, diff / 200);
     }
 
-    const scorers = pickScorers(players, goalsFor);
+    const scorers = pickScorers(rng, players, goalsFor);
     const sorted = [...players].sort((a, b) => b.overall_rating - a.overall_rating);
     const motm =
         outcome === 'loss'
-            ? sorted[Math.floor(Math.random() * Math.min(5, sorted.length))].name
+            ? sorted[rng.int(0, Math.min(5, sorted.length) - 1)].name
             : scorers[0] ?? sorted[0].name;
 
     const flavourPool =
         outcome === 'win' ? FLAVOUR_WIN : outcome === 'draw' ? FLAVOUR_DRAW : FLAVOUR_LOSS;
-    const flavour = flavourPool[Math.floor(Math.random() * flavourPool.length)].replace(
-        '{scorer}',
-        scorers[0] ?? motm,
-    );
+    const flavour = rng.pick(flavourPool).replace('{scorer}', scorers[0] ?? motm);
 
     return {
         round: round.name,

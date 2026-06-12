@@ -18,10 +18,13 @@ const ERA_LABELS: Record<string, string> = {
 };
 
 export function PlayerCard({ player, showRating, onPick }: PlayerCardProps) {
-    const keyStat =
-        player.position[0] === 'GK'
-            ? `${player.clean_sheets ?? 0} clean sheets`
-            : `${player.goals ?? 0}G ${player.assists ?? 0}A`;
+    const isGk = player.position[0] === 'GK';
+    const hasStat = isGk
+        ? player.clean_sheets != null
+        : player.goals != null || player.assists != null;
+    const keyStat = isGk
+        ? `${player.clean_sheets ?? 0} clean sheets`
+        : `${player.goals ?? 0}G ${player.assists ?? 0}A`;
 
     return (
         <button
@@ -38,6 +41,9 @@ export function PlayerCard({ player, showRating, onPick }: PlayerCardProps) {
                     <p className="caption-mono mt-1.5 text-white/50">
                         {getNation(player.nation)?.flag} {player.nation} · {player.world_cup_year}
                     </p>
+                    {player.club && (
+                        <p className="mt-0.5 text-xs text-white/40">{player.club}</p>
+                    )}
                 </div>
                 {showRating && (
                     <span className="font-mono text-2xl font-medium text-flame-1">
@@ -52,7 +58,9 @@ export function PlayerCard({ player, showRating, onPick }: PlayerCardProps) {
                     </Badge>
                 ))}
                 <Badge variant="secondary">{ERA_LABELS[player.era]}</Badge>
-                <span className="ml-auto font-mono text-xs text-white/70">{keyStat}</span>
+                {hasStat && (
+                    <span className="ml-auto font-mono text-xs text-white/70">{keyStat}</span>
+                )}
             </div>
             {player.fun_fact && (
                 <p className="font-serif text-sm italic text-white/50">“{player.fun_fact}”</p>

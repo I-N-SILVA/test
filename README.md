@@ -17,8 +17,24 @@ START → Pick Formation → Spin Wheel (Nation) → Pick Player → Fill XI →
 - **Difficulty:** Easy (3 rerolls), Normal (1), Legend (0 rerolls)
 - **Blind mode:** hide ratings during the draft, independent of difficulty
 - **Era filter:** Classic (to 1990), Modern (1990-2010), Contemporary (2010-2026)
-- The wheel is weighted by World Cup appearances; Brazil and Germany come up more often
-- Chemistry bonus for players sharing a nation or era
+- **Modes:** Free play (random seed) or the **Daily Challenge** — everyone gets
+  the same wheel and the same opponents each day, so runs are directly comparable
+- **Spin modes:** Open draw (all 54 nations, equal odds — the default),
+  Realistic (weighted by World Cup appearances), Confederation (spin a continent,
+  then a nation) and Position-first (fill each slot in turn)
+- **Gamble tokens:** 2 per run — burn one to auto-draft a fully random player,
+  double or nothing
+- **Chemistry** rewards nation-stacking strongly and shared eras weakly — it's a
+  genuine risk/reward lever, not a flat bonus
+- **Line-based simulation:** your attack (forwards + midfield) drives goals scored,
+  your defence + goalkeeper drives clean sheets, so squad shape and formation matter
+
+## Seeds & sharing
+
+Every run derives from a single seed via a deterministic PRNG (mulberry32), so a
+run can be persisted mid-flight and replayed exactly. The results screen renders a
+shareable run-card PNG client-side (no dependencies) and, where the seed is known,
+a `?seed=` deep link a friend can open to play the identical run.
 
 ## Stack
 
@@ -36,6 +52,7 @@ START → Pick Formation → Spin Wheel (Nation) → Pick Player → Fill XI →
 npm install
 npm run dev        # http://localhost:6048
 npm run typecheck
+npm test           # Vitest — engine, RNG and wheel logic
 npm run build
 ```
 
@@ -46,15 +63,24 @@ app/            landing page + /game flow
 components/ui   PLYAZ-themed primitives (button, badge, card)
 components/game SpinWheel, PitchView, PlayerCard, screens per phase
 lib/game/       types, formations, wheel logic, simulation engine, store
-data/           players.json (100 legends, 12 nations), nations.json
+                rng.ts (seeded PRNG), shareCard.ts (canvas run-card)
+lib/game/*.test.ts  Vitest coverage for the engine, RNG, wheel and dataset
+scripts/         build_dataset.py — regenerates the datasets (idempotent, validated)
+data/           players.json (~510 player-seasons, 54 nations), nations.json
 docs/PRD.md     full product requirements document
 ```
 
 ## Dataset
 
-MVP ships 12 nations with roughly 8 player-seasons each (1950-2022). Ratings and stats
-are community-curated; corrections welcome via GitHub Issues. Phase 2 grows this to all
-48 qualified nations per the PRD.
+Ships ~510 player-seasons across 54 nations: all 48 teams at the 2026 World Cup
+(USA/Canada/Mexico) plus historic giants who didn't qualify (Italy, Hungary,
+Chile, Cameroon, Nigeria, Poland) so the all-time draft stays rich. Each nation
+has a goalkeeper and coverage across defence, midfield and attack, mixing
+legends (1930s onward) with current 2026-era stars carrying a `club` tag for
+context. Ratings are community-curated; corrections welcome via GitHub Issues.
+
+Regenerate with `python3 scripts/build_dataset.py` — it preserves existing
+entries, de-dupes, derives eras, and validates positional coverage.
 
 ## Roadmap
 

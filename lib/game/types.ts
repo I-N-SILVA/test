@@ -12,17 +12,31 @@ export interface Player {
     goals?: number;
     assists?: number;
     clean_sheets?: number;
+    /** Club/league context at the time — Twelve-style card detail. */
+    club?: string;
     era: Era;
     fun_fact?: string;
 }
+
+export type Confederation = 'UEFA' | 'CONMEBOL' | 'CONCACAF' | 'CAF' | 'AFC' | 'OFC';
 
 export interface Nation {
     id: string;
     name: string;
     flag: string;
-    /** World Cup appearances — used as wheel weighting. */
+    /** World Cup appearances — used by the weighted ("Realistic") spin mode. */
     appearances: number;
+    confederation: Confederation;
 }
+
+/**
+ * How the wheel chooses a nation:
+ * - uniform: every eligible nation has equal odds (default, max variety)
+ * - weighted: odds ∝ World Cup appearances (Brazil/Germany dominate)
+ * - confederation: spin a confederation first, then a nation within it
+ * - position: announce the next open slot, then spin a nation that can fill it
+ */
+export type SpinMode = 'uniform' | 'weighted' | 'confederation' | 'position';
 
 export interface FormationSlot {
     id: string;
@@ -59,6 +73,8 @@ export interface MatchResult {
     flavour: string;
 }
 
+export type GameMode = 'free' | 'daily';
+
 export interface RunState {
     phase: 'setup' | 'draft' | 'sim' | 'results';
     formationId: string;
@@ -66,9 +82,23 @@ export interface RunState {
     eraFilter: EraFilter;
     /** Blind mode: when false, player overalls stay hidden during the draft. */
     showRatings: boolean;
+    /** Free play (random seed) or the shared Daily Challenge seed. */
+    mode: GameMode;
+    /** Seed the whole run derives from — wheel spins and match sim alike. */
+    seed: number;
+    /** Human label for the seed, e.g. the daily date. */
+    seedLabel: string;
+    /** Live PRNG state, advanced on every spin and simulated match. */
+    rngState: number;
+    /** How the wheel selects nations. */
+    spinMode: SpinMode;
     /** slot id → player */
     squad: Record<string, Player>;
     rerolls: number;
+    /** Double-or-nothing tokens: auto-draft a fully random player. */
+    gambles: number;
+    /** Confederation landed in the first stage of a two-stage spin. */
+    spunConfederation: Confederation | null;
     /** Nation currently on the wheel (after a spin), pending player pick. */
     spunNation: string | null;
     matches: MatchResult[];

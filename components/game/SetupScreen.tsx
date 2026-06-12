@@ -5,7 +5,15 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { FormationPicker } from './FormationPicker';
 import { useGame, REROLLS_BY_DIFFICULTY } from '@/lib/game/store';
-import type { Difficulty, EraFilter } from '@/lib/game/types';
+import { dailyLabel, dailySeed, randomSeed, seedFromString } from '@/lib/game/rng';
+import type { Difficulty, EraFilter, GameMode, SpinMode } from '@/lib/game/types';
+
+const SPIN_MODES: { id: SpinMode; name: string; blurb: string }[] = [
+    { id: 'uniform', name: 'Open draw', blurb: 'Every nation, equal odds' },
+    { id: 'weighted', name: 'Realistic', blurb: 'Weighted by World Cup appearances' },
+    { id: 'confederation', name: 'Confederation', blurb: 'Spin a continent, then a nation' },
+    { id: 'position', name: 'Position-first', blurb: 'Fill each slot in turn' },
+];
 
 const DIFFICULTIES: { id: Difficulty; name: string; blurb: string }[] = [
     { id: 'easy', name: 'Easy', blurb: '3 rerolls available' },
@@ -30,6 +38,44 @@ export function SetupScreen() {
     const [difficulty, setDifficulty] = React.useState<Difficulty>('normal');
     const [eraFilter, setEraFilter] = React.useState<EraFilter>('all');
     const [showRatings, setShowRatings] = React.useState(true);
+    const [spinMode, setSpinMode] = React.useState<SpinMode>('uniform');
+    const [mode, setMode] = React.useState<GameMode>('free');
+    // A ?seed= link pins a specific seed so a friend replays your exact run.
+    const [customSeed, setCustomSeed] = React.useState<{ seed: number; label: string } | null>(null);
+
+    React.useEffect(() => {
+        const raw = new URLSearchParams(window.location.search).get('seed');
+        if (!raw) return;
+        const seed = /^\d+$/.test(raw) ? Number(raw) >>> 0 : seedFromString(raw);
+        setCustomSeed({ seed, label: raw });
+        setMode('free');
+    }, []);
+
+    const start = () => {
+        let seed: number;
+        let seedLabel: string;
+        if (mode === 'daily') {
+            seed = dailySeed();
+            seedLabel = dailyLabel();
+        } else if (customSeed) {
+            seed = customSeed.seed;
+            seedLabel = customSeed.label;
+        } else {
+            seed = randomSeed();
+            seedLabel = '';
+        }
+        dispatch({
+            type: 'configure',
+            formationId,
+            difficulty,
+            eraFilter,
+            showRatings,
+            mode,
+            seed,
+            seedLabel,
+            spinMode,
+        });
+    };
 
     return (
         <div className="mx-auto flex w-full max-w-2xl flex-col gap-10">
@@ -43,8 +89,78 @@ export function SetupScreen() {
             </div>
 
             <section>
+                <SectionLabel>Mode</SectionLabel>
+                <div className="grid grid-cols-2 gap-2">
+                    {(
+                        [
+                            {
+                                id: 'free',
+                                name: customSeed ? 'Shared seed' : 'Free play',
+                                blurb: customSeed
+                                    ? `Replaying seed “${customSeed.label}”`
+                                    : 'A fresh random run every time',
+                            },
+                            {
+                                id: 'daily',
+                                name: 'Daily Challenge',
+                                blurb: `Everyone gets today’s seed · ${dailyLabel()}`,
+                            },
+                        ] as { id: GameMode; name: string; blurb: string }[]
+                    ).map((m) => (
+                        <button
+                            key={m.id}
+                            type="button"
+                            onClick={() => setMode(m.id)}
+                            aria-pressed={mode === m.id}
+                            className={cn(
+                                'rounded-md border p-4 text-left transition-all duration-300 ease-expo',
+                                mode === m.id
+                                    ? 'border-flame-1 bg-flame-2/10'
+                                    : 'border-white/15 bg-white/[0.03] hover:border-white/40',
+                            )}
+                        >
+                            <span className="block font-semibold">{m.name}</span>
+                            <span className="mt-1 block text-xs text-white/50">{m.blurb}</span>
+                        </button>
+                    ))}
+                </div>
+                {mode === 'daily' && (
+                    <p className="mt-2 text-xs text-white/50">
+                        Same wheel and same opponents for every player today — compare your run.
+                    </p>
+                )}
+            </section>
+
+            <section>
                 <SectionLabel>Formation</SectionLabel>
                 <FormationPicker value={formationId} onChange={setFormationId} />
+            </section>
+
+            <section>
+                <SectionLabel>Spin mode</SectionLabel>
+                <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+                    {SPIN_MODES.map((m) => (
+                        <button
+                            key={m.id}
+                            type="button"
+                            onClick={() => setSpinMode(m.id)}
+                            aria-pressed={spinMode === m.id}
+                            className={cn(
+                                'rounded-md border p-4 text-left transition-all duration-300 ease-expo',
+                                spinMode === m.id
+                                    ? 'border-flame-1 bg-flame-2/10'
+                                    : 'border-white/15 bg-white/[0.03] hover:border-white/40',
+                            )}
+                        >
+                            <span className="block font-semibold">{m.name}</span>
+                            <span className="mt-1 block text-xs text-white/50">{m.blurb}</span>
+                        </button>
+                    ))}
+                </div>
+                <p className="mt-2 text-xs text-white/50">
+                    Plus 2 🎲 gamble tokens per run — auto-draft a fully random player, double or
+                    nothing.
+                </p>
             </section>
 
             <section>
@@ -125,14 +241,8 @@ export function SetupScreen() {
                 </p>
             </section>
 
-            <Button
-                size="xl"
-                variant="flame"
-                onClick={() =>
-                    dispatch({ type: 'configure', formationId, difficulty, eraFilter, showRatings })
-                }
-            >
-                Start the draft →
+            <Button size="xl" variant="flame" onClick={start}>
+                {mode === 'daily' ? 'Start the daily →' : 'Start the draft →'}
             </Button>
             <p className="caption-mono -mt-6 text-center text-white/40">
                 {REROLLS_BY_DIFFICULTY[difficulty]} reroll
