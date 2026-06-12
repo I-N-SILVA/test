@@ -6,7 +6,7 @@ const HOW_TO_PLAY = [
     {
         step: '01',
         title: 'Spin the wheel',
-        body: 'Every spin lands on a real World Cup nation. Open draw gives all 54 equal odds, or switch to Realistic, Confederation or Position-first. Feeling lucky? Burn a gamble token.',
+        body: 'Every spin lands on a real World Cup nation — all 54 with equal odds. Feeling lucky? Burn a gamble token and let the wheel draft for you.',
     },
     {
         step: '02',
