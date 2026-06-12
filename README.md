@@ -19,7 +19,11 @@ START → Pick Formation → Spin Wheel (Nation) → Pick Player → Fill XI →
 - **Era filter:** Classic (to 1990), Modern (1990-2010), Contemporary (2010-2026)
 - **Modes:** Free play (random seed) or the **Daily Challenge** — everyone gets
   the same wheel and the same opponents each day, so runs are directly comparable
-- The wheel is weighted by World Cup appearances; Brazil and Germany come up more often
+- **Spin modes:** Open draw (all 54 nations, equal odds — the default),
+  Realistic (weighted by World Cup appearances), Confederation (spin a continent,
+  then a nation) and Position-first (fill each slot in turn)
+- **Gamble tokens:** 2 per run — burn one to auto-draft a fully random player,
+  double or nothing
 - **Chemistry** rewards nation-stacking strongly and shared eras weakly — it's a
   genuine risk/reward lever, not a flat bonus
 - **Line-based simulation:** your attack (forwards + midfield) drives goals scored,

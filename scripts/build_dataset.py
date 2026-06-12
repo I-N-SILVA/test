@@ -90,6 +90,33 @@ NATIONS = [
     ("uzbekistan", "Uzbekistan", "🇺🇿", 1),
 ]
 
+# Confederation per nation — drives the two-stage "confederation" spin mode.
+CONFEDERATION = {
+    # UEFA
+    "Austria": "UEFA", "Belgium": "UEFA", "Bosnia and Herzegovina": "UEFA",
+    "Croatia": "UEFA", "Czechia": "UEFA", "England": "UEFA", "France": "UEFA",
+    "Germany": "UEFA", "Hungary": "UEFA", "Italy": "UEFA", "Netherlands": "UEFA",
+    "Norway": "UEFA", "Poland": "UEFA", "Portugal": "UEFA", "Scotland": "UEFA",
+    "Spain": "UEFA", "Sweden": "UEFA", "Switzerland": "UEFA", "Turkey": "UEFA",
+    # CONMEBOL
+    "Argentina": "CONMEBOL", "Brazil": "CONMEBOL", "Chile": "CONMEBOL",
+    "Colombia": "CONMEBOL", "Ecuador": "CONMEBOL", "Paraguay": "CONMEBOL",
+    "Uruguay": "CONMEBOL",
+    # CONCACAF
+    "Canada": "CONCACAF", "Curaçao": "CONCACAF", "Haiti": "CONCACAF",
+    "Mexico": "CONCACAF", "Panama": "CONCACAF", "United States": "CONCACAF",
+    # CAF
+    "Algeria": "CAF", "Cameroon": "CAF", "Cape Verde": "CAF", "DR Congo": "CAF",
+    "Egypt": "CAF", "Ghana": "CAF", "Ivory Coast": "CAF", "Morocco": "CAF",
+    "Nigeria": "CAF", "Senegal": "CAF", "South Africa": "CAF", "Tunisia": "CAF",
+    # AFC
+    "Australia": "AFC", "Iran": "AFC", "Iraq": "AFC", "Japan": "AFC",
+    "Jordan": "AFC", "Qatar": "AFC", "Saudi Arabia": "AFC",
+    "South Korea": "AFC", "Uzbekistan": "AFC",
+    # OFC
+    "New Zealand": "OFC",
+}
+
 # New players: nation -> [(name, [positions], year, rating, fun_fact, club)]
 # club="" for pure legends. Stats are intentionally sparse for current squads
 # (tournament in progress); the card falls back to club + fun_fact context.
@@ -655,9 +682,17 @@ def main():
             added += 1
 
     nations = [
-        {"id": nid, "name": name, "flag": flag, "appearances": apps}
+        {
+            "id": nid,
+            "name": name,
+            "flag": flag,
+            "appearances": apps,
+            "confederation": CONFEDERATION[name],
+        }
         for nid, name, flag, apps in NATIONS
     ]
+    missing_confed = [name for _, name, _, _ in NATIONS if name not in CONFEDERATION]
+    assert not missing_confed, f"Missing confederation: {missing_confed}"
 
     json.dump(
         players,

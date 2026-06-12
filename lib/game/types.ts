@@ -18,13 +18,25 @@ export interface Player {
     fun_fact?: string;
 }
 
+export type Confederation = 'UEFA' | 'CONMEBOL' | 'CONCACAF' | 'CAF' | 'AFC' | 'OFC';
+
 export interface Nation {
     id: string;
     name: string;
     flag: string;
-    /** World Cup appearances — used as wheel weighting. */
+    /** World Cup appearances — used by the weighted ("Realistic") spin mode. */
     appearances: number;
+    confederation: Confederation;
 }
+
+/**
+ * How the wheel chooses a nation:
+ * - uniform: every eligible nation has equal odds (default, max variety)
+ * - weighted: odds ∝ World Cup appearances (Brazil/Germany dominate)
+ * - confederation: spin a confederation first, then a nation within it
+ * - position: announce the next open slot, then spin a nation that can fill it
+ */
+export type SpinMode = 'uniform' | 'weighted' | 'confederation' | 'position';
 
 export interface FormationSlot {
     id: string;
@@ -78,9 +90,15 @@ export interface RunState {
     seedLabel: string;
     /** Live PRNG state, advanced on every spin and simulated match. */
     rngState: number;
+    /** How the wheel selects nations. */
+    spinMode: SpinMode;
     /** slot id → player */
     squad: Record<string, Player>;
     rerolls: number;
+    /** Double-or-nothing tokens: auto-draft a fully random player. */
+    gambles: number;
+    /** Confederation landed in the first stage of a two-stage spin. */
+    spunConfederation: Confederation | null;
     /** Nation currently on the wheel (after a spin), pending player pick. */
     spunNation: string | null;
     matches: MatchResult[];

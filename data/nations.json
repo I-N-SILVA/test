@@ -3,324 +3,378 @@
     "id": "brazil",
     "name": "Brazil",
     "flag": "🇧🇷",
-    "appearances": 22
+    "appearances": 22,
+    "confederation": "CONMEBOL"
   },
   {
     "id": "germany",
     "name": "Germany",
     "flag": "🇩🇪",
-    "appearances": 20
+    "appearances": 20,
+    "confederation": "UEFA"
   },
   {
     "id": "italy",
     "name": "Italy",
     "flag": "🇮🇹",
-    "appearances": 18
+    "appearances": 18,
+    "confederation": "UEFA"
   },
   {
     "id": "argentina",
     "name": "Argentina",
     "flag": "🇦🇷",
-    "appearances": 18
+    "appearances": 18,
+    "confederation": "CONMEBOL"
   },
   {
     "id": "france",
     "name": "France",
     "flag": "🇫🇷",
-    "appearances": 16
+    "appearances": 16,
+    "confederation": "UEFA"
   },
   {
     "id": "england",
     "name": "England",
     "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    "appearances": 16
+    "appearances": 16,
+    "confederation": "UEFA"
   },
   {
     "id": "spain",
     "name": "Spain",
     "flag": "🇪🇸",
-    "appearances": 16
+    "appearances": 16,
+    "confederation": "UEFA"
   },
   {
     "id": "mexico",
     "name": "Mexico",
     "flag": "🇲🇽",
-    "appearances": 17
+    "appearances": 17,
+    "confederation": "CONCACAF"
   },
   {
     "id": "uruguay",
     "name": "Uruguay",
     "flag": "🇺🇾",
-    "appearances": 14
+    "appearances": 14,
+    "confederation": "CONMEBOL"
   },
   {
     "id": "belgium",
     "name": "Belgium",
     "flag": "🇧🇪",
-    "appearances": 14
+    "appearances": 14,
+    "confederation": "UEFA"
   },
   {
     "id": "sweden",
     "name": "Sweden",
     "flag": "🇸🇪",
-    "appearances": 12
+    "appearances": 12,
+    "confederation": "UEFA"
   },
   {
     "id": "switzerland",
     "name": "Switzerland",
     "flag": "🇨🇭",
-    "appearances": 12
+    "appearances": 12,
+    "confederation": "UEFA"
   },
   {
     "id": "netherlands",
     "name": "Netherlands",
     "flag": "🇳🇱",
-    "appearances": 11
+    "appearances": 11,
+    "confederation": "UEFA"
   },
   {
     "id": "usa",
     "name": "United States",
     "flag": "🇺🇸",
-    "appearances": 11
+    "appearances": 11,
+    "confederation": "CONCACAF"
   },
   {
     "id": "south-korea",
     "name": "South Korea",
     "flag": "🇰🇷",
-    "appearances": 11
+    "appearances": 11,
+    "confederation": "AFC"
   },
   {
     "id": "czechia",
     "name": "Czechia",
     "flag": "🇨🇿",
-    "appearances": 10
+    "appearances": 10,
+    "confederation": "UEFA"
   },
   {
     "id": "hungary",
     "name": "Hungary",
     "flag": "🇭🇺",
-    "appearances": 9
+    "appearances": 9,
+    "confederation": "UEFA"
   },
   {
     "id": "chile",
     "name": "Chile",
     "flag": "🇨🇱",
-    "appearances": 9
+    "appearances": 9,
+    "confederation": "CONMEBOL"
   },
   {
     "id": "poland",
     "name": "Poland",
     "flag": "🇵🇱",
-    "appearances": 9
+    "appearances": 9,
+    "confederation": "UEFA"
   },
   {
     "id": "portugal",
     "name": "Portugal",
     "flag": "🇵🇹",
-    "appearances": 8
+    "appearances": 8,
+    "confederation": "UEFA"
   },
   {
     "id": "austria",
     "name": "Austria",
     "flag": "🇦🇹",
-    "appearances": 8
+    "appearances": 8,
+    "confederation": "UEFA"
   },
   {
     "id": "paraguay",
     "name": "Paraguay",
     "flag": "🇵🇾",
-    "appearances": 8
+    "appearances": 8,
+    "confederation": "CONMEBOL"
   },
   {
     "id": "scotland",
     "name": "Scotland",
     "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-    "appearances": 8
+    "appearances": 8,
+    "confederation": "UEFA"
   },
   {
     "id": "cameroon",
     "name": "Cameroon",
     "flag": "🇨🇲",
-    "appearances": 8
+    "appearances": 8,
+    "confederation": "CAF"
   },
   {
     "id": "japan",
     "name": "Japan",
     "flag": "🇯🇵",
-    "appearances": 7
+    "appearances": 7,
+    "confederation": "AFC"
   },
   {
     "id": "croatia",
     "name": "Croatia",
     "flag": "🇭🇷",
-    "appearances": 6
+    "appearances": 6,
+    "confederation": "UEFA"
   },
   {
     "id": "colombia",
     "name": "Colombia",
     "flag": "🇨🇴",
-    "appearances": 6
+    "appearances": 6,
+    "confederation": "CONMEBOL"
   },
   {
     "id": "morocco",
     "name": "Morocco",
     "flag": "🇲🇦",
-    "appearances": 6
+    "appearances": 6,
+    "confederation": "CAF"
   },
   {
     "id": "iran",
     "name": "Iran",
     "flag": "🇮🇷",
-    "appearances": 6
+    "appearances": 6,
+    "confederation": "AFC"
   },
   {
     "id": "saudi-arabia",
     "name": "Saudi Arabia",
     "flag": "🇸🇦",
-    "appearances": 6
+    "appearances": 6,
+    "confederation": "AFC"
   },
   {
     "id": "australia",
     "name": "Australia",
     "flag": "🇦🇺",
-    "appearances": 6
+    "appearances": 6,
+    "confederation": "AFC"
   },
   {
     "id": "tunisia",
     "name": "Tunisia",
     "flag": "🇹🇳",
-    "appearances": 6
+    "appearances": 6,
+    "confederation": "CAF"
   },
   {
     "id": "nigeria",
     "name": "Nigeria",
     "flag": "🇳🇬",
-    "appearances": 6
+    "appearances": 6,
+    "confederation": "CAF"
   },
   {
     "id": "ecuador",
     "name": "Ecuador",
     "flag": "🇪🇨",
-    "appearances": 4
+    "appearances": 4,
+    "confederation": "CONMEBOL"
   },
   {
     "id": "algeria",
     "name": "Algeria",
     "flag": "🇩🇿",
-    "appearances": 4
+    "appearances": 4,
+    "confederation": "CAF"
   },
   {
     "id": "ghana",
     "name": "Ghana",
     "flag": "🇬🇭",
-    "appearances": 4
+    "appearances": 4,
+    "confederation": "CAF"
   },
   {
     "id": "norway",
     "name": "Norway",
     "flag": "🇳🇴",
-    "appearances": 4
+    "appearances": 4,
+    "confederation": "UEFA"
   },
   {
     "id": "egypt",
     "name": "Egypt",
     "flag": "🇪🇬",
-    "appearances": 3
+    "appearances": 3,
+    "confederation": "CAF"
   },
   {
     "id": "ivory-coast",
     "name": "Ivory Coast",
     "flag": "🇨🇮",
-    "appearances": 3
+    "appearances": 3,
+    "confederation": "CAF"
   },
   {
     "id": "senegal",
     "name": "Senegal",
     "flag": "🇸🇳",
-    "appearances": 3
+    "appearances": 3,
+    "confederation": "CAF"
   },
   {
     "id": "south-africa",
     "name": "South Africa",
     "flag": "🇿🇦",
-    "appearances": 3
+    "appearances": 3,
+    "confederation": "CAF"
   },
   {
     "id": "new-zealand",
     "name": "New Zealand",
     "flag": "🇳🇿",
-    "appearances": 2
+    "appearances": 2,
+    "confederation": "OFC"
   },
   {
     "id": "canada",
     "name": "Canada",
     "flag": "🇨🇦",
-    "appearances": 2
+    "appearances": 2,
+    "confederation": "CONCACAF"
   },
   {
     "id": "turkey",
     "name": "Turkey",
     "flag": "🇹🇷",
-    "appearances": 2
+    "appearances": 2,
+    "confederation": "UEFA"
   },
   {
     "id": "dr-congo",
     "name": "DR Congo",
     "flag": "🇨🇩",
-    "appearances": 1
+    "appearances": 1,
+    "confederation": "CAF"
   },
   {
     "id": "iraq",
     "name": "Iraq",
     "flag": "🇮🇶",
-    "appearances": 1
+    "appearances": 1,
+    "confederation": "AFC"
   },
   {
     "id": "panama",
     "name": "Panama",
     "flag": "🇵🇦",
-    "appearances": 1
+    "appearances": 1,
+    "confederation": "CONCACAF"
   },
   {
     "id": "qatar",
     "name": "Qatar",
     "flag": "🇶🇦",
-    "appearances": 1
+    "appearances": 1,
+    "confederation": "AFC"
   },
   {
     "id": "bosnia",
     "name": "Bosnia and Herzegovina",
     "flag": "🇧🇦",
-    "appearances": 1
+    "appearances": 1,
+    "confederation": "UEFA"
   },
   {
     "id": "haiti",
     "name": "Haiti",
     "flag": "🇭🇹",
-    "appearances": 1
+    "appearances": 1,
+    "confederation": "CONCACAF"
   },
   {
     "id": "curacao",
     "name": "Curaçao",
     "flag": "🇨🇼",
-    "appearances": 1
+    "appearances": 1,
+    "confederation": "CONCACAF"
   },
   {
     "id": "cape-verde",
     "name": "Cape Verde",
     "flag": "🇨🇻",
-    "appearances": 1
+    "appearances": 1,
+    "confederation": "CAF"
   },
   {
     "id": "jordan",
     "name": "Jordan",
     "flag": "🇯🇴",
-    "appearances": 1
+    "appearances": 1,
+    "confederation": "AFC"
   },
   {
     "id": "uzbekistan",
     "name": "Uzbekistan",
     "flag": "🇺🇿",
-    "appearances": 1
+    "appearances": 1,
+    "confederation": "AFC"
   }
 ]
