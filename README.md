@@ -60,16 +60,23 @@ components/ui   PLYAZ-themed primitives (button, badge, card)
 components/game SpinWheel, PitchView, PlayerCard, screens per phase
 lib/game/       types, formations, wheel logic, simulation engine, store
                 rng.ts (seeded PRNG), shareCard.ts (canvas run-card)
-lib/game/*.test.ts  Vitest coverage for the engine, RNG and wheel
-data/           players.json (100 legends, 12 nations), nations.json
+lib/game/*.test.ts  Vitest coverage for the engine, RNG, wheel and dataset
+scripts/         build_dataset.py — regenerates the datasets (idempotent, validated)
+data/           players.json (~510 player-seasons, 54 nations), nations.json
 docs/PRD.md     full product requirements document
 ```
 
 ## Dataset
 
-MVP ships 12 nations with roughly 8 player-seasons each (1950-2022). Ratings and stats
-are community-curated; corrections welcome via GitHub Issues. Phase 2 grows this to all
-48 qualified nations per the PRD.
+Ships ~510 player-seasons across 54 nations: all 48 teams at the 2026 World Cup
+(USA/Canada/Mexico) plus historic giants who didn't qualify (Italy, Hungary,
+Chile, Cameroon, Nigeria, Poland) so the all-time draft stays rich. Each nation
+has a goalkeeper and coverage across defence, midfield and attack, mixing
+legends (1930s onward) with current 2026-era stars carrying a `club` tag for
+context. Ratings are community-curated; corrections welcome via GitHub Issues.
+
+Regenerate with `python3 scripts/build_dataset.py` — it preserves existing
+entries, de-dupes, derives eras, and validates positional coverage.
 
 ## Roadmap
 

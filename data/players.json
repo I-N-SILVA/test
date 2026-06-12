@@ -1,112 +1,6639 @@
 [
-    { "id": "pele-1970", "name": "Pelé", "nation": "Brazil", "position": ["ST", "CAM"], "world_cup_year": 1970, "overall_rating": 97, "goals": 4, "assists": 6, "era": "classic", "fun_fact": "Only player to win three World Cups" },
-    { "id": "garrincha-1962", "name": "Garrincha", "nation": "Brazil", "position": ["RW"], "world_cup_year": 1962, "overall_rating": 94, "goals": 4, "assists": 3, "era": "classic", "fun_fact": "Carried Brazil to the 1962 title without Pelé" },
-    { "id": "ronaldo-2002", "name": "Ronaldo", "nation": "Brazil", "position": ["ST"], "world_cup_year": 2002, "overall_rating": 96, "goals": 8, "assists": 1, "era": "modern", "fun_fact": "Golden Boot with 8 goals after career-threatening injuries" },
-    { "id": "romario-1994", "name": "Romário", "nation": "Brazil", "position": ["ST"], "world_cup_year": 1994, "overall_rating": 93, "goals": 5, "assists": 3, "era": "modern", "fun_fact": "1994 Golden Ball winner" },
-    { "id": "zico-1982", "name": "Zico", "nation": "Brazil", "position": ["CAM", "CM"], "world_cup_year": 1982, "overall_rating": 91, "goals": 4, "assists": 3, "era": "classic", "fun_fact": "Heartbeat of the beloved 1982 side" },
-    { "id": "ronaldinho-2002", "name": "Ronaldinho", "nation": "Brazil", "position": ["CAM", "LW"], "world_cup_year": 2002, "overall_rating": 92, "goals": 2, "assists": 3, "era": "modern", "fun_fact": "That free kick against England" },
-    { "id": "cafu-2002", "name": "Cafu", "nation": "Brazil", "position": ["RB"], "world_cup_year": 2002, "overall_rating": 89, "goals": 0, "assists": 2, "era": "modern", "fun_fact": "Played in three consecutive World Cup finals" },
-    { "id": "roberto-carlos-2002", "name": "Roberto Carlos", "nation": "Brazil", "position": ["LB"], "world_cup_year": 2002, "overall_rating": 89, "goals": 0, "assists": 1, "era": "modern", "fun_fact": "Most feared left foot in football" },
-    { "id": "taffarel-1994", "name": "Taffarel", "nation": "Brazil", "position": ["GK"], "world_cup_year": 1994, "overall_rating": 86, "clean_sheets": 4, "era": "modern", "fun_fact": "Penalty shoot-out hero of USA 94" },
-
-    { "id": "beckenbauer-1974", "name": "Franz Beckenbauer", "nation": "Germany", "position": ["CB", "CDM"], "world_cup_year": 1974, "overall_rating": 95, "goals": 0, "assists": 2, "era": "classic", "fun_fact": "Invented the modern sweeper role" },
-    { "id": "gerd-muller-1974", "name": "Gerd Müller", "nation": "Germany", "position": ["ST"], "world_cup_year": 1974, "overall_rating": 95, "goals": 4, "assists": 1, "era": "classic", "fun_fact": "14 World Cup goals in just 13 games" },
-    { "id": "matthaus-1990", "name": "Lothar Matthäus", "nation": "Germany", "position": ["CM", "CDM"], "world_cup_year": 1990, "overall_rating": 92, "goals": 4, "assists": 2, "era": "modern", "fun_fact": "Played in five World Cups" },
-    { "id": "klose-2014", "name": "Miroslav Klose", "nation": "Germany", "position": ["ST"], "world_cup_year": 2014, "overall_rating": 89, "goals": 2, "assists": 1, "era": "contemporary", "fun_fact": "All-time World Cup top scorer with 16 goals" },
-    { "id": "lahm-2014", "name": "Philipp Lahm", "nation": "Germany", "position": ["RB", "CDM"], "world_cup_year": 2014, "overall_rating": 90, "goals": 0, "assists": 1, "era": "contemporary", "fun_fact": "Lifted the trophy as captain in the Maracanã" },
-    { "id": "neuer-2014", "name": "Manuel Neuer", "nation": "Germany", "position": ["GK"], "world_cup_year": 2014, "overall_rating": 92, "clean_sheets": 4, "era": "contemporary", "fun_fact": "Redefined the sweeper-keeper in 2014" },
-    { "id": "maier-1974", "name": "Sepp Maier", "nation": "Germany", "position": ["GK"], "world_cup_year": 1974, "overall_rating": 89, "clean_sheets": 4, "era": "classic", "fun_fact": "Die Katze — the cat of Anzing" },
-    { "id": "breitner-1974", "name": "Paul Breitner", "nation": "Germany", "position": ["LB", "CM"], "world_cup_year": 1974, "overall_rating": 88, "goals": 3, "assists": 1, "era": "classic", "fun_fact": "Scored in two different World Cup finals" },
-
-    { "id": "rossi-1982", "name": "Paolo Rossi", "nation": "Italy", "position": ["ST"], "world_cup_year": 1982, "overall_rating": 91, "goals": 6, "assists": 0, "era": "classic", "fun_fact": "Golden Boot and Golden Ball in 1982" },
-    { "id": "baggio-1994", "name": "Roberto Baggio", "nation": "Italy", "position": ["CAM", "ST"], "world_cup_year": 1994, "overall_rating": 92, "goals": 5, "assists": 1, "era": "modern", "fun_fact": "Dragged Italy to the 1994 final almost alone" },
-    { "id": "maldini-1994", "name": "Paolo Maldini", "nation": "Italy", "position": ["LB", "CB"], "world_cup_year": 1994, "overall_rating": 93, "goals": 0, "assists": 0, "era": "modern", "fun_fact": "23 World Cup matches without losing in 90 minutes" },
-    { "id": "cannavaro-2006", "name": "Fabio Cannavaro", "nation": "Italy", "position": ["CB"], "world_cup_year": 2006, "overall_rating": 93, "goals": 0, "assists": 0, "era": "modern", "fun_fact": "Won the 2006 Ballon d'Or as a defender" },
-    { "id": "buffon-2006", "name": "Gianluigi Buffon", "nation": "Italy", "position": ["GK"], "world_cup_year": 2006, "overall_rating": 93, "clean_sheets": 5, "era": "modern", "fun_fact": "Conceded only two goals in the entire 2006 tournament" },
-    { "id": "pirlo-2006", "name": "Andrea Pirlo", "nation": "Italy", "position": ["CM", "CDM", "CAM"], "world_cup_year": 2006, "overall_rating": 91, "goals": 1, "assists": 4, "era": "modern", "fun_fact": "Three man-of-the-match awards in 2006" },
-    { "id": "totti-2006", "name": "Francesco Totti", "nation": "Italy", "position": ["CAM", "ST"], "world_cup_year": 2006, "overall_rating": 88, "goals": 1, "assists": 4, "era": "modern", "fun_fact": "Il Capitano of Roma and 2006 champion" },
-    { "id": "zoff-1982", "name": "Dino Zoff", "nation": "Italy", "position": ["GK"], "world_cup_year": 1982, "overall_rating": 90, "clean_sheets": 3, "era": "classic", "fun_fact": "Oldest World Cup winner at 40" },
-
-    { "id": "maradona-1986", "name": "Diego Maradona", "nation": "Argentina", "position": ["CAM", "ST"], "world_cup_year": 1986, "overall_rating": 98, "goals": 5, "assists": 5, "era": "classic", "fun_fact": "The greatest individual World Cup ever played" },
-    { "id": "messi-2022", "name": "Lionel Messi", "nation": "Argentina", "position": ["RW", "CAM", "ST"], "world_cup_year": 2022, "overall_rating": 97, "goals": 7, "assists": 3, "era": "contemporary", "fun_fact": "Two Golden Balls, one golden crown in Qatar" },
-    { "id": "batistuta-1998", "name": "Gabriel Batistuta", "nation": "Argentina", "position": ["ST"], "world_cup_year": 1998, "overall_rating": 90, "goals": 5, "assists": 0, "era": "modern", "fun_fact": "Hat-tricks in two different World Cups" },
-    { "id": "kempes-1978", "name": "Mario Kempes", "nation": "Argentina", "position": ["ST", "CAM"], "world_cup_year": 1978, "overall_rating": 91, "goals": 6, "assists": 2, "era": "classic", "fun_fact": "Golden Boot and two goals in the 78 final" },
-    { "id": "di-maria-2022", "name": "Ángel Di María", "nation": "Argentina", "position": ["LW", "RW"], "world_cup_year": 2022, "overall_rating": 88, "goals": 1, "assists": 1, "era": "contemporary", "fun_fact": "Scored in the 2022 final" },
-    { "id": "e-martinez-2022", "name": "Emiliano Martínez", "nation": "Argentina", "position": ["GK"], "world_cup_year": 2022, "overall_rating": 88, "clean_sheets": 3, "era": "contemporary", "fun_fact": "THAT save against Kolo Muani" },
-    { "id": "passarella-1978", "name": "Daniel Passarella", "nation": "Argentina", "position": ["CB"], "world_cup_year": 1978, "overall_rating": 90, "goals": 1, "assists": 1, "era": "classic", "fun_fact": "Captain of Argentina's first title" },
-    { "id": "mascherano-2014", "name": "Javier Mascherano", "nation": "Argentina", "position": ["CDM", "CB"], "world_cup_year": 2014, "overall_rating": 87, "goals": 0, "assists": 0, "era": "contemporary", "fun_fact": "The tackle on Robben in the 2014 semi" },
-
-    { "id": "zidane-1998", "name": "Zinedine Zidane", "nation": "France", "position": ["CAM", "CM"], "world_cup_year": 1998, "overall_rating": 95, "goals": 2, "assists": 1, "era": "modern", "fun_fact": "Two headers in a World Cup final" },
-    { "id": "platini-1982", "name": "Michel Platini", "nation": "France", "position": ["CAM", "CM"], "world_cup_year": 1982, "overall_rating": 93, "goals": 2, "assists": 3, "era": "classic", "fun_fact": "Conductor of the greatest midfield never to win it" },
-    { "id": "mbappe-2022", "name": "Kylian Mbappé", "nation": "France", "position": ["ST", "LW"], "world_cup_year": 2022, "overall_rating": 94, "goals": 8, "assists": 2, "era": "contemporary", "fun_fact": "Hat-trick in a World Cup final — and still lost" },
-    { "id": "henry-2006", "name": "Thierry Henry", "nation": "France", "position": ["ST", "LW"], "world_cup_year": 2006, "overall_rating": 90, "goals": 3, "assists": 1, "era": "modern", "fun_fact": "France's record scorer at the time of retirement" },
-    { "id": "thuram-1998", "name": "Lilian Thuram", "nation": "France", "position": ["RB", "CB"], "world_cup_year": 1998, "overall_rating": 90, "goals": 2, "assists": 0, "era": "modern", "fun_fact": "Both career France goals came in the 98 semi-final" },
-    { "id": "desailly-1998", "name": "Marcel Desailly", "nation": "France", "position": ["CB", "CDM"], "world_cup_year": 1998, "overall_rating": 89, "goals": 0, "assists": 0, "era": "modern", "fun_fact": "The Rock of the 1998 champions" },
-    { "id": "barthez-1998", "name": "Fabien Barthez", "nation": "France", "position": ["GK"], "world_cup_year": 1998, "overall_rating": 86, "clean_sheets": 5, "era": "modern", "fun_fact": "Laurent Blanc kissed his head before every match" },
-    { "id": "kante-2018", "name": "N'Golo Kanté", "nation": "France", "position": ["CDM", "CM"], "world_cup_year": 2018, "overall_rating": 89, "goals": 0, "assists": 0, "era": "contemporary", "fun_fact": "Covers 70% of the earth; the rest is water" },
-    { "id": "griezmann-2018", "name": "Antoine Griezmann", "nation": "France", "position": ["CAM", "ST"], "world_cup_year": 2018, "overall_rating": 89, "goals": 4, "assists": 2, "era": "contemporary", "fun_fact": "Scored in the 2018 final" },
-
-    { "id": "moore-1966", "name": "Bobby Moore", "nation": "England", "position": ["CB"], "world_cup_year": 1966, "overall_rating": 93, "goals": 0, "assists": 1, "era": "classic", "fun_fact": "Pelé called him the greatest defender he ever faced" },
-    { "id": "charlton-1966", "name": "Bobby Charlton", "nation": "England", "position": ["CM", "CAM"], "world_cup_year": 1966, "overall_rating": 93, "goals": 3, "assists": 1, "era": "classic", "fun_fact": "Both goals in the 1966 semi-final" },
-    { "id": "banks-1966", "name": "Gordon Banks", "nation": "England", "position": ["GK"], "world_cup_year": 1966, "overall_rating": 92, "clean_sheets": 4, "era": "classic", "fun_fact": "The save from Pelé, 1970" },
-    { "id": "lineker-1986", "name": "Gary Lineker", "nation": "England", "position": ["ST"], "world_cup_year": 1986, "overall_rating": 89, "goals": 6, "assists": 0, "era": "classic", "fun_fact": "1986 Golden Boot — never booked in his career" },
-    { "id": "beckham-2002", "name": "David Beckham", "nation": "England", "position": ["RW", "CM"], "world_cup_year": 2002, "overall_rating": 87, "goals": 1, "assists": 1, "era": "modern", "fun_fact": "The penalty against Argentina — redemption" },
-    { "id": "rooney-2006", "name": "Wayne Rooney", "nation": "England", "position": ["ST", "CAM"], "world_cup_year": 2006, "overall_rating": 86, "goals": 0, "assists": 0, "era": "modern", "fun_fact": "England's record scorer of his generation" },
-    { "id": "kane-2018", "name": "Harry Kane", "nation": "England", "position": ["ST"], "world_cup_year": 2018, "overall_rating": 87, "goals": 6, "assists": 0, "era": "contemporary", "fun_fact": "2018 Golden Boot" },
-    { "id": "shilton-1990", "name": "Peter Shilton", "nation": "England", "position": ["GK"], "world_cup_year": 1990, "overall_rating": 88, "clean_sheets": 4, "era": "classic", "fun_fact": "125 England caps — a record" },
-
-    { "id": "iniesta-2010", "name": "Andrés Iniesta", "nation": "Spain", "position": ["CM", "CAM"], "world_cup_year": 2010, "overall_rating": 93, "goals": 2, "assists": 1, "era": "contemporary", "fun_fact": "The goal in minute 116 of the final" },
-    { "id": "xavi-2010", "name": "Xavi Hernández", "nation": "Spain", "position": ["CM"], "world_cup_year": 2010, "overall_rating": 93, "goals": 0, "assists": 2, "era": "contemporary", "fun_fact": "Completed 599 passes in the 2010 tournament" },
-    { "id": "casillas-2010", "name": "Iker Casillas", "nation": "Spain", "position": ["GK"], "world_cup_year": 2010, "overall_rating": 92, "clean_sheets": 5, "era": "contemporary", "fun_fact": "Conceded just two goals en route to the title" },
-    { "id": "puyol-2010", "name": "Carles Puyol", "nation": "Spain", "position": ["CB"], "world_cup_year": 2010, "overall_rating": 89, "goals": 1, "assists": 0, "era": "contemporary", "fun_fact": "The header that beat Germany in the semi" },
-    { "id": "ramos-2010", "name": "Sergio Ramos", "nation": "Spain", "position": ["CB", "RB"], "world_cup_year": 2010, "overall_rating": 90, "goals": 0, "assists": 0, "era": "contemporary", "fun_fact": "World champion at 24" },
-    { "id": "villa-2010", "name": "David Villa", "nation": "Spain", "position": ["ST", "LW"], "world_cup_year": 2010, "overall_rating": 90, "goals": 5, "assists": 1, "era": "contemporary", "fun_fact": "Spain's all-time top scorer" },
-    { "id": "busquets-2010", "name": "Sergio Busquets", "nation": "Spain", "position": ["CDM"], "world_cup_year": 2010, "overall_rating": 88, "goals": 0, "assists": 0, "era": "contemporary", "fun_fact": "Watch the game, you won't see him. Watch him, you'll see the game" },
-    { "id": "torres-2010", "name": "Fernando Torres", "nation": "Spain", "position": ["ST"], "world_cup_year": 2010, "overall_rating": 86, "goals": 0, "assists": 1, "era": "contemporary", "fun_fact": "El Niño of the golden generation" },
-
-    { "id": "varela-1950", "name": "Obdulio Varela", "nation": "Uruguay", "position": ["CDM", "CM"], "world_cup_year": 1950, "overall_rating": 91, "goals": 1, "assists": 1, "era": "classic", "fun_fact": "Silenced 200,000 at the Maracanazo" },
-    { "id": "ghiggia-1950", "name": "Alcides Ghiggia", "nation": "Uruguay", "position": ["RW"], "world_cup_year": 1950, "overall_rating": 88, "goals": 4, "assists": 1, "era": "classic", "fun_fact": "Only three people have silenced the Maracanã: Sinatra, the Pope, and me" },
-    { "id": "schiaffino-1950", "name": "Juan Schiaffino", "nation": "Uruguay", "position": ["CAM", "CM"], "world_cup_year": 1950, "overall_rating": 90, "goals": 5, "assists": 2, "era": "classic", "fun_fact": "Scored the equaliser in the Maracanazo" },
-    { "id": "francescoli-1990", "name": "Enzo Francescoli", "nation": "Uruguay", "position": ["CAM"], "world_cup_year": 1990, "overall_rating": 87, "goals": 0, "assists": 1, "era": "modern", "fun_fact": "Zidane named his son Enzo after him" },
-    { "id": "forlan-2010", "name": "Diego Forlán", "nation": "Uruguay", "position": ["ST", "CAM"], "world_cup_year": 2010, "overall_rating": 89, "goals": 5, "assists": 1, "era": "contemporary", "fun_fact": "2010 Golden Ball winner" },
-    { "id": "suarez-2014", "name": "Luis Suárez", "nation": "Uruguay", "position": ["ST"], "world_cup_year": 2014, "overall_rating": 89, "goals": 2, "assists": 0, "era": "contemporary", "fun_fact": "Sank England twice in Sao Paulo" },
-    { "id": "godin-2018", "name": "Diego Godín", "nation": "Uruguay", "position": ["CB"], "world_cup_year": 2018, "overall_rating": 87, "goals": 0, "assists": 0, "era": "contemporary", "fun_fact": "El Faraón — leader of La Celeste's iron defence" },
-    { "id": "muslera-2010", "name": "Fernando Muslera", "nation": "Uruguay", "position": ["GK"], "world_cup_year": 2010, "overall_rating": 84, "clean_sheets": 3, "era": "contemporary", "fun_fact": "Shoot-out hero against Ghana in 2010" },
-
-    { "id": "cruyff-1974", "name": "Johan Cruyff", "nation": "Netherlands", "position": ["CAM", "ST", "LW"], "world_cup_year": 1974, "overall_rating": 96, "goals": 3, "assists": 3, "era": "classic", "fun_fact": "The Cruyff Turn was born at this World Cup" },
-    { "id": "neeskens-1974", "name": "Johan Neeskens", "nation": "Netherlands", "position": ["CM", "CDM"], "world_cup_year": 1974, "overall_rating": 90, "goals": 5, "assists": 1, "era": "classic", "fun_fact": "Scored the fastest final goal — 2nd minute penalty" },
-    { "id": "van-basten-1990", "name": "Marco van Basten", "nation": "Netherlands", "position": ["ST"], "world_cup_year": 1990, "overall_rating": 91, "goals": 0, "assists": 0, "era": "modern", "fun_fact": "Three-time Ballon d'Or winner" },
-    { "id": "gullit-1990", "name": "Ruud Gullit", "nation": "Netherlands", "position": ["CAM", "CM", "ST"], "world_cup_year": 1990, "overall_rating": 90, "goals": 0, "assists": 1, "era": "modern", "fun_fact": "Total footballer — played every outfield position" },
-    { "id": "bergkamp-1998", "name": "Dennis Bergkamp", "nation": "Netherlands", "position": ["CAM", "ST"], "world_cup_year": 1998, "overall_rating": 90, "goals": 3, "assists": 1, "era": "modern", "fun_fact": "That touch against Argentina, 89th minute" },
-    { "id": "robben-2014", "name": "Arjen Robben", "nation": "Netherlands", "position": ["RW", "LW"], "world_cup_year": 2014, "overall_rating": 90, "goals": 3, "assists": 1, "era": "contemporary", "fun_fact": "Clocked at 37 km/h against Spain" },
-    { "id": "van-persie-2014", "name": "Robin van Persie", "nation": "Netherlands", "position": ["ST"], "world_cup_year": 2014, "overall_rating": 88, "goals": 4, "assists": 0, "era": "contemporary", "fun_fact": "The flying header against Spain" },
-    { "id": "koeman-1990", "name": "Ronald Koeman", "nation": "Netherlands", "position": ["CB", "CDM"], "world_cup_year": 1990, "overall_rating": 88, "goals": 0, "assists": 0, "era": "modern", "fun_fact": "Highest-scoring defender in football history" },
-    { "id": "van-der-sar-1998", "name": "Edwin van der Sar", "nation": "Netherlands", "position": ["GK"], "world_cup_year": 1998, "overall_rating": 87, "clean_sheets": 3, "era": "modern", "fun_fact": "The original modern sweeper-keeper" },
-
-    { "id": "puskas-1954", "name": "Ferenc Puskás", "nation": "Hungary", "position": ["ST", "CAM"], "world_cup_year": 1954, "overall_rating": 96, "goals": 4, "assists": 2, "era": "classic", "fun_fact": "The Galloping Major — 84 goals in 85 internationals" },
-    { "id": "kocsis-1954", "name": "Sándor Kocsis", "nation": "Hungary", "position": ["ST"], "world_cup_year": 1954, "overall_rating": 93, "goals": 11, "assists": 1, "era": "classic", "fun_fact": "11 goals in one World Cup — Golden Head" },
-    { "id": "hidegkuti-1954", "name": "Nándor Hidegkuti", "nation": "Hungary", "position": ["CAM", "ST"], "world_cup_year": 1954, "overall_rating": 91, "goals": 4, "assists": 3, "era": "classic", "fun_fact": "Invented the false nine" },
-    { "id": "bozsik-1954", "name": "József Bozsik", "nation": "Hungary", "position": ["CM", "CDM"], "world_cup_year": 1954, "overall_rating": 89, "goals": 1, "assists": 2, "era": "classic", "fun_fact": "Midfield brain of the Mighty Magyars" },
-    { "id": "czibor-1954", "name": "Zoltán Czibor", "nation": "Hungary", "position": ["LW"], "world_cup_year": 1954, "overall_rating": 88, "goals": 4, "assists": 2, "era": "classic", "fun_fact": "The Mad Winger of the Golden Team" },
-    { "id": "grosics-1954", "name": "Gyula Grosics", "nation": "Hungary", "position": ["GK"], "world_cup_year": 1954, "overall_rating": 86, "clean_sheets": 2, "era": "classic", "fun_fact": "The Black Panther — pioneer keeper-sweeper" },
-    { "id": "albert-1966", "name": "Flórián Albert", "nation": "Hungary", "position": ["CAM", "ST"], "world_cup_year": 1966, "overall_rating": 89, "goals": 1, "assists": 2, "era": "classic", "fun_fact": "1967 Ballon d'Or winner" },
-    { "id": "buzanszky-1954", "name": "Jenő Buzánszky", "nation": "Hungary", "position": ["RB"], "world_cup_year": 1954, "overall_rating": 83, "goals": 0, "assists": 0, "era": "classic", "fun_fact": "Right back of the Golden Team" },
-
-    { "id": "eusebio-1966", "name": "Eusébio", "nation": "Portugal", "position": ["ST", "RW"], "world_cup_year": 1966, "overall_rating": 95, "goals": 9, "assists": 1, "era": "classic", "fun_fact": "Four goals against North Korea after being 3-0 down" },
-    { "id": "cr7-2018", "name": "Cristiano Ronaldo", "nation": "Portugal", "position": ["ST", "LW"], "world_cup_year": 2018, "overall_rating": 93, "goals": 4, "assists": 0, "era": "contemporary", "fun_fact": "Hat-trick against Spain, including THAT free kick" },
-    { "id": "figo-2006", "name": "Luís Figo", "nation": "Portugal", "position": ["RW", "CAM"], "world_cup_year": 2006, "overall_rating": 89, "goals": 0, "assists": 2, "era": "modern", "fun_fact": "Captain of the golden generation" },
-    { "id": "rui-costa-2002", "name": "Rui Costa", "nation": "Portugal", "position": ["CAM"], "world_cup_year": 2002, "overall_rating": 87, "goals": 0, "assists": 1, "era": "modern", "fun_fact": "The Maestro's velvet left foot" },
-    { "id": "deco-2006", "name": "Deco", "nation": "Portugal", "position": ["CM", "CAM"], "world_cup_year": 2006, "overall_rating": 87, "goals": 1, "assists": 1, "era": "modern", "fun_fact": "Champions League winner with two different clubs" },
-    { "id": "pepe-2022", "name": "Pepe", "nation": "Portugal", "position": ["CB"], "world_cup_year": 2022, "overall_rating": 86, "goals": 1, "assists": 0, "era": "contemporary", "fun_fact": "Scored at a World Cup aged 39" },
-    { "id": "patricio-2018", "name": "Rui Patrício", "nation": "Portugal", "position": ["GK"], "world_cup_year": 2018, "overall_rating": 85, "clean_sheets": 1, "era": "contemporary", "fun_fact": "Euro 2016 hero between the posts" },
-    { "id": "b-fernandes-2022", "name": "Bruno Fernandes", "nation": "Portugal", "position": ["CAM", "CM"], "world_cup_year": 2022, "overall_rating": 86, "goals": 2, "assists": 1, "era": "contemporary", "fun_fact": "Brace against Uruguay in Qatar" },
-
-    { "id": "modric-2018", "name": "Luka Modrić", "nation": "Croatia", "position": ["CM", "CAM"], "world_cup_year": 2018, "overall_rating": 91, "goals": 2, "assists": 1, "era": "contemporary", "fun_fact": "2018 Golden Ball — broke the Messi/Ronaldo Ballon d'Or duopoly" },
-    { "id": "suker-1998", "name": "Davor Šuker", "nation": "Croatia", "position": ["ST"], "world_cup_year": 1998, "overall_rating": 90, "goals": 6, "assists": 1, "era": "modern", "fun_fact": "1998 Golden Boot in Croatia's first World Cup" },
-    { "id": "boban-1998", "name": "Zvonimir Boban", "nation": "Croatia", "position": ["CAM", "CM"], "world_cup_year": 1998, "overall_rating": 87, "goals": 0, "assists": 1, "era": "modern", "fun_fact": "Captain of the bronze generation" },
-    { "id": "rakitic-2018", "name": "Ivan Rakitić", "nation": "Croatia", "position": ["CM", "CDM"], "world_cup_year": 2018, "overall_rating": 86, "goals": 1, "assists": 0, "era": "contemporary", "fun_fact": "Converted decisive penalties in two 2018 shoot-outs" },
-    { "id": "mandzukic-2018", "name": "Mario Mandžukić", "nation": "Croatia", "position": ["ST"], "world_cup_year": 2018, "overall_rating": 85, "goals": 3, "assists": 1, "era": "contemporary", "fun_fact": "Scored for both teams in the 2018 final" },
-    { "id": "perisic-2018", "name": "Ivan Perišić", "nation": "Croatia", "position": ["LW", "RW"], "world_cup_year": 2018, "overall_rating": 85, "goals": 3, "assists": 1, "era": "contemporary", "fun_fact": "Scored in the 2018 final" },
-    { "id": "gvardiol-2022", "name": "Joško Gvardiol", "nation": "Croatia", "position": ["CB", "LB"], "world_cup_year": 2022, "overall_rating": 86, "goals": 1, "assists": 0, "era": "contemporary", "fun_fact": "The masked man of Qatar 2022" },
-    { "id": "livakovic-2022", "name": "Dominik Livaković", "nation": "Croatia", "position": ["GK"], "world_cup_year": 2022, "overall_rating": 85, "clean_sheets": 2, "era": "contemporary", "fun_fact": "Three penalty saves against Japan" }
+  {
+    "id": "pele-1970",
+    "name": "Pelé",
+    "nation": "Brazil",
+    "position": [
+      "ST",
+      "CAM"
+    ],
+    "world_cup_year": 1970,
+    "overall_rating": 97,
+    "goals": 4,
+    "assists": 6,
+    "era": "classic",
+    "fun_fact": "Only player to win three World Cups"
+  },
+  {
+    "id": "garrincha-1962",
+    "name": "Garrincha",
+    "nation": "Brazil",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 1962,
+    "overall_rating": 94,
+    "goals": 4,
+    "assists": 3,
+    "era": "classic",
+    "fun_fact": "Carried Brazil to the 1962 title without Pelé"
+  },
+  {
+    "id": "ronaldo-2002",
+    "name": "Ronaldo",
+    "nation": "Brazil",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2002,
+    "overall_rating": 96,
+    "goals": 8,
+    "assists": 1,
+    "era": "modern",
+    "fun_fact": "Golden Boot with 8 goals after career-threatening injuries"
+  },
+  {
+    "id": "romario-1994",
+    "name": "Romário",
+    "nation": "Brazil",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1994,
+    "overall_rating": 93,
+    "goals": 5,
+    "assists": 3,
+    "era": "modern",
+    "fun_fact": "1994 Golden Ball winner"
+  },
+  {
+    "id": "zico-1982",
+    "name": "Zico",
+    "nation": "Brazil",
+    "position": [
+      "CAM",
+      "CM"
+    ],
+    "world_cup_year": 1982,
+    "overall_rating": 91,
+    "goals": 4,
+    "assists": 3,
+    "era": "classic",
+    "fun_fact": "Heartbeat of the beloved 1982 side"
+  },
+  {
+    "id": "ronaldinho-2002",
+    "name": "Ronaldinho",
+    "nation": "Brazil",
+    "position": [
+      "CAM",
+      "LW"
+    ],
+    "world_cup_year": 2002,
+    "overall_rating": 92,
+    "goals": 2,
+    "assists": 3,
+    "era": "modern",
+    "fun_fact": "That free kick against England"
+  },
+  {
+    "id": "cafu-2002",
+    "name": "Cafu",
+    "nation": "Brazil",
+    "position": [
+      "RB"
+    ],
+    "world_cup_year": 2002,
+    "overall_rating": 89,
+    "goals": 0,
+    "assists": 2,
+    "era": "modern",
+    "fun_fact": "Played in three consecutive World Cup finals"
+  },
+  {
+    "id": "roberto-carlos-2002",
+    "name": "Roberto Carlos",
+    "nation": "Brazil",
+    "position": [
+      "LB"
+    ],
+    "world_cup_year": 2002,
+    "overall_rating": 89,
+    "goals": 0,
+    "assists": 1,
+    "era": "modern",
+    "fun_fact": "Most feared left foot in football"
+  },
+  {
+    "id": "taffarel-1994",
+    "name": "Taffarel",
+    "nation": "Brazil",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 1994,
+    "overall_rating": 86,
+    "clean_sheets": 4,
+    "era": "modern",
+    "fun_fact": "Penalty shoot-out hero of USA 94"
+  },
+  {
+    "id": "beckenbauer-1974",
+    "name": "Franz Beckenbauer",
+    "nation": "Germany",
+    "position": [
+      "CB",
+      "CDM"
+    ],
+    "world_cup_year": 1974,
+    "overall_rating": 95,
+    "goals": 0,
+    "assists": 2,
+    "era": "classic",
+    "fun_fact": "Invented the modern sweeper role"
+  },
+  {
+    "id": "gerd-muller-1974",
+    "name": "Gerd Müller",
+    "nation": "Germany",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1974,
+    "overall_rating": 95,
+    "goals": 4,
+    "assists": 1,
+    "era": "classic",
+    "fun_fact": "14 World Cup goals in just 13 games"
+  },
+  {
+    "id": "matthaus-1990",
+    "name": "Lothar Matthäus",
+    "nation": "Germany",
+    "position": [
+      "CM",
+      "CDM"
+    ],
+    "world_cup_year": 1990,
+    "overall_rating": 92,
+    "goals": 4,
+    "assists": 2,
+    "era": "modern",
+    "fun_fact": "Played in five World Cups"
+  },
+  {
+    "id": "klose-2014",
+    "name": "Miroslav Klose",
+    "nation": "Germany",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 89,
+    "goals": 2,
+    "assists": 1,
+    "era": "contemporary",
+    "fun_fact": "All-time World Cup top scorer with 16 goals"
+  },
+  {
+    "id": "lahm-2014",
+    "name": "Philipp Lahm",
+    "nation": "Germany",
+    "position": [
+      "RB",
+      "CDM"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 90,
+    "goals": 0,
+    "assists": 1,
+    "era": "contemporary",
+    "fun_fact": "Lifted the trophy as captain in the Maracanã"
+  },
+  {
+    "id": "neuer-2014",
+    "name": "Manuel Neuer",
+    "nation": "Germany",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 92,
+    "clean_sheets": 4,
+    "era": "contemporary",
+    "fun_fact": "Redefined the sweeper-keeper in 2014"
+  },
+  {
+    "id": "maier-1974",
+    "name": "Sepp Maier",
+    "nation": "Germany",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 1974,
+    "overall_rating": 89,
+    "clean_sheets": 4,
+    "era": "classic",
+    "fun_fact": "Die Katze — the cat of Anzing"
+  },
+  {
+    "id": "breitner-1974",
+    "name": "Paul Breitner",
+    "nation": "Germany",
+    "position": [
+      "LB",
+      "CM"
+    ],
+    "world_cup_year": 1974,
+    "overall_rating": 88,
+    "goals": 3,
+    "assists": 1,
+    "era": "classic",
+    "fun_fact": "Scored in two different World Cup finals"
+  },
+  {
+    "id": "rossi-1982",
+    "name": "Paolo Rossi",
+    "nation": "Italy",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1982,
+    "overall_rating": 91,
+    "goals": 6,
+    "assists": 0,
+    "era": "classic",
+    "fun_fact": "Golden Boot and Golden Ball in 1982"
+  },
+  {
+    "id": "baggio-1994",
+    "name": "Roberto Baggio",
+    "nation": "Italy",
+    "position": [
+      "CAM",
+      "ST"
+    ],
+    "world_cup_year": 1994,
+    "overall_rating": 92,
+    "goals": 5,
+    "assists": 1,
+    "era": "modern",
+    "fun_fact": "Dragged Italy to the 1994 final almost alone"
+  },
+  {
+    "id": "maldini-1994",
+    "name": "Paolo Maldini",
+    "nation": "Italy",
+    "position": [
+      "LB",
+      "CB"
+    ],
+    "world_cup_year": 1994,
+    "overall_rating": 93,
+    "goals": 0,
+    "assists": 0,
+    "era": "modern",
+    "fun_fact": "23 World Cup matches without losing in 90 minutes"
+  },
+  {
+    "id": "cannavaro-2006",
+    "name": "Fabio Cannavaro",
+    "nation": "Italy",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2006,
+    "overall_rating": 93,
+    "goals": 0,
+    "assists": 0,
+    "era": "modern",
+    "fun_fact": "Won the 2006 Ballon d'Or as a defender"
+  },
+  {
+    "id": "buffon-2006",
+    "name": "Gianluigi Buffon",
+    "nation": "Italy",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2006,
+    "overall_rating": 93,
+    "clean_sheets": 5,
+    "era": "modern",
+    "fun_fact": "Conceded only two goals in the entire 2006 tournament"
+  },
+  {
+    "id": "pirlo-2006",
+    "name": "Andrea Pirlo",
+    "nation": "Italy",
+    "position": [
+      "CM",
+      "CDM",
+      "CAM"
+    ],
+    "world_cup_year": 2006,
+    "overall_rating": 91,
+    "goals": 1,
+    "assists": 4,
+    "era": "modern",
+    "fun_fact": "Three man-of-the-match awards in 2006"
+  },
+  {
+    "id": "totti-2006",
+    "name": "Francesco Totti",
+    "nation": "Italy",
+    "position": [
+      "CAM",
+      "ST"
+    ],
+    "world_cup_year": 2006,
+    "overall_rating": 88,
+    "goals": 1,
+    "assists": 4,
+    "era": "modern",
+    "fun_fact": "Il Capitano of Roma and 2006 champion"
+  },
+  {
+    "id": "zoff-1982",
+    "name": "Dino Zoff",
+    "nation": "Italy",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 1982,
+    "overall_rating": 90,
+    "clean_sheets": 3,
+    "era": "classic",
+    "fun_fact": "Oldest World Cup winner at 40"
+  },
+  {
+    "id": "maradona-1986",
+    "name": "Diego Maradona",
+    "nation": "Argentina",
+    "position": [
+      "CAM",
+      "ST"
+    ],
+    "world_cup_year": 1986,
+    "overall_rating": 98,
+    "goals": 5,
+    "assists": 5,
+    "era": "classic",
+    "fun_fact": "The greatest individual World Cup ever played"
+  },
+  {
+    "id": "messi-2022",
+    "name": "Lionel Messi",
+    "nation": "Argentina",
+    "position": [
+      "RW",
+      "CAM",
+      "ST"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 97,
+    "goals": 7,
+    "assists": 3,
+    "era": "contemporary",
+    "fun_fact": "Two Golden Balls, one golden crown in Qatar"
+  },
+  {
+    "id": "batistuta-1998",
+    "name": "Gabriel Batistuta",
+    "nation": "Argentina",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1998,
+    "overall_rating": 90,
+    "goals": 5,
+    "assists": 0,
+    "era": "modern",
+    "fun_fact": "Hat-tricks in two different World Cups"
+  },
+  {
+    "id": "kempes-1978",
+    "name": "Mario Kempes",
+    "nation": "Argentina",
+    "position": [
+      "ST",
+      "CAM"
+    ],
+    "world_cup_year": 1978,
+    "overall_rating": 91,
+    "goals": 6,
+    "assists": 2,
+    "era": "classic",
+    "fun_fact": "Golden Boot and two goals in the 78 final"
+  },
+  {
+    "id": "di-maria-2022",
+    "name": "Ángel Di María",
+    "nation": "Argentina",
+    "position": [
+      "LW",
+      "RW"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 88,
+    "goals": 1,
+    "assists": 1,
+    "era": "contemporary",
+    "fun_fact": "Scored in the 2022 final"
+  },
+  {
+    "id": "e-martinez-2022",
+    "name": "Emiliano Martínez",
+    "nation": "Argentina",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 88,
+    "clean_sheets": 3,
+    "era": "contemporary",
+    "fun_fact": "THAT save against Kolo Muani"
+  },
+  {
+    "id": "passarella-1978",
+    "name": "Daniel Passarella",
+    "nation": "Argentina",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 1978,
+    "overall_rating": 90,
+    "goals": 1,
+    "assists": 1,
+    "era": "classic",
+    "fun_fact": "Captain of Argentina's first title"
+  },
+  {
+    "id": "mascherano-2014",
+    "name": "Javier Mascherano",
+    "nation": "Argentina",
+    "position": [
+      "CDM",
+      "CB"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 87,
+    "goals": 0,
+    "assists": 0,
+    "era": "contemporary",
+    "fun_fact": "The tackle on Robben in the 2014 semi"
+  },
+  {
+    "id": "zidane-1998",
+    "name": "Zinedine Zidane",
+    "nation": "France",
+    "position": [
+      "CAM",
+      "CM"
+    ],
+    "world_cup_year": 1998,
+    "overall_rating": 95,
+    "goals": 2,
+    "assists": 1,
+    "era": "modern",
+    "fun_fact": "Two headers in a World Cup final"
+  },
+  {
+    "id": "platini-1982",
+    "name": "Michel Platini",
+    "nation": "France",
+    "position": [
+      "CAM",
+      "CM"
+    ],
+    "world_cup_year": 1982,
+    "overall_rating": 93,
+    "goals": 2,
+    "assists": 3,
+    "era": "classic",
+    "fun_fact": "Conductor of the greatest midfield never to win it"
+  },
+  {
+    "id": "mbappe-2022",
+    "name": "Kylian Mbappé",
+    "nation": "France",
+    "position": [
+      "ST",
+      "LW"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 94,
+    "goals": 8,
+    "assists": 2,
+    "era": "contemporary",
+    "fun_fact": "Hat-trick in a World Cup final — and still lost"
+  },
+  {
+    "id": "henry-2006",
+    "name": "Thierry Henry",
+    "nation": "France",
+    "position": [
+      "ST",
+      "LW"
+    ],
+    "world_cup_year": 2006,
+    "overall_rating": 90,
+    "goals": 3,
+    "assists": 1,
+    "era": "modern",
+    "fun_fact": "France's record scorer at the time of retirement"
+  },
+  {
+    "id": "thuram-1998",
+    "name": "Lilian Thuram",
+    "nation": "France",
+    "position": [
+      "RB",
+      "CB"
+    ],
+    "world_cup_year": 1998,
+    "overall_rating": 90,
+    "goals": 2,
+    "assists": 0,
+    "era": "modern",
+    "fun_fact": "Both career France goals came in the 98 semi-final"
+  },
+  {
+    "id": "desailly-1998",
+    "name": "Marcel Desailly",
+    "nation": "France",
+    "position": [
+      "CB",
+      "CDM"
+    ],
+    "world_cup_year": 1998,
+    "overall_rating": 89,
+    "goals": 0,
+    "assists": 0,
+    "era": "modern",
+    "fun_fact": "The Rock of the 1998 champions"
+  },
+  {
+    "id": "barthez-1998",
+    "name": "Fabien Barthez",
+    "nation": "France",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 1998,
+    "overall_rating": 86,
+    "clean_sheets": 5,
+    "era": "modern",
+    "fun_fact": "Laurent Blanc kissed his head before every match"
+  },
+  {
+    "id": "kante-2018",
+    "name": "N'Golo Kanté",
+    "nation": "France",
+    "position": [
+      "CDM",
+      "CM"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 89,
+    "goals": 0,
+    "assists": 0,
+    "era": "contemporary",
+    "fun_fact": "Covers 70% of the earth; the rest is water"
+  },
+  {
+    "id": "griezmann-2018",
+    "name": "Antoine Griezmann",
+    "nation": "France",
+    "position": [
+      "CAM",
+      "ST"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 89,
+    "goals": 4,
+    "assists": 2,
+    "era": "contemporary",
+    "fun_fact": "Scored in the 2018 final"
+  },
+  {
+    "id": "moore-1966",
+    "name": "Bobby Moore",
+    "nation": "England",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 1966,
+    "overall_rating": 93,
+    "goals": 0,
+    "assists": 1,
+    "era": "classic",
+    "fun_fact": "Pelé called him the greatest defender he ever faced"
+  },
+  {
+    "id": "charlton-1966",
+    "name": "Bobby Charlton",
+    "nation": "England",
+    "position": [
+      "CM",
+      "CAM"
+    ],
+    "world_cup_year": 1966,
+    "overall_rating": 93,
+    "goals": 3,
+    "assists": 1,
+    "era": "classic",
+    "fun_fact": "Both goals in the 1966 semi-final"
+  },
+  {
+    "id": "banks-1966",
+    "name": "Gordon Banks",
+    "nation": "England",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 1966,
+    "overall_rating": 92,
+    "clean_sheets": 4,
+    "era": "classic",
+    "fun_fact": "The save from Pelé, 1970"
+  },
+  {
+    "id": "lineker-1986",
+    "name": "Gary Lineker",
+    "nation": "England",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1986,
+    "overall_rating": 89,
+    "goals": 6,
+    "assists": 0,
+    "era": "classic",
+    "fun_fact": "1986 Golden Boot — never booked in his career"
+  },
+  {
+    "id": "beckham-2002",
+    "name": "David Beckham",
+    "nation": "England",
+    "position": [
+      "RW",
+      "CM"
+    ],
+    "world_cup_year": 2002,
+    "overall_rating": 87,
+    "goals": 1,
+    "assists": 1,
+    "era": "modern",
+    "fun_fact": "The penalty against Argentina — redemption"
+  },
+  {
+    "id": "rooney-2006",
+    "name": "Wayne Rooney",
+    "nation": "England",
+    "position": [
+      "ST",
+      "CAM"
+    ],
+    "world_cup_year": 2006,
+    "overall_rating": 86,
+    "goals": 0,
+    "assists": 0,
+    "era": "modern",
+    "fun_fact": "England's record scorer of his generation"
+  },
+  {
+    "id": "kane-2018",
+    "name": "Harry Kane",
+    "nation": "England",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 87,
+    "goals": 6,
+    "assists": 0,
+    "era": "contemporary",
+    "fun_fact": "2018 Golden Boot"
+  },
+  {
+    "id": "shilton-1990",
+    "name": "Peter Shilton",
+    "nation": "England",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 1990,
+    "overall_rating": 88,
+    "clean_sheets": 4,
+    "era": "classic",
+    "fun_fact": "125 England caps — a record"
+  },
+  {
+    "id": "iniesta-2010",
+    "name": "Andrés Iniesta",
+    "nation": "Spain",
+    "position": [
+      "CM",
+      "CAM"
+    ],
+    "world_cup_year": 2010,
+    "overall_rating": 93,
+    "goals": 2,
+    "assists": 1,
+    "era": "contemporary",
+    "fun_fact": "The goal in minute 116 of the final"
+  },
+  {
+    "id": "xavi-2010",
+    "name": "Xavi Hernández",
+    "nation": "Spain",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2010,
+    "overall_rating": 93,
+    "goals": 0,
+    "assists": 2,
+    "era": "contemporary",
+    "fun_fact": "Completed 599 passes in the 2010 tournament"
+  },
+  {
+    "id": "casillas-2010",
+    "name": "Iker Casillas",
+    "nation": "Spain",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2010,
+    "overall_rating": 92,
+    "clean_sheets": 5,
+    "era": "contemporary",
+    "fun_fact": "Conceded just two goals en route to the title"
+  },
+  {
+    "id": "puyol-2010",
+    "name": "Carles Puyol",
+    "nation": "Spain",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2010,
+    "overall_rating": 89,
+    "goals": 1,
+    "assists": 0,
+    "era": "contemporary",
+    "fun_fact": "The header that beat Germany in the semi"
+  },
+  {
+    "id": "ramos-2010",
+    "name": "Sergio Ramos",
+    "nation": "Spain",
+    "position": [
+      "CB",
+      "RB"
+    ],
+    "world_cup_year": 2010,
+    "overall_rating": 90,
+    "goals": 0,
+    "assists": 0,
+    "era": "contemporary",
+    "fun_fact": "World champion at 24"
+  },
+  {
+    "id": "villa-2010",
+    "name": "David Villa",
+    "nation": "Spain",
+    "position": [
+      "ST",
+      "LW"
+    ],
+    "world_cup_year": 2010,
+    "overall_rating": 90,
+    "goals": 5,
+    "assists": 1,
+    "era": "contemporary",
+    "fun_fact": "Spain's all-time top scorer"
+  },
+  {
+    "id": "busquets-2010",
+    "name": "Sergio Busquets",
+    "nation": "Spain",
+    "position": [
+      "CDM"
+    ],
+    "world_cup_year": 2010,
+    "overall_rating": 88,
+    "goals": 0,
+    "assists": 0,
+    "era": "contemporary",
+    "fun_fact": "Watch the game, you won't see him. Watch him, you'll see the game"
+  },
+  {
+    "id": "torres-2010",
+    "name": "Fernando Torres",
+    "nation": "Spain",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2010,
+    "overall_rating": 86,
+    "goals": 0,
+    "assists": 1,
+    "era": "contemporary",
+    "fun_fact": "El Niño of the golden generation"
+  },
+  {
+    "id": "varela-1950",
+    "name": "Obdulio Varela",
+    "nation": "Uruguay",
+    "position": [
+      "CDM",
+      "CM"
+    ],
+    "world_cup_year": 1950,
+    "overall_rating": 91,
+    "goals": 1,
+    "assists": 1,
+    "era": "classic",
+    "fun_fact": "Silenced 200,000 at the Maracanazo"
+  },
+  {
+    "id": "ghiggia-1950",
+    "name": "Alcides Ghiggia",
+    "nation": "Uruguay",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 1950,
+    "overall_rating": 88,
+    "goals": 4,
+    "assists": 1,
+    "era": "classic",
+    "fun_fact": "Only three people have silenced the Maracanã: Sinatra, the Pope, and me"
+  },
+  {
+    "id": "schiaffino-1950",
+    "name": "Juan Schiaffino",
+    "nation": "Uruguay",
+    "position": [
+      "CAM",
+      "CM"
+    ],
+    "world_cup_year": 1950,
+    "overall_rating": 90,
+    "goals": 5,
+    "assists": 2,
+    "era": "classic",
+    "fun_fact": "Scored the equaliser in the Maracanazo"
+  },
+  {
+    "id": "francescoli-1990",
+    "name": "Enzo Francescoli",
+    "nation": "Uruguay",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 1990,
+    "overall_rating": 87,
+    "goals": 0,
+    "assists": 1,
+    "era": "modern",
+    "fun_fact": "Zidane named his son Enzo after him"
+  },
+  {
+    "id": "forlan-2010",
+    "name": "Diego Forlán",
+    "nation": "Uruguay",
+    "position": [
+      "ST",
+      "CAM"
+    ],
+    "world_cup_year": 2010,
+    "overall_rating": 89,
+    "goals": 5,
+    "assists": 1,
+    "era": "contemporary",
+    "fun_fact": "2010 Golden Ball winner"
+  },
+  {
+    "id": "suarez-2014",
+    "name": "Luis Suárez",
+    "nation": "Uruguay",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 89,
+    "goals": 2,
+    "assists": 0,
+    "era": "contemporary",
+    "fun_fact": "Sank England twice in Sao Paulo"
+  },
+  {
+    "id": "godin-2018",
+    "name": "Diego Godín",
+    "nation": "Uruguay",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 87,
+    "goals": 0,
+    "assists": 0,
+    "era": "contemporary",
+    "fun_fact": "El Faraón — leader of La Celeste's iron defence"
+  },
+  {
+    "id": "muslera-2010",
+    "name": "Fernando Muslera",
+    "nation": "Uruguay",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2010,
+    "overall_rating": 84,
+    "clean_sheets": 3,
+    "era": "contemporary",
+    "fun_fact": "Shoot-out hero against Ghana in 2010"
+  },
+  {
+    "id": "cruyff-1974",
+    "name": "Johan Cruyff",
+    "nation": "Netherlands",
+    "position": [
+      "CAM",
+      "ST",
+      "LW"
+    ],
+    "world_cup_year": 1974,
+    "overall_rating": 96,
+    "goals": 3,
+    "assists": 3,
+    "era": "classic",
+    "fun_fact": "The Cruyff Turn was born at this World Cup"
+  },
+  {
+    "id": "neeskens-1974",
+    "name": "Johan Neeskens",
+    "nation": "Netherlands",
+    "position": [
+      "CM",
+      "CDM"
+    ],
+    "world_cup_year": 1974,
+    "overall_rating": 90,
+    "goals": 5,
+    "assists": 1,
+    "era": "classic",
+    "fun_fact": "Scored the fastest final goal — 2nd minute penalty"
+  },
+  {
+    "id": "van-basten-1990",
+    "name": "Marco van Basten",
+    "nation": "Netherlands",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1990,
+    "overall_rating": 91,
+    "goals": 0,
+    "assists": 0,
+    "era": "modern",
+    "fun_fact": "Three-time Ballon d'Or winner"
+  },
+  {
+    "id": "gullit-1990",
+    "name": "Ruud Gullit",
+    "nation": "Netherlands",
+    "position": [
+      "CAM",
+      "CM",
+      "ST"
+    ],
+    "world_cup_year": 1990,
+    "overall_rating": 90,
+    "goals": 0,
+    "assists": 1,
+    "era": "modern",
+    "fun_fact": "Total footballer — played every outfield position"
+  },
+  {
+    "id": "bergkamp-1998",
+    "name": "Dennis Bergkamp",
+    "nation": "Netherlands",
+    "position": [
+      "CAM",
+      "ST"
+    ],
+    "world_cup_year": 1998,
+    "overall_rating": 90,
+    "goals": 3,
+    "assists": 1,
+    "era": "modern",
+    "fun_fact": "That touch against Argentina, 89th minute"
+  },
+  {
+    "id": "robben-2014",
+    "name": "Arjen Robben",
+    "nation": "Netherlands",
+    "position": [
+      "RW",
+      "LW"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 90,
+    "goals": 3,
+    "assists": 1,
+    "era": "contemporary",
+    "fun_fact": "Clocked at 37 km/h against Spain"
+  },
+  {
+    "id": "van-persie-2014",
+    "name": "Robin van Persie",
+    "nation": "Netherlands",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 88,
+    "goals": 4,
+    "assists": 0,
+    "era": "contemporary",
+    "fun_fact": "The flying header against Spain"
+  },
+  {
+    "id": "koeman-1990",
+    "name": "Ronald Koeman",
+    "nation": "Netherlands",
+    "position": [
+      "CB",
+      "CDM"
+    ],
+    "world_cup_year": 1990,
+    "overall_rating": 88,
+    "goals": 0,
+    "assists": 0,
+    "era": "modern",
+    "fun_fact": "Highest-scoring defender in football history"
+  },
+  {
+    "id": "van-der-sar-1998",
+    "name": "Edwin van der Sar",
+    "nation": "Netherlands",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 1998,
+    "overall_rating": 87,
+    "clean_sheets": 3,
+    "era": "modern",
+    "fun_fact": "The original modern sweeper-keeper"
+  },
+  {
+    "id": "puskas-1954",
+    "name": "Ferenc Puskás",
+    "nation": "Hungary",
+    "position": [
+      "ST",
+      "CAM"
+    ],
+    "world_cup_year": 1954,
+    "overall_rating": 96,
+    "goals": 4,
+    "assists": 2,
+    "era": "classic",
+    "fun_fact": "The Galloping Major — 84 goals in 85 internationals"
+  },
+  {
+    "id": "kocsis-1954",
+    "name": "Sándor Kocsis",
+    "nation": "Hungary",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1954,
+    "overall_rating": 93,
+    "goals": 11,
+    "assists": 1,
+    "era": "classic",
+    "fun_fact": "11 goals in one World Cup — Golden Head"
+  },
+  {
+    "id": "hidegkuti-1954",
+    "name": "Nándor Hidegkuti",
+    "nation": "Hungary",
+    "position": [
+      "CAM",
+      "ST"
+    ],
+    "world_cup_year": 1954,
+    "overall_rating": 91,
+    "goals": 4,
+    "assists": 3,
+    "era": "classic",
+    "fun_fact": "Invented the false nine"
+  },
+  {
+    "id": "bozsik-1954",
+    "name": "József Bozsik",
+    "nation": "Hungary",
+    "position": [
+      "CM",
+      "CDM"
+    ],
+    "world_cup_year": 1954,
+    "overall_rating": 89,
+    "goals": 1,
+    "assists": 2,
+    "era": "classic",
+    "fun_fact": "Midfield brain of the Mighty Magyars"
+  },
+  {
+    "id": "czibor-1954",
+    "name": "Zoltán Czibor",
+    "nation": "Hungary",
+    "position": [
+      "LW"
+    ],
+    "world_cup_year": 1954,
+    "overall_rating": 88,
+    "goals": 4,
+    "assists": 2,
+    "era": "classic",
+    "fun_fact": "The Mad Winger of the Golden Team"
+  },
+  {
+    "id": "grosics-1954",
+    "name": "Gyula Grosics",
+    "nation": "Hungary",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 1954,
+    "overall_rating": 86,
+    "clean_sheets": 2,
+    "era": "classic",
+    "fun_fact": "The Black Panther — pioneer keeper-sweeper"
+  },
+  {
+    "id": "albert-1966",
+    "name": "Flórián Albert",
+    "nation": "Hungary",
+    "position": [
+      "CAM",
+      "ST"
+    ],
+    "world_cup_year": 1966,
+    "overall_rating": 89,
+    "goals": 1,
+    "assists": 2,
+    "era": "classic",
+    "fun_fact": "1967 Ballon d'Or winner"
+  },
+  {
+    "id": "buzanszky-1954",
+    "name": "Jenő Buzánszky",
+    "nation": "Hungary",
+    "position": [
+      "RB"
+    ],
+    "world_cup_year": 1954,
+    "overall_rating": 83,
+    "goals": 0,
+    "assists": 0,
+    "era": "classic",
+    "fun_fact": "Right back of the Golden Team"
+  },
+  {
+    "id": "eusebio-1966",
+    "name": "Eusébio",
+    "nation": "Portugal",
+    "position": [
+      "ST",
+      "RW"
+    ],
+    "world_cup_year": 1966,
+    "overall_rating": 95,
+    "goals": 9,
+    "assists": 1,
+    "era": "classic",
+    "fun_fact": "Four goals against North Korea after being 3-0 down"
+  },
+  {
+    "id": "cr7-2018",
+    "name": "Cristiano Ronaldo",
+    "nation": "Portugal",
+    "position": [
+      "ST",
+      "LW"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 93,
+    "goals": 4,
+    "assists": 0,
+    "era": "contemporary",
+    "fun_fact": "Hat-trick against Spain, including THAT free kick"
+  },
+  {
+    "id": "figo-2006",
+    "name": "Luís Figo",
+    "nation": "Portugal",
+    "position": [
+      "RW",
+      "CAM"
+    ],
+    "world_cup_year": 2006,
+    "overall_rating": 89,
+    "goals": 0,
+    "assists": 2,
+    "era": "modern",
+    "fun_fact": "Captain of the golden generation"
+  },
+  {
+    "id": "rui-costa-2002",
+    "name": "Rui Costa",
+    "nation": "Portugal",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2002,
+    "overall_rating": 87,
+    "goals": 0,
+    "assists": 1,
+    "era": "modern",
+    "fun_fact": "The Maestro's velvet left foot"
+  },
+  {
+    "id": "deco-2006",
+    "name": "Deco",
+    "nation": "Portugal",
+    "position": [
+      "CM",
+      "CAM"
+    ],
+    "world_cup_year": 2006,
+    "overall_rating": 87,
+    "goals": 1,
+    "assists": 1,
+    "era": "modern",
+    "fun_fact": "Champions League winner with two different clubs"
+  },
+  {
+    "id": "pepe-2022",
+    "name": "Pepe",
+    "nation": "Portugal",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 86,
+    "goals": 1,
+    "assists": 0,
+    "era": "contemporary",
+    "fun_fact": "Scored at a World Cup aged 39"
+  },
+  {
+    "id": "patricio-2018",
+    "name": "Rui Patrício",
+    "nation": "Portugal",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 85,
+    "clean_sheets": 1,
+    "era": "contemporary",
+    "fun_fact": "Euro 2016 hero between the posts"
+  },
+  {
+    "id": "b-fernandes-2022",
+    "name": "Bruno Fernandes",
+    "nation": "Portugal",
+    "position": [
+      "CAM",
+      "CM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 86,
+    "goals": 2,
+    "assists": 1,
+    "era": "contemporary",
+    "fun_fact": "Brace against Uruguay in Qatar"
+  },
+  {
+    "id": "modric-2018",
+    "name": "Luka Modrić",
+    "nation": "Croatia",
+    "position": [
+      "CM",
+      "CAM"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 91,
+    "goals": 2,
+    "assists": 1,
+    "era": "contemporary",
+    "fun_fact": "2018 Golden Ball — broke the Messi/Ronaldo Ballon d'Or duopoly"
+  },
+  {
+    "id": "suker-1998",
+    "name": "Davor Šuker",
+    "nation": "Croatia",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1998,
+    "overall_rating": 90,
+    "goals": 6,
+    "assists": 1,
+    "era": "modern",
+    "fun_fact": "1998 Golden Boot in Croatia's first World Cup"
+  },
+  {
+    "id": "boban-1998",
+    "name": "Zvonimir Boban",
+    "nation": "Croatia",
+    "position": [
+      "CAM",
+      "CM"
+    ],
+    "world_cup_year": 1998,
+    "overall_rating": 87,
+    "goals": 0,
+    "assists": 1,
+    "era": "modern",
+    "fun_fact": "Captain of the bronze generation"
+  },
+  {
+    "id": "rakitic-2018",
+    "name": "Ivan Rakitić",
+    "nation": "Croatia",
+    "position": [
+      "CM",
+      "CDM"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 86,
+    "goals": 1,
+    "assists": 0,
+    "era": "contemporary",
+    "fun_fact": "Converted decisive penalties in two 2018 shoot-outs"
+  },
+  {
+    "id": "mandzukic-2018",
+    "name": "Mario Mandžukić",
+    "nation": "Croatia",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 85,
+    "goals": 3,
+    "assists": 1,
+    "era": "contemporary",
+    "fun_fact": "Scored for both teams in the 2018 final"
+  },
+  {
+    "id": "perisic-2018",
+    "name": "Ivan Perišić",
+    "nation": "Croatia",
+    "position": [
+      "LW",
+      "RW"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 85,
+    "goals": 3,
+    "assists": 1,
+    "era": "contemporary",
+    "fun_fact": "Scored in the 2018 final"
+  },
+  {
+    "id": "gvardiol-2022",
+    "name": "Joško Gvardiol",
+    "nation": "Croatia",
+    "position": [
+      "CB",
+      "LB"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 86,
+    "goals": 1,
+    "assists": 0,
+    "era": "contemporary",
+    "fun_fact": "The masked man of Qatar 2022"
+  },
+  {
+    "id": "livakovic-2022",
+    "name": "Dominik Livaković",
+    "nation": "Croatia",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 85,
+    "clean_sheets": 2,
+    "era": "contemporary",
+    "fun_fact": "Three penalty saves against Japan"
+  },
+  {
+    "id": "neymar-2018",
+    "name": "Neymar",
+    "nation": "Brazil",
+    "position": [
+      "LW",
+      "CAM"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 90,
+    "era": "contemporary",
+    "club": "Santos",
+    "fun_fact": "Brazil's record scorer"
+  },
+  {
+    "id": "vinicius-junior-2022",
+    "name": "Vinícius Júnior",
+    "nation": "Brazil",
+    "position": [
+      "LW"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 90,
+    "era": "contemporary",
+    "club": "Real Madrid",
+    "fun_fact": "Champions League final match-winner"
+  },
+  {
+    "id": "rodrygo-2026",
+    "name": "Rodrygo",
+    "nation": "Brazil",
+    "position": [
+      "RW",
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 86,
+    "era": "contemporary",
+    "club": "Real Madrid",
+    "fun_fact": "Big-game forward"
+  },
+  {
+    "id": "alisson-2022",
+    "name": "Alisson",
+    "nation": "Brazil",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 89,
+    "era": "contemporary",
+    "club": "Liverpool",
+    "fun_fact": "Commanding shot-stopper"
+  },
+  {
+    "id": "marquinhos-2022",
+    "name": "Marquinhos",
+    "nation": "Brazil",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 87,
+    "era": "contemporary",
+    "club": "Paris Saint-Germain",
+    "fun_fact": "Captain at the back"
+  },
+  {
+    "id": "bruno-guimaraes-2026",
+    "name": "Bruno Guimarães",
+    "nation": "Brazil",
+    "position": [
+      "CM",
+      "CDM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 85,
+    "era": "contemporary",
+    "club": "Newcastle United",
+    "fun_fact": "Box-to-box engine"
+  },
+  {
+    "id": "casemiro-2022",
+    "name": "Casemiro",
+    "nation": "Brazil",
+    "position": [
+      "CDM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "Manchester United",
+    "fun_fact": "Midfield destroyer"
+  },
+  {
+    "id": "endrick-2026",
+    "name": "Endrick",
+    "nation": "Brazil",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "club": "Real Madrid",
+    "fun_fact": "Teenage phenom"
+  },
+  {
+    "id": "lautaro-martinez-2022",
+    "name": "Lautaro Martínez",
+    "nation": "Argentina",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 87,
+    "era": "contemporary",
+    "club": "Inter",
+    "fun_fact": "Ruthless poacher"
+  },
+  {
+    "id": "julian-alvarez-2022",
+    "name": "Julián Álvarez",
+    "nation": "Argentina",
+    "position": [
+      "ST",
+      "CAM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 86,
+    "era": "contemporary",
+    "club": "Atlético Madrid",
+    "fun_fact": "Relentless presser"
+  },
+  {
+    "id": "alexis-mac-allister-2022",
+    "name": "Alexis Mac Allister",
+    "nation": "Argentina",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 85,
+    "era": "contemporary",
+    "club": "Liverpool",
+    "fun_fact": "World Cup-winning midfielder"
+  },
+  {
+    "id": "enzo-fernandez-2022",
+    "name": "Enzo Fernández",
+    "nation": "Argentina",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "Chelsea",
+    "fun_fact": "Young general"
+  },
+  {
+    "id": "cristian-romero-2022",
+    "name": "Cristian Romero",
+    "nation": "Argentina",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 86,
+    "era": "contemporary",
+    "club": "Tottenham Hotspur",
+    "fun_fact": "Aggressive ball-winner"
+  },
+  {
+    "id": "rodrigo-de-paul-2022",
+    "name": "Rodrigo De Paul",
+    "nation": "Argentina",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 83,
+    "era": "contemporary",
+    "club": "Atlético Madrid",
+    "fun_fact": "Messi's bodyguard"
+  },
+  {
+    "id": "aurelien-tchouameni-2022",
+    "name": "Aurélien Tchouaméni",
+    "nation": "France",
+    "position": [
+      "CDM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 85,
+    "era": "contemporary",
+    "club": "Real Madrid",
+    "fun_fact": "Composed anchor"
+  },
+  {
+    "id": "william-saliba-2022",
+    "name": "William Saliba",
+    "nation": "France",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 86,
+    "era": "contemporary",
+    "club": "Arsenal",
+    "fun_fact": "Elegant defender"
+  },
+  {
+    "id": "theo-hernandez-2022",
+    "name": "Theo Hernández",
+    "nation": "France",
+    "position": [
+      "LB"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 85,
+    "era": "contemporary",
+    "club": "AC Milan",
+    "fun_fact": "Rampaging full-back"
+  },
+  {
+    "id": "mike-maignan-2022",
+    "name": "Mike Maignan",
+    "nation": "France",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 86,
+    "era": "contemporary",
+    "club": "AC Milan",
+    "fun_fact": "Modern keeper"
+  },
+  {
+    "id": "ousmane-dembele-2026",
+    "name": "Ousmane Dembélé",
+    "nation": "France",
+    "position": [
+      "RW",
+      "LW"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 86,
+    "era": "contemporary",
+    "club": "Paris Saint-Germain",
+    "fun_fact": "Two-footed terror"
+  },
+  {
+    "id": "eduardo-camavinga-2026",
+    "name": "Eduardo Camavinga",
+    "nation": "France",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "Real Madrid",
+    "fun_fact": "Silky all-rounder"
+  },
+  {
+    "id": "marcus-thuram-2026",
+    "name": "Marcus Thuram",
+    "nation": "France",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "Inter",
+    "fun_fact": "Powerful forward"
+  },
+  {
+    "id": "jude-bellingham-2022",
+    "name": "Jude Bellingham",
+    "nation": "England",
+    "position": [
+      "CM",
+      "CAM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 88,
+    "era": "contemporary",
+    "club": "Real Madrid",
+    "fun_fact": "Generational midfielder"
+  },
+  {
+    "id": "bukayo-saka-2022",
+    "name": "Bukayo Saka",
+    "nation": "England",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 86,
+    "era": "contemporary",
+    "club": "Arsenal",
+    "fun_fact": "Fearless winger"
+  },
+  {
+    "id": "phil-foden-2022",
+    "name": "Phil Foden",
+    "nation": "England",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 86,
+    "era": "contemporary",
+    "club": "Manchester City",
+    "fun_fact": "Stockport Iniesta"
+  },
+  {
+    "id": "declan-rice-2022",
+    "name": "Declan Rice",
+    "nation": "England",
+    "position": [
+      "CDM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 85,
+    "era": "contemporary",
+    "club": "Arsenal",
+    "fun_fact": "Tireless shield"
+  },
+  {
+    "id": "cole-palmer-2026",
+    "name": "Cole Palmer",
+    "nation": "England",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 85,
+    "era": "contemporary",
+    "club": "Chelsea",
+    "fun_fact": "Ice-cold finisher"
+  },
+  {
+    "id": "john-stones-2022",
+    "name": "John Stones",
+    "nation": "England",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "Manchester City",
+    "fun_fact": "Ball-playing defender"
+  },
+  {
+    "id": "jordan-pickford-2022",
+    "name": "Jordan Pickford",
+    "nation": "England",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 82,
+    "era": "contemporary",
+    "club": "Everton",
+    "fun_fact": "Shootout specialist"
+  },
+  {
+    "id": "rodri-2022",
+    "name": "Rodri",
+    "nation": "Spain",
+    "position": [
+      "CDM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 90,
+    "era": "contemporary",
+    "club": "Manchester City",
+    "fun_fact": "Ballon d'Or anchor"
+  },
+  {
+    "id": "pedri-2022",
+    "name": "Pedri",
+    "nation": "Spain",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 86,
+    "era": "contemporary",
+    "club": "Barcelona",
+    "fun_fact": "Effortless tempo-setter"
+  },
+  {
+    "id": "lamine-yamal-2026",
+    "name": "Lamine Yamal",
+    "nation": "Spain",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 86,
+    "era": "contemporary",
+    "club": "Barcelona",
+    "fun_fact": "Teenage sensation"
+  },
+  {
+    "id": "nico-williams-2026",
+    "name": "Nico Williams",
+    "nation": "Spain",
+    "position": [
+      "LW"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 85,
+    "era": "contemporary",
+    "club": "Athletic Club",
+    "fun_fact": "Blistering pace"
+  },
+  {
+    "id": "dani-olmo-2026",
+    "name": "Dani Olmo",
+    "nation": "Spain",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "Barcelona",
+    "fun_fact": "Creative spark"
+  },
+  {
+    "id": "gavi-2022",
+    "name": "Gavi",
+    "nation": "Spain",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 83,
+    "era": "contemporary",
+    "club": "Barcelona",
+    "fun_fact": "Fearless teenager"
+  },
+  {
+    "id": "unai-simon-2022",
+    "name": "Unai Simón",
+    "nation": "Spain",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "Athletic Club",
+    "fun_fact": "Footwork keeper"
+  },
+  {
+    "id": "bernardo-silva-2022",
+    "name": "Bernardo Silva",
+    "nation": "Portugal",
+    "position": [
+      "CAM",
+      "RW"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 87,
+    "era": "contemporary",
+    "club": "Manchester City",
+    "fun_fact": "Tireless magician"
+  },
+  {
+    "id": "ruben-dias-2022",
+    "name": "Rúben Dias",
+    "nation": "Portugal",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 87,
+    "era": "contemporary",
+    "club": "Manchester City",
+    "fun_fact": "Defensive rock"
+  },
+  {
+    "id": "rafael-leao-2022",
+    "name": "Rafael Leão",
+    "nation": "Portugal",
+    "position": [
+      "LW"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 85,
+    "era": "contemporary",
+    "club": "AC Milan",
+    "fun_fact": "Explosive winger"
+  },
+  {
+    "id": "vitinha-2026",
+    "name": "Vitinha",
+    "nation": "Portugal",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 85,
+    "era": "contemporary",
+    "club": "Paris Saint-Germain",
+    "fun_fact": "Press-resistant metronome"
+  },
+  {
+    "id": "diogo-costa-2022",
+    "name": "Diogo Costa",
+    "nation": "Portugal",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "FC Porto",
+    "fun_fact": "Penalty hero"
+  },
+  {
+    "id": "nuno-mendes-2026",
+    "name": "Nuno Mendes",
+    "nation": "Portugal",
+    "position": [
+      "LB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "Paris Saint-Germain",
+    "fun_fact": "Flying full-back"
+  },
+  {
+    "id": "goncalo-ramos-2022",
+    "name": "Gonçalo Ramos",
+    "nation": "Portugal",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 82,
+    "era": "contemporary",
+    "club": "Paris Saint-Germain",
+    "fun_fact": "Hat-trick off the bench"
+  },
+  {
+    "id": "virgil-van-dijk-2022",
+    "name": "Virgil van Dijk",
+    "nation": "Netherlands",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 89,
+    "era": "contemporary",
+    "club": "Liverpool",
+    "fun_fact": "Imperious captain"
+  },
+  {
+    "id": "frenkie-de-jong-2022",
+    "name": "Frenkie de Jong",
+    "nation": "Netherlands",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 86,
+    "era": "contemporary",
+    "club": "Barcelona",
+    "fun_fact": "Glides through midfield"
+  },
+  {
+    "id": "cody-gakpo-2022",
+    "name": "Cody Gakpo",
+    "nation": "Netherlands",
+    "position": [
+      "LW"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "Liverpool",
+    "fun_fact": "Direct forward"
+  },
+  {
+    "id": "xavi-simons-2026",
+    "name": "Xavi Simons",
+    "nation": "Netherlands",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "RB Leipzig",
+    "fun_fact": "Creative livewire"
+  },
+  {
+    "id": "denzel-dumfries-2022",
+    "name": "Denzel Dumfries",
+    "nation": "Netherlands",
+    "position": [
+      "RB"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 82,
+    "era": "contemporary",
+    "club": "Inter",
+    "fun_fact": "Marauding wing-back"
+  },
+  {
+    "id": "nathan-ake-2026",
+    "name": "Nathan Aké",
+    "nation": "Netherlands",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 82,
+    "era": "contemporary",
+    "club": "Manchester City",
+    "fun_fact": "Versatile defender"
+  },
+  {
+    "id": "bart-verbruggen-2026",
+    "name": "Bart Verbruggen",
+    "nation": "Netherlands",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "club": "Brighton",
+    "fun_fact": "Modern keeper"
+  },
+  {
+    "id": "jamal-musiala-2022",
+    "name": "Jamal Musiala",
+    "nation": "Germany",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 88,
+    "era": "contemporary",
+    "club": "Bayern Munich",
+    "fun_fact": "Mesmerising dribbler"
+  },
+  {
+    "id": "florian-wirtz-2026",
+    "name": "Florian Wirtz",
+    "nation": "Germany",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 88,
+    "era": "contemporary",
+    "club": "Bayer Leverkusen",
+    "fun_fact": "Generational playmaker"
+  },
+  {
+    "id": "joshua-kimmich-2022",
+    "name": "Joshua Kimmich",
+    "nation": "Germany",
+    "position": [
+      "CM",
+      "RB"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 87,
+    "era": "contemporary",
+    "club": "Bayern Munich",
+    "fun_fact": "Tactical leader"
+  },
+  {
+    "id": "antonio-rudiger-2022",
+    "name": "Antonio Rüdiger",
+    "nation": "Germany",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 86,
+    "era": "contemporary",
+    "club": "Real Madrid",
+    "fun_fact": "Relentless defender"
+  },
+  {
+    "id": "marc-andre-ter-stegen-2026",
+    "name": "Marc-André ter Stegen",
+    "nation": "Germany",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 86,
+    "era": "contemporary",
+    "club": "Barcelona",
+    "fun_fact": "Sweeper-keeper"
+  },
+  {
+    "id": "kai-havertz-2022",
+    "name": "Kai Havertz",
+    "nation": "Germany",
+    "position": [
+      "ST",
+      "CAM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "Arsenal",
+    "fun_fact": "Versatile forward"
+  },
+  {
+    "id": "leroy-sane-2022",
+    "name": "Leroy Sané",
+    "nation": "Germany",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "Bayern Munich",
+    "fun_fact": "Searing pace"
+  },
+  {
+    "id": "gianluigi-donnarumma-2022",
+    "name": "Gianluigi Donnarumma",
+    "nation": "Italy",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 89,
+    "era": "contemporary",
+    "club": "Paris Saint-Germain",
+    "fun_fact": "Euro 2020 hero"
+  },
+  {
+    "id": "nicolo-barella-2022",
+    "name": "Nicolò Barella",
+    "nation": "Italy",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 86,
+    "era": "contemporary",
+    "club": "Inter",
+    "fun_fact": "All-action midfielder"
+  },
+  {
+    "id": "alessandro-bastoni-2022",
+    "name": "Alessandro Bastoni",
+    "nation": "Italy",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 85,
+    "era": "contemporary",
+    "club": "Inter",
+    "fun_fact": "Ball-playing defender"
+  },
+  {
+    "id": "marco-verratti-2018",
+    "name": "Marco Verratti",
+    "nation": "Italy",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 87,
+    "era": "contemporary",
+    "club": "Paris Saint-Germain",
+    "fun_fact": "Midfield metronome"
+  },
+  {
+    "id": "giorgio-chiellini-2014",
+    "name": "Giorgio Chiellini",
+    "nation": "Italy",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 88,
+    "era": "contemporary",
+    "club": "Juventus",
+    "fun_fact": "Defensive masterclass"
+  },
+  {
+    "id": "federico-chiesa-2021",
+    "name": "Federico Chiesa",
+    "nation": "Italy",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2021,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "Juventus",
+    "fun_fact": "Direct match-winner"
+  },
+  {
+    "id": "federico-dimarco-2026",
+    "name": "Federico Dimarco",
+    "nation": "Italy",
+    "position": [
+      "LB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 83,
+    "era": "contemporary",
+    "club": "Inter",
+    "fun_fact": "Wand of a left foot"
+  },
+  {
+    "id": "federico-valverde-2022",
+    "name": "Federico Valverde",
+    "nation": "Uruguay",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 88,
+    "era": "contemporary",
+    "club": "Real Madrid",
+    "fun_fact": "Engine of midfield"
+  },
+  {
+    "id": "ronald-araujo-2022",
+    "name": "Ronald Araújo",
+    "nation": "Uruguay",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 85,
+    "era": "contemporary",
+    "club": "Barcelona",
+    "fun_fact": "Uncompromising defender"
+  },
+  {
+    "id": "darwin-nunez-2022",
+    "name": "Darwin Núñez",
+    "nation": "Uruguay",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 83,
+    "era": "contemporary",
+    "club": "Liverpool",
+    "fun_fact": "Chaotic finisher"
+  },
+  {
+    "id": "rodrigo-bentancur-2022",
+    "name": "Rodrigo Bentancur",
+    "nation": "Uruguay",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 82,
+    "era": "contemporary",
+    "club": "Tottenham Hotspur",
+    "fun_fact": "Composed deep-lying mid"
+  },
+  {
+    "id": "sergio-rochet-2022",
+    "name": "Sergio Rochet",
+    "nation": "Uruguay",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "club": "Internacional",
+    "fun_fact": "Reliable last line"
+  },
+  {
+    "id": "mateo-kovacic-2022",
+    "name": "Mateo Kovačić",
+    "nation": "Croatia",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "Manchester City",
+    "fun_fact": "Press-resistant carrier"
+  },
+  {
+    "id": "marcelo-brozovic-2022",
+    "name": "Marcelo Brozović",
+    "nation": "Croatia",
+    "position": [
+      "CDM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 83,
+    "era": "contemporary",
+    "club": "Al-Nassr",
+    "fun_fact": "Deep-lying regista"
+  },
+  {
+    "id": "andrej-kramaric-2022",
+    "name": "Andrej Kramarić",
+    "nation": "Croatia",
+    "position": [
+      "CAM",
+      "ST"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 82,
+    "era": "contemporary",
+    "club": "Hoffenheim",
+    "fun_fact": "Clever finisher"
+  },
+  {
+    "id": "borna-sosa-2022",
+    "name": "Borna Sosa",
+    "nation": "Croatia",
+    "position": [
+      "LB"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 79,
+    "era": "contemporary",
+    "club": "Ajax",
+    "fun_fact": "Cross-supply machine"
+  },
+  {
+    "id": "dominik-szoboszlai-2026",
+    "name": "Dominik Szoboszlai",
+    "nation": "Hungary",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 85,
+    "era": "contemporary",
+    "club": "Liverpool",
+    "fun_fact": "Hungary's talisman"
+  },
+  {
+    "id": "milos-kerkez-2026",
+    "name": "Milos Kerkez",
+    "nation": "Hungary",
+    "position": [
+      "LB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 81,
+    "era": "contemporary",
+    "club": "Liverpool",
+    "fun_fact": "Energetic full-back"
+  },
+  {
+    "id": "willi-orban-2026",
+    "name": "Willi Orbán",
+    "nation": "Hungary",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "club": "RB Leipzig",
+    "fun_fact": "Aerial leader"
+  },
+  {
+    "id": "peter-gulacsi-2026",
+    "name": "Péter Gulácsi",
+    "nation": "Hungary",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "club": "RB Leipzig",
+    "fun_fact": "Steady keeper"
+  },
+  {
+    "id": "roland-sallai-2026",
+    "name": "Roland Sallai",
+    "nation": "Hungary",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 78,
+    "era": "contemporary",
+    "club": "Galatasaray",
+    "fun_fact": "Direct winger"
+  },
+  {
+    "id": "barnabas-varga-2026",
+    "name": "Barnabás Varga",
+    "nation": "Hungary",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 76,
+    "era": "contemporary",
+    "club": "Ferencváros",
+    "fun_fact": "Aerial target man"
+  },
+  {
+    "id": "hugo-sanchez-1986",
+    "name": "Hugo Sánchez",
+    "nation": "Mexico",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1986,
+    "overall_rating": 91,
+    "era": "classic",
+    "fun_fact": "Acrobatic goal king"
+  },
+  {
+    "id": "rafael-marquez-2006",
+    "name": "Rafael Márquez",
+    "nation": "Mexico",
+    "position": [
+      "CB",
+      "CDM"
+    ],
+    "world_cup_year": 2006,
+    "overall_rating": 87,
+    "era": "modern",
+    "fun_fact": "Captain across five World Cups"
+  },
+  {
+    "id": "cuauhtemoc-blanco-1998",
+    "name": "Cuauhtémoc Blanco",
+    "nation": "Mexico",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 1998,
+    "overall_rating": 84,
+    "era": "modern",
+    "fun_fact": "Inventor of the Cuauhtemiña"
+  },
+  {
+    "id": "jorge-campos-1994",
+    "name": "Jorge Campos",
+    "nation": "Mexico",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 1994,
+    "overall_rating": 82,
+    "era": "modern",
+    "fun_fact": "Flamboyant keeper-striker"
+  },
+  {
+    "id": "guillermo-ochoa-2014",
+    "name": "Guillermo Ochoa",
+    "nation": "Mexico",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "fun_fact": "The wall of Brazil 2014"
+  },
+  {
+    "id": "javier-hernandez-2014",
+    "name": "Javier Hernández",
+    "nation": "Mexico",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 83,
+    "era": "contemporary",
+    "fun_fact": "Chicharito, instinctive finisher"
+  },
+  {
+    "id": "hirving-lozano-2018",
+    "name": "Hirving Lozano",
+    "nation": "Mexico",
+    "position": [
+      "LW"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 82,
+    "era": "contemporary",
+    "club": "PSV",
+    "fun_fact": "Chucky stunned Germany"
+  },
+  {
+    "id": "edson-alvarez-2022",
+    "name": "Edson Álvarez",
+    "nation": "Mexico",
+    "position": [
+      "CDM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 82,
+    "era": "contemporary",
+    "club": "West Ham United",
+    "fun_fact": "Tireless shield"
+  },
+  {
+    "id": "santiago-gimenez-2026",
+    "name": "Santiago Giménez",
+    "nation": "Mexico",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 81,
+    "era": "contemporary",
+    "club": "AC Milan",
+    "fun_fact": "Prolific in Europe"
+  },
+  {
+    "id": "kevin-de-bruyne-2018",
+    "name": "Kevin De Bruyne",
+    "nation": "Belgium",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 92,
+    "era": "contemporary",
+    "club": "Manchester City",
+    "fun_fact": "World-class playmaker"
+  },
+  {
+    "id": "eden-hazard-2018",
+    "name": "Eden Hazard",
+    "nation": "Belgium",
+    "position": [
+      "LW"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 90,
+    "era": "contemporary",
+    "club": "Real Madrid",
+    "fun_fact": "Mesmeric dribbler"
+  },
+  {
+    "id": "thibaut-courtois-2018",
+    "name": "Thibaut Courtois",
+    "nation": "Belgium",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 89,
+    "era": "contemporary",
+    "club": "Real Madrid",
+    "fun_fact": "Giant shot-stopper"
+  },
+  {
+    "id": "romelu-lukaku-2018",
+    "name": "Romelu Lukaku",
+    "nation": "Belgium",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 86,
+    "era": "contemporary",
+    "club": "Roma",
+    "fun_fact": "Belgium's record scorer"
+  },
+  {
+    "id": "jan-vertonghen-2018",
+    "name": "Jan Vertonghen",
+    "nation": "Belgium",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 85,
+    "era": "contemporary",
+    "club": "Anderlecht",
+    "fun_fact": "Composed veteran"
+  },
+  {
+    "id": "jean-marie-pfaff-1986",
+    "name": "Jean-Marie Pfaff",
+    "nation": "Belgium",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 1986,
+    "overall_rating": 86,
+    "era": "classic",
+    "fun_fact": "One of the greats in goal"
+  },
+  {
+    "id": "enzo-scifo-1986",
+    "name": "Enzo Scifo",
+    "nation": "Belgium",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 1986,
+    "overall_rating": 85,
+    "era": "classic",
+    "fun_fact": "Elegant playmaker"
+  },
+  {
+    "id": "jeremy-doku-2026",
+    "name": "Jérémy Doku",
+    "nation": "Belgium",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 83,
+    "era": "contemporary",
+    "club": "Manchester City",
+    "fun_fact": "Electric one-v-one winger"
+  },
+  {
+    "id": "zlatan-ibrahimovic-2006",
+    "name": "Zlatan Ibrahimović",
+    "nation": "Sweden",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2006,
+    "overall_rating": 90,
+    "era": "modern",
+    "fun_fact": "Audacious genius"
+  },
+  {
+    "id": "henrik-larsson-2002",
+    "name": "Henrik Larsson",
+    "nation": "Sweden",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2002,
+    "overall_rating": 87,
+    "era": "modern",
+    "fun_fact": "Lethal and tireless"
+  },
+  {
+    "id": "gunnar-nordahl-1950",
+    "name": "Gunnar Nordahl",
+    "nation": "Sweden",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1950,
+    "overall_rating": 88,
+    "era": "classic",
+    "fun_fact": "Milan goal machine"
+  },
+  {
+    "id": "freddie-ljungberg-2002",
+    "name": "Freddie Ljungberg",
+    "nation": "Sweden",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2002,
+    "overall_rating": 84,
+    "era": "modern",
+    "fun_fact": "Surging runs"
+  },
+  {
+    "id": "victor-lindelof-2018",
+    "name": "Victor Lindelöf",
+    "nation": "Sweden",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 81,
+    "era": "contemporary",
+    "club": "Manchester United",
+    "fun_fact": "Calm in possession"
+  },
+  {
+    "id": "emil-forsberg-2018",
+    "name": "Emil Forsberg",
+    "nation": "Sweden",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 81,
+    "era": "contemporary",
+    "club": "New York Red Bulls",
+    "fun_fact": "Creative hub"
+  },
+  {
+    "id": "alexander-isak-2026",
+    "name": "Alexander Isak",
+    "nation": "Sweden",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 85,
+    "era": "contemporary",
+    "club": "Newcastle United",
+    "fun_fact": "Lethal, elegant finisher"
+  },
+  {
+    "id": "dejan-kulusevski-2026",
+    "name": "Dejan Kulusevski",
+    "nation": "Sweden",
+    "position": [
+      "RW",
+      "CAM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 83,
+    "era": "contemporary",
+    "club": "Tottenham Hotspur",
+    "fun_fact": "Powerful dribbler"
+  },
+  {
+    "id": "andreas-isaksson-2006",
+    "name": "Andreas Isaksson",
+    "nation": "Sweden",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2006,
+    "overall_rating": 80,
+    "era": "modern",
+    "fun_fact": "Long-serving keeper"
+  },
+  {
+    "id": "granit-xhaka-2022",
+    "name": "Granit Xhaka",
+    "nation": "Switzerland",
+    "position": [
+      "CM",
+      "CDM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "Bayer Leverkusen",
+    "fun_fact": "Captain and leader"
+  },
+  {
+    "id": "xherdan-shaqiri-2018",
+    "name": "Xherdan Shaqiri",
+    "nation": "Switzerland",
+    "position": [
+      "RW",
+      "CAM"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 83,
+    "era": "contemporary",
+    "club": "Chicago Fire",
+    "fun_fact": "Set-piece specialist"
+  },
+  {
+    "id": "yann-sommer-2022",
+    "name": "Yann Sommer",
+    "nation": "Switzerland",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "Inter",
+    "fun_fact": "Reflex shot-stopper"
+  },
+  {
+    "id": "manuel-akanji-2022",
+    "name": "Manuel Akanji",
+    "nation": "Switzerland",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "Manchester City",
+    "fun_fact": "Composed defender"
+  },
+  {
+    "id": "breel-embolo-2022",
+    "name": "Breel Embolo",
+    "nation": "Switzerland",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 81,
+    "era": "contemporary",
+    "club": "Monaco",
+    "fun_fact": "Powerful forward"
+  },
+  {
+    "id": "remo-freuler-2022",
+    "name": "Remo Freuler",
+    "nation": "Switzerland",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 79,
+    "era": "contemporary",
+    "club": "Bologna",
+    "fun_fact": "Industrious midfielder"
+  },
+  {
+    "id": "stephane-chapuisat-1994",
+    "name": "Stéphane Chapuisat",
+    "nation": "Switzerland",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1994,
+    "overall_rating": 83,
+    "era": "modern",
+    "fun_fact": "European champion forward"
+  },
+  {
+    "id": "christian-pulisic-2022",
+    "name": "Christian Pulisic",
+    "nation": "United States",
+    "position": [
+      "LW"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "AC Milan",
+    "fun_fact": "Captain America"
+  },
+  {
+    "id": "landon-donovan-2010",
+    "name": "Landon Donovan",
+    "nation": "United States",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2010,
+    "overall_rating": 84,
+    "era": "modern",
+    "fun_fact": "USA's all-time icon"
+  },
+  {
+    "id": "clint-dempsey-2014",
+    "name": "Clint Dempsey",
+    "nation": "United States",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 83,
+    "era": "contemporary",
+    "fun_fact": "Fearless forward"
+  },
+  {
+    "id": "tim-howard-2014",
+    "name": "Tim Howard",
+    "nation": "United States",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 83,
+    "era": "contemporary",
+    "fun_fact": "16 saves vs Belgium"
+  },
+  {
+    "id": "weston-mckennie-2022",
+    "name": "Weston McKennie",
+    "nation": "United States",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "club": "Juventus",
+    "fun_fact": "Box-crashing midfielder"
+  },
+  {
+    "id": "tyler-adams-2022",
+    "name": "Tyler Adams",
+    "nation": "United States",
+    "position": [
+      "CDM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 79,
+    "era": "contemporary",
+    "club": "Bournemouth",
+    "fun_fact": "Relentless ball-winner"
+  },
+  {
+    "id": "gio-reyna-2022",
+    "name": "Gio Reyna",
+    "nation": "United States",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 78,
+    "era": "contemporary",
+    "club": "Borussia Dortmund",
+    "fun_fact": "Silky playmaker"
+  },
+  {
+    "id": "brian-mcbride-2002",
+    "name": "Brian McBride",
+    "nation": "United States",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2002,
+    "overall_rating": 80,
+    "era": "modern",
+    "fun_fact": "Brave target man"
+  },
+  {
+    "id": "son-heung-min-2022",
+    "name": "Son Heung-min",
+    "nation": "South Korea",
+    "position": [
+      "LW",
+      "ST"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 88,
+    "era": "contemporary",
+    "club": "Tottenham Hotspur",
+    "fun_fact": "Tottenham talisman"
+  },
+  {
+    "id": "park-ji-sung-2006",
+    "name": "Park Ji-sung",
+    "nation": "South Korea",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2006,
+    "overall_rating": 85,
+    "era": "modern",
+    "fun_fact": "Three-lunged engine"
+  },
+  {
+    "id": "cha-bum-kun-1986",
+    "name": "Cha Bum-kun",
+    "nation": "South Korea",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1986,
+    "overall_rating": 86,
+    "era": "classic",
+    "fun_fact": "Bundesliga legend"
+  },
+  {
+    "id": "kim-min-jae-2022",
+    "name": "Kim Min-jae",
+    "nation": "South Korea",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "Bayern Munich",
+    "fun_fact": "The Monster"
+  },
+  {
+    "id": "lee-kang-in-2022",
+    "name": "Lee Kang-in",
+    "nation": "South Korea",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 82,
+    "era": "contemporary",
+    "club": "Paris Saint-Germain",
+    "fun_fact": "Left-footed creator"
+  },
+  {
+    "id": "hong-myung-bo-2002",
+    "name": "Hong Myung-bo",
+    "nation": "South Korea",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2002,
+    "overall_rating": 83,
+    "era": "modern",
+    "fun_fact": "Sweeper of 2002"
+  },
+  {
+    "id": "hwang-hee-chan-2022",
+    "name": "Hwang Hee-chan",
+    "nation": "South Korea",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "club": "Wolverhampton",
+    "fun_fact": "Direct runner"
+  },
+  {
+    "id": "cho-hyun-woo-2018",
+    "name": "Cho Hyun-woo",
+    "nation": "South Korea",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 79,
+    "era": "contemporary",
+    "fun_fact": "Heroics vs Germany"
+  },
+  {
+    "id": "pavel-nedved-2006",
+    "name": "Pavel Nedvěd",
+    "nation": "Czechia",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2006,
+    "overall_rating": 90,
+    "era": "modern",
+    "fun_fact": "The Czech Fury"
+  },
+  {
+    "id": "petr-cech-2006",
+    "name": "Petr Čech",
+    "nation": "Czechia",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2006,
+    "overall_rating": 89,
+    "era": "modern",
+    "fun_fact": "Legendary shot-stopper"
+  },
+  {
+    "id": "tomas-rosicky-2006",
+    "name": "Tomáš Rosický",
+    "nation": "Czechia",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2006,
+    "overall_rating": 86,
+    "era": "modern",
+    "fun_fact": "Little Mozart"
+  },
+  {
+    "id": "antonin-panenka-1982",
+    "name": "Antonín Panenka",
+    "nation": "Czechia",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 1982,
+    "overall_rating": 84,
+    "era": "classic",
+    "fun_fact": "Invented the Panenka"
+  },
+  {
+    "id": "patrik-schick-2022",
+    "name": "Patrik Schick",
+    "nation": "Czechia",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 83,
+    "era": "contemporary",
+    "club": "Bayer Leverkusen",
+    "fun_fact": "Halfway-line wonder goal"
+  },
+  {
+    "id": "tomas-soucek-2026",
+    "name": "Tomáš Souček",
+    "nation": "Czechia",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 81,
+    "era": "contemporary",
+    "club": "West Ham United",
+    "fun_fact": "Towering box presence"
+  },
+  {
+    "id": "milan-baros-2006",
+    "name": "Milan Baroš",
+    "nation": "Czechia",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2006,
+    "overall_rating": 82,
+    "era": "modern",
+    "fun_fact": "Euro 2004 Golden Boot"
+  },
+  {
+    "id": "alexis-sanchez-2014",
+    "name": "Alexis Sánchez",
+    "nation": "Chile",
+    "position": [
+      "RW",
+      "ST"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 86,
+    "era": "contemporary",
+    "club": "Udinese",
+    "fun_fact": "Chile's wonder boy"
+  },
+  {
+    "id": "arturo-vidal-2014",
+    "name": "Arturo Vidal",
+    "nation": "Chile",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 86,
+    "era": "contemporary",
+    "club": "Colo-Colo",
+    "fun_fact": "King Arturo"
+  },
+  {
+    "id": "ivan-zamorano-1998",
+    "name": "Iván Zamorano",
+    "nation": "Chile",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1998,
+    "overall_rating": 85,
+    "era": "modern",
+    "fun_fact": "Bam Bam"
+  },
+  {
+    "id": "marcelo-salas-1998",
+    "name": "Marcelo Salas",
+    "nation": "Chile",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1998,
+    "overall_rating": 84,
+    "era": "modern",
+    "fun_fact": "El Matador"
+  },
+  {
+    "id": "elias-figueroa-1974",
+    "name": "Elías Figueroa",
+    "nation": "Chile",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 1974,
+    "overall_rating": 86,
+    "era": "classic",
+    "fun_fact": "Three-time South American POTY"
+  },
+  {
+    "id": "claudio-bravo-2014",
+    "name": "Claudio Bravo",
+    "nation": "Chile",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 83,
+    "era": "contemporary",
+    "fun_fact": "Shootout specialist"
+  },
+  {
+    "id": "gary-medel-2014",
+    "name": "Gary Medel",
+    "nation": "Chile",
+    "position": [
+      "CDM",
+      "CB"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "fun_fact": "The Pitbull"
+  },
+  {
+    "id": "robert-lewandowski-2018",
+    "name": "Robert Lewandowski",
+    "nation": "Poland",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 90,
+    "era": "contemporary",
+    "club": "Barcelona",
+    "fun_fact": "Prolific finisher"
+  },
+  {
+    "id": "zbigniew-boniek-1982",
+    "name": "Zbigniew Boniek",
+    "nation": "Poland",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 1982,
+    "overall_rating": 87,
+    "era": "classic",
+    "fun_fact": "Juventus great"
+  },
+  {
+    "id": "grzegorz-lato-1974",
+    "name": "Grzegorz Lato",
+    "nation": "Poland",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 1974,
+    "overall_rating": 86,
+    "era": "classic",
+    "fun_fact": "1974 Golden Boot"
+  },
+  {
+    "id": "kazimierz-deyna-1974",
+    "name": "Kazimierz Deyna",
+    "nation": "Poland",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 1974,
+    "overall_rating": 85,
+    "era": "classic",
+    "fun_fact": "Elegant playmaker"
+  },
+  {
+    "id": "wojciech-szczesny-2022",
+    "name": "Wojciech Szczęsny",
+    "nation": "Poland",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "Barcelona",
+    "fun_fact": "Penalty hero"
+  },
+  {
+    "id": "piotr-zielinski-2022",
+    "name": "Piotr Zieliński",
+    "nation": "Poland",
+    "position": [
+      "CM",
+      "CAM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 82,
+    "era": "contemporary",
+    "club": "Inter",
+    "fun_fact": "Creative midfielder"
+  },
+  {
+    "id": "jan-tomaszewski-1974",
+    "name": "Jan Tomaszewski",
+    "nation": "Poland",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 1974,
+    "overall_rating": 82,
+    "era": "classic",
+    "fun_fact": "The clown who beat England"
+  },
+  {
+    "id": "jakub-kiwior-2026",
+    "name": "Jakub Kiwior",
+    "nation": "Poland",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 78,
+    "era": "contemporary",
+    "club": "Arsenal",
+    "fun_fact": "Left-footed defender"
+  },
+  {
+    "id": "david-alaba-2026",
+    "name": "David Alaba",
+    "nation": "Austria",
+    "position": [
+      "CB",
+      "LB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 85,
+    "era": "contemporary",
+    "club": "Real Madrid",
+    "fun_fact": "Versatile maestro"
+  },
+  {
+    "id": "hans-krankl-1978",
+    "name": "Hans Krankl",
+    "nation": "Austria",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1978,
+    "overall_rating": 86,
+    "era": "classic",
+    "fun_fact": "Hero of Córdoba"
+  },
+  {
+    "id": "marcel-sabitzer-2026",
+    "name": "Marcel Sabitzer",
+    "nation": "Austria",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 82,
+    "era": "contemporary",
+    "club": "Borussia Dortmund",
+    "fun_fact": "Driving midfielder"
+  },
+  {
+    "id": "konrad-laimer-2026",
+    "name": "Konrad Laimer",
+    "nation": "Austria",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "club": "Bayern Munich",
+    "fun_fact": "Pressing machine"
+  },
+  {
+    "id": "christoph-baumgartner-2026",
+    "name": "Christoph Baumgartner",
+    "nation": "Austria",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "club": "RB Leipzig",
+    "fun_fact": "Late-arriving runner"
+  },
+  {
+    "id": "xaver-schlager-2026",
+    "name": "Xaver Schlager",
+    "nation": "Austria",
+    "position": [
+      "CDM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "club": "RB Leipzig",
+    "fun_fact": "Combative anchor"
+  },
+  {
+    "id": "toni-polster-1990",
+    "name": "Toni Polster",
+    "nation": "Austria",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1990,
+    "overall_rating": 82,
+    "era": "classic",
+    "fun_fact": "Prolific marksman"
+  },
+  {
+    "id": "patrick-pentz-2026",
+    "name": "Patrick Pentz",
+    "nation": "Austria",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 76,
+    "era": "contemporary",
+    "club": "Brøndby",
+    "fun_fact": "Shot-stopper"
+  },
+  {
+    "id": "jose-luis-chilavert-1998",
+    "name": "José Luis Chilavert",
+    "nation": "Paraguay",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 1998,
+    "overall_rating": 87,
+    "era": "modern",
+    "fun_fact": "Goalscoring goalkeeper"
+  },
+  {
+    "id": "julio-cesar-romero-1986",
+    "name": "Julio César Romero",
+    "nation": "Paraguay",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 1986,
+    "overall_rating": 84,
+    "era": "classic",
+    "fun_fact": "Romerito, South American POTY"
+  },
+  {
+    "id": "carlos-gamarra-2002",
+    "name": "Carlos Gamarra",
+    "nation": "Paraguay",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2002,
+    "overall_rating": 84,
+    "era": "modern",
+    "fun_fact": "Impeccable defender"
+  },
+  {
+    "id": "roque-santa-cruz-2006",
+    "name": "Roque Santa Cruz",
+    "nation": "Paraguay",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2006,
+    "overall_rating": 83,
+    "era": "modern",
+    "fun_fact": "Elegant target man"
+  },
+  {
+    "id": "salvador-cabanas-2006",
+    "name": "Salvador Cabañas",
+    "nation": "Paraguay",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2006,
+    "overall_rating": 82,
+    "era": "modern",
+    "fun_fact": "Lethal poacher"
+  },
+  {
+    "id": "miguel-almiron-2026",
+    "name": "Miguel Almirón",
+    "nation": "Paraguay",
+    "position": [
+      "RW",
+      "CAM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 81,
+    "era": "contemporary",
+    "club": "Atlanta United",
+    "fun_fact": "Tireless runner"
+  },
+  {
+    "id": "gustavo-gomez-2026",
+    "name": "Gustavo Gómez",
+    "nation": "Paraguay",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "club": "Palmeiras",
+    "fun_fact": "Commanding captain"
+  },
+  {
+    "id": "antonio-sanabria-2026",
+    "name": "Antonio Sanabria",
+    "nation": "Paraguay",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 78,
+    "era": "contemporary",
+    "club": "Torino",
+    "fun_fact": "Mobile forward"
+  },
+  {
+    "id": "kenny-dalglish-1978",
+    "name": "Kenny Dalglish",
+    "nation": "Scotland",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1978,
+    "overall_rating": 88,
+    "era": "classic",
+    "fun_fact": "King Kenny"
+  },
+  {
+    "id": "denis-law-1974",
+    "name": "Denis Law",
+    "nation": "Scotland",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1974,
+    "overall_rating": 87,
+    "era": "classic",
+    "fun_fact": "The Lawman"
+  },
+  {
+    "id": "graeme-souness-1986",
+    "name": "Graeme Souness",
+    "nation": "Scotland",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 1986,
+    "overall_rating": 86,
+    "era": "classic",
+    "fun_fact": "Steel and class"
+  },
+  {
+    "id": "andy-robertson-2026",
+    "name": "Andy Robertson",
+    "nation": "Scotland",
+    "position": [
+      "LB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "Liverpool",
+    "fun_fact": "Rampaging captain"
+  },
+  {
+    "id": "scott-mctominay-2026",
+    "name": "Scott McTominay",
+    "nation": "Scotland",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 82,
+    "era": "contemporary",
+    "club": "Napoli",
+    "fun_fact": "Goal-getting midfielder"
+  },
+  {
+    "id": "john-mcginn-2026",
+    "name": "John McGinn",
+    "nation": "Scotland",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "club": "Aston Villa",
+    "fun_fact": "Energetic engine"
+  },
+  {
+    "id": "billy-bremner-1974",
+    "name": "Billy Bremner",
+    "nation": "Scotland",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 1974,
+    "overall_rating": 83,
+    "era": "classic",
+    "fun_fact": "Fearless leader"
+  },
+  {
+    "id": "angus-gunn-2026",
+    "name": "Angus Gunn",
+    "nation": "Scotland",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 76,
+    "era": "contemporary",
+    "club": "Norwich City",
+    "fun_fact": "Reliable keeper"
+  },
+  {
+    "id": "samuel-eto-o-2002",
+    "name": "Samuel Eto'o",
+    "nation": "Cameroon",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2002,
+    "overall_rating": 89,
+    "era": "modern",
+    "fun_fact": "Indomitable Lion"
+  },
+  {
+    "id": "roger-milla-1990",
+    "name": "Roger Milla",
+    "nation": "Cameroon",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1990,
+    "overall_rating": 86,
+    "era": "classic",
+    "fun_fact": "Dancing at 38"
+  },
+  {
+    "id": "thomas-n-kono-1982",
+    "name": "Thomas N'Kono",
+    "nation": "Cameroon",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 1982,
+    "overall_rating": 82,
+    "era": "classic",
+    "fun_fact": "Inspiration to a generation"
+  },
+  {
+    "id": "patrick-mboma-1998",
+    "name": "Patrick Mboma",
+    "nation": "Cameroon",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1998,
+    "overall_rating": 81,
+    "era": "modern",
+    "fun_fact": "Powerful finisher"
+  },
+  {
+    "id": "rigobert-song-2002",
+    "name": "Rigobert Song",
+    "nation": "Cameroon",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2002,
+    "overall_rating": 80,
+    "era": "modern",
+    "fun_fact": "Warrior defender"
+  },
+  {
+    "id": "marc-vivien-foe-2002",
+    "name": "Marc-Vivien Foé",
+    "nation": "Cameroon",
+    "position": [
+      "CDM"
+    ],
+    "world_cup_year": 2002,
+    "overall_rating": 80,
+    "era": "modern",
+    "fun_fact": "Forever remembered"
+  },
+  {
+    "id": "andre-onana-2022",
+    "name": "André Onana",
+    "nation": "Cameroon",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 83,
+    "era": "contemporary",
+    "club": "Manchester United",
+    "fun_fact": "Modern sweeper-keeper"
+  },
+  {
+    "id": "vincent-aboubakar-2022",
+    "name": "Vincent Aboubakar",
+    "nation": "Cameroon",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "club": "Beşiktaş",
+    "fun_fact": "Clutch goalscorer"
+  },
+  {
+    "id": "hidetoshi-nakata-2002",
+    "name": "Hidetoshi Nakata",
+    "nation": "Japan",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2002,
+    "overall_rating": 85,
+    "era": "modern",
+    "fun_fact": "Pioneer in Europe"
+  },
+  {
+    "id": "shunsuke-nakamura-2006",
+    "name": "Shunsuke Nakamura",
+    "nation": "Japan",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2006,
+    "overall_rating": 82,
+    "era": "modern",
+    "fun_fact": "Free-kick maestro"
+  },
+  {
+    "id": "keisuke-honda-2010",
+    "name": "Keisuke Honda",
+    "nation": "Japan",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2010,
+    "overall_rating": 83,
+    "era": "modern",
+    "fun_fact": "Big-stage performer"
+  },
+  {
+    "id": "kaoru-mitoma-2022",
+    "name": "Kaoru Mitoma",
+    "nation": "Japan",
+    "position": [
+      "LW"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 83,
+    "era": "contemporary",
+    "club": "Brighton",
+    "fun_fact": "Mesmeric dribbler"
+  },
+  {
+    "id": "takefusa-kubo-2022",
+    "name": "Takefusa Kubo",
+    "nation": "Japan",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 83,
+    "era": "contemporary",
+    "club": "Real Sociedad",
+    "fun_fact": "Japanese Messi"
+  },
+  {
+    "id": "wataru-endo-2022",
+    "name": "Wataru Endo",
+    "nation": "Japan",
+    "position": [
+      "CDM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 81,
+    "era": "contemporary",
+    "club": "Liverpool",
+    "fun_fact": "Tireless anchor"
+  },
+  {
+    "id": "takehiro-tomiyasu-2022",
+    "name": "Takehiro Tomiyasu",
+    "nation": "Japan",
+    "position": [
+      "CB",
+      "RB"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "club": "Arsenal",
+    "fun_fact": "Versatile defender"
+  },
+  {
+    "id": "eiji-kawashima-2014",
+    "name": "Eiji Kawashima",
+    "nation": "Japan",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 77,
+    "era": "contemporary",
+    "fun_fact": "Veteran keeper"
+  },
+  {
+    "id": "carlos-valderrama-1990",
+    "name": "Carlos Valderrama",
+    "nation": "Colombia",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 1990,
+    "overall_rating": 89,
+    "era": "classic",
+    "fun_fact": "El Pibe"
+  },
+  {
+    "id": "james-rodriguez-2014",
+    "name": "James Rodríguez",
+    "nation": "Colombia",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 87,
+    "era": "contemporary",
+    "fun_fact": "2014 Golden Boot"
+  },
+  {
+    "id": "radamel-falcao-2018",
+    "name": "Radamel Falcao",
+    "nation": "Colombia",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 85,
+    "era": "contemporary",
+    "fun_fact": "El Tigre"
+  },
+  {
+    "id": "luis-diaz-2026",
+    "name": "Luis Díaz",
+    "nation": "Colombia",
+    "position": [
+      "LW"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 86,
+    "era": "contemporary",
+    "club": "Liverpool",
+    "fun_fact": "Electric winger"
+  },
+  {
+    "id": "rene-higuita-1990",
+    "name": "René Higuita",
+    "nation": "Colombia",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 1990,
+    "overall_rating": 82,
+    "era": "classic",
+    "fun_fact": "Scorpion-kick showman"
+  },
+  {
+    "id": "davinson-sanchez-2018",
+    "name": "Davinson Sánchez",
+    "nation": "Colombia",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 81,
+    "era": "contemporary",
+    "club": "Galatasaray",
+    "fun_fact": "Athletic defender"
+  },
+  {
+    "id": "juan-cuadrado-2018",
+    "name": "Juan Cuadrado",
+    "nation": "Colombia",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 81,
+    "era": "contemporary",
+    "club": "Atalanta",
+    "fun_fact": "Driving wing-back"
+  },
+  {
+    "id": "achraf-hakimi-2022",
+    "name": "Achraf Hakimi",
+    "nation": "Morocco",
+    "position": [
+      "RB"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 85,
+    "era": "contemporary",
+    "club": "Paris Saint-Germain",
+    "fun_fact": "Marauding full-back"
+  },
+  {
+    "id": "yassine-bounou-2022",
+    "name": "Yassine Bounou",
+    "nation": "Morocco",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "Al-Hilal",
+    "fun_fact": "Penalty king of Qatar"
+  },
+  {
+    "id": "hakim-ziyech-2022",
+    "name": "Hakim Ziyech",
+    "nation": "Morocco",
+    "position": [
+      "CAM",
+      "RW"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 83,
+    "era": "contemporary",
+    "club": "Al-Duhail",
+    "fun_fact": "Wand of a left foot"
+  },
+  {
+    "id": "sofyan-amrabat-2022",
+    "name": "Sofyan Amrabat",
+    "nation": "Morocco",
+    "position": [
+      "CDM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 82,
+    "era": "contemporary",
+    "club": "Fiorentina",
+    "fun_fact": "Engine of the 2022 run"
+  },
+  {
+    "id": "youssef-en-nesyri-2022",
+    "name": "Youssef En-Nesyri",
+    "nation": "Morocco",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 81,
+    "era": "contemporary",
+    "club": "Fenerbahçe",
+    "fun_fact": "Header sank Portugal"
+  },
+  {
+    "id": "noussair-mazraoui-2022",
+    "name": "Noussair Mazraoui",
+    "nation": "Morocco",
+    "position": [
+      "RB"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "club": "Manchester United",
+    "fun_fact": "Two-way full-back"
+  },
+  {
+    "id": "brahim-diaz-2026",
+    "name": "Brahim Díaz",
+    "nation": "Morocco",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 83,
+    "era": "contemporary",
+    "club": "Real Madrid",
+    "fun_fact": "Dribbling creator"
+  },
+  {
+    "id": "mustapha-hadji-1998",
+    "name": "Mustapha Hadji",
+    "nation": "Morocco",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 1998,
+    "overall_rating": 83,
+    "era": "modern",
+    "fun_fact": "African Footballer of the Year"
+  },
+  {
+    "id": "ali-daei-1998",
+    "name": "Ali Daei",
+    "nation": "Iran",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1998,
+    "overall_rating": 84,
+    "era": "modern",
+    "fun_fact": "Record international scorer"
+  },
+  {
+    "id": "mehdi-taremi-2022",
+    "name": "Mehdi Taremi",
+    "nation": "Iran",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 83,
+    "era": "contemporary",
+    "club": "Inter",
+    "fun_fact": "Clinical forward"
+  },
+  {
+    "id": "sardar-azmoun-2018",
+    "name": "Sardar Azmoun",
+    "nation": "Iran",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 81,
+    "era": "contemporary",
+    "club": "Shabab Al-Ahli",
+    "fun_fact": "The Iranian Messi"
+  },
+  {
+    "id": "mehdi-mahdavikia-2006",
+    "name": "Mehdi Mahdavikia",
+    "nation": "Iran",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2006,
+    "overall_rating": 80,
+    "era": "modern",
+    "fun_fact": "Bundesliga flyer"
+  },
+  {
+    "id": "alireza-jahanbakhsh-2018",
+    "name": "Alireza Jahanbakhsh",
+    "nation": "Iran",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 79,
+    "era": "contemporary",
+    "fun_fact": "Direct winger"
+  },
+  {
+    "id": "ehsan-hajsafi-2018",
+    "name": "Ehsan Hajsafi",
+    "nation": "Iran",
+    "position": [
+      "LB"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 77,
+    "era": "contemporary",
+    "fun_fact": "Veteran captain"
+  },
+  {
+    "id": "alireza-beiranvand-2018",
+    "name": "Alireza Beiranvand",
+    "nation": "Iran",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 78,
+    "era": "contemporary",
+    "fun_fact": "Long-throw keeper"
+  },
+  {
+    "id": "majed-abdullah-1994",
+    "name": "Majed Abdullah",
+    "nation": "Saudi Arabia",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1994,
+    "overall_rating": 82,
+    "era": "modern",
+    "fun_fact": "The Arabian Pelé"
+  },
+  {
+    "id": "salem-al-dawsari-2022",
+    "name": "Salem Al-Dawsari",
+    "nation": "Saudi Arabia",
+    "position": [
+      "LW"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "club": "Al-Hilal",
+    "fun_fact": "Winner against Argentina"
+  },
+  {
+    "id": "sami-al-jaber-1998",
+    "name": "Sami Al-Jaber",
+    "nation": "Saudi Arabia",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1998,
+    "overall_rating": 79,
+    "era": "modern",
+    "fun_fact": "Four-time World Cup forward"
+  },
+  {
+    "id": "mohamed-al-deayea-1998",
+    "name": "Mohamed Al-Deayea",
+    "nation": "Saudi Arabia",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 1998,
+    "overall_rating": 78,
+    "era": "modern",
+    "fun_fact": "Long-serving keeper"
+  },
+  {
+    "id": "firas-al-buraikan-2026",
+    "name": "Firas Al-Buraikan",
+    "nation": "Saudi Arabia",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 77,
+    "era": "contemporary",
+    "club": "Al-Ahli",
+    "fun_fact": "Mobile striker"
+  },
+  {
+    "id": "saud-abdulhamid-2026",
+    "name": "Saud Abdulhamid",
+    "nation": "Saudi Arabia",
+    "position": [
+      "RB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 76,
+    "era": "contemporary",
+    "club": "Roma",
+    "fun_fact": "Attacking full-back"
+  },
+  {
+    "id": "ali-al-bulaihi-2022",
+    "name": "Ali Al-Bulaihi",
+    "nation": "Saudi Arabia",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 76,
+    "era": "contemporary",
+    "club": "Al-Hilal",
+    "fun_fact": "Uncompromising defender"
+  },
+  {
+    "id": "tim-cahill-2014",
+    "name": "Tim Cahill",
+    "nation": "Australia",
+    "position": [
+      "CAM",
+      "ST"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "fun_fact": "Socceroos icon"
+  },
+  {
+    "id": "harry-kewell-2006",
+    "name": "Harry Kewell",
+    "nation": "Australia",
+    "position": [
+      "LW"
+    ],
+    "world_cup_year": 2006,
+    "overall_rating": 84,
+    "era": "modern",
+    "fun_fact": "Australia's finest export"
+  },
+  {
+    "id": "mark-schwarzer-2006",
+    "name": "Mark Schwarzer",
+    "nation": "Australia",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2006,
+    "overall_rating": 80,
+    "era": "modern",
+    "fun_fact": "Premier League stalwart"
+  },
+  {
+    "id": "mathew-ryan-2018",
+    "name": "Mathew Ryan",
+    "nation": "Australia",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 79,
+    "era": "contemporary",
+    "club": "Roma",
+    "fun_fact": "Brave captain keeper"
+  },
+  {
+    "id": "aaron-mooy-2018",
+    "name": "Aaron Mooy",
+    "nation": "Australia",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 78,
+    "era": "contemporary",
+    "fun_fact": "Tidy passer"
+  },
+  {
+    "id": "jackson-irvine-2022",
+    "name": "Jackson Irvine",
+    "nation": "Australia",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 76,
+    "era": "contemporary",
+    "club": "St. Pauli",
+    "fun_fact": "Box-to-box runner"
+  },
+  {
+    "id": "mathew-leckie-2022",
+    "name": "Mathew Leckie",
+    "nation": "Australia",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 77,
+    "era": "contemporary",
+    "club": "Melbourne City",
+    "fun_fact": "Goal sank Denmark"
+  },
+  {
+    "id": "mitchell-duke-2022",
+    "name": "Mitchell Duke",
+    "nation": "Australia",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 75,
+    "era": "contemporary",
+    "fun_fact": "Hard-working forward"
+  },
+  {
+    "id": "wahbi-khazri-2018",
+    "name": "Wahbi Khazri",
+    "nation": "Tunisia",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 79,
+    "era": "contemporary",
+    "fun_fact": "Talisman forward"
+  },
+  {
+    "id": "youssef-msakni-2018",
+    "name": "Youssef Msakni",
+    "nation": "Tunisia",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 79,
+    "era": "contemporary",
+    "fun_fact": "Creative captain"
+  },
+  {
+    "id": "ellyes-skhiri-2026",
+    "name": "Ellyes Skhiri",
+    "nation": "Tunisia",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "club": "Eintracht Frankfurt",
+    "fun_fact": "Two-way midfielder"
+  },
+  {
+    "id": "aissa-laidouni-2022",
+    "name": "Aïssa Laïdouni",
+    "nation": "Tunisia",
+    "position": [
+      "CDM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 78,
+    "era": "contemporary",
+    "club": "Wolfsburg",
+    "fun_fact": "Combative anchor"
+  },
+  {
+    "id": "hannibal-mejbri-2026",
+    "name": "Hannibal Mejbri",
+    "nation": "Tunisia",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 78,
+    "era": "contemporary",
+    "club": "Burnley",
+    "fun_fact": "Energetic playmaker"
+  },
+  {
+    "id": "dylan-bronn-2018",
+    "name": "Dylan Bronn",
+    "nation": "Tunisia",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 76,
+    "era": "contemporary",
+    "fun_fact": "Aerial defender"
+  },
+  {
+    "id": "aymen-mathlouthi-2014",
+    "name": "Aymen Mathlouthi",
+    "nation": "Tunisia",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 75,
+    "era": "contemporary",
+    "fun_fact": "Experienced keeper"
+  },
+  {
+    "id": "jay-jay-okocha-1998",
+    "name": "Jay-Jay Okocha",
+    "nation": "Nigeria",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 1998,
+    "overall_rating": 87,
+    "era": "modern",
+    "fun_fact": "So good they named him twice"
+  },
+  {
+    "id": "nwankwo-kanu-1998",
+    "name": "Nwankwo Kanu",
+    "nation": "Nigeria",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1998,
+    "overall_rating": 84,
+    "era": "modern",
+    "fun_fact": "Olympic and Invincible great"
+  },
+  {
+    "id": "rashidi-yekini-1994",
+    "name": "Rashidi Yekini",
+    "nation": "Nigeria",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1994,
+    "overall_rating": 84,
+    "era": "modern",
+    "fun_fact": "Roared into the net"
+  },
+  {
+    "id": "victor-osimhen-2026",
+    "name": "Victor Osimhen",
+    "nation": "Nigeria",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 87,
+    "era": "contemporary",
+    "club": "Galatasaray",
+    "fun_fact": "Lethal No.9"
+  },
+  {
+    "id": "sunday-oliseh-1998",
+    "name": "Sunday Oliseh",
+    "nation": "Nigeria",
+    "position": [
+      "CDM"
+    ],
+    "world_cup_year": 1998,
+    "overall_rating": 81,
+    "era": "modern",
+    "fun_fact": "Thunderous striker of the ball"
+  },
+  {
+    "id": "wilfred-ndidi-2018",
+    "name": "Wilfred Ndidi",
+    "nation": "Nigeria",
+    "position": [
+      "CDM"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 81,
+    "era": "contemporary",
+    "club": "Beşiktaş",
+    "fun_fact": "Ball-winning machine"
+  },
+  {
+    "id": "vincent-enyeama-2014",
+    "name": "Vincent Enyeama",
+    "nation": "Nigeria",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "fun_fact": "Inspirational keeper"
+  },
+  {
+    "id": "ahmed-musa-2014",
+    "name": "Ahmed Musa",
+    "nation": "Nigeria",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 79,
+    "era": "contemporary",
+    "fun_fact": "Pacey forward"
+  },
+  {
+    "id": "moises-caicedo-2022",
+    "name": "Moisés Caicedo",
+    "nation": "Ecuador",
+    "position": [
+      "CDM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "Chelsea",
+    "fun_fact": "Record-fee anchor"
+  },
+  {
+    "id": "enner-valencia-2022",
+    "name": "Enner Valencia",
+    "nation": "Ecuador",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 82,
+    "era": "contemporary",
+    "club": "Internacional",
+    "fun_fact": "Ecuador's talisman"
+  },
+  {
+    "id": "antonio-valencia-2014",
+    "name": "Antonio Valencia",
+    "nation": "Ecuador",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 82,
+    "era": "contemporary",
+    "fun_fact": "Driving force"
+  },
+  {
+    "id": "pervis-estupinan-2022",
+    "name": "Pervis Estupiñán",
+    "nation": "Ecuador",
+    "position": [
+      "LB"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 81,
+    "era": "contemporary",
+    "club": "Brighton",
+    "fun_fact": "Overlapping full-back"
+  },
+  {
+    "id": "piero-hincapie-2026",
+    "name": "Piero Hincapié",
+    "nation": "Ecuador",
+    "position": [
+      "CB",
+      "LB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 82,
+    "era": "contemporary",
+    "club": "Bayer Leverkusen",
+    "fun_fact": "Aggressive defender"
+  },
+  {
+    "id": "kendry-paez-2026",
+    "name": "Kendry Páez",
+    "nation": "Ecuador",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 78,
+    "era": "contemporary",
+    "club": "Chelsea",
+    "fun_fact": "Teenage prodigy"
+  },
+  {
+    "id": "agustin-delgado-2002",
+    "name": "Agustín Delgado",
+    "nation": "Ecuador",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2002,
+    "overall_rating": 80,
+    "era": "modern",
+    "fun_fact": "First Ecuador WC scorer"
+  },
+  {
+    "id": "hernan-galindez-2022",
+    "name": "Hernán Galíndez",
+    "nation": "Ecuador",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 76,
+    "era": "contemporary",
+    "fun_fact": "Steady keeper"
+  },
+  {
+    "id": "riyad-mahrez-2014",
+    "name": "Riyad Mahrez",
+    "nation": "Algeria",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 86,
+    "era": "contemporary",
+    "club": "Al-Ahli",
+    "fun_fact": "Mercurial winger"
+  },
+  {
+    "id": "rabah-madjer-1986",
+    "name": "Rabah Madjer",
+    "nation": "Algeria",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1986,
+    "overall_rating": 85,
+    "era": "classic",
+    "fun_fact": "Backheel European champion"
+  },
+  {
+    "id": "ismael-bennacer-2026",
+    "name": "Ismaël Bennacer",
+    "nation": "Algeria",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 82,
+    "era": "contemporary",
+    "club": "AC Milan",
+    "fun_fact": "Press-resistant midfielder"
+  },
+  {
+    "id": "islam-slimani-2014",
+    "name": "Islam Slimani",
+    "nation": "Algeria",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "fun_fact": "Record goalscorer"
+  },
+  {
+    "id": "aissa-mandi-2026",
+    "name": "Aïssa Mandi",
+    "nation": "Algeria",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 78,
+    "era": "contemporary",
+    "club": "Lille",
+    "fun_fact": "Calm defender"
+  },
+  {
+    "id": "youcef-atal-2026",
+    "name": "Youcef Atal",
+    "nation": "Algeria",
+    "position": [
+      "RB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 78,
+    "era": "contemporary",
+    "club": "Al-Sadd",
+    "fun_fact": "Attacking full-back"
+  },
+  {
+    "id": "rais-m-bolhi-2014",
+    "name": "Raïs M'Bolhi",
+    "nation": "Algeria",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 79,
+    "era": "contemporary",
+    "fun_fact": "Heroics against Germany"
+  },
+  {
+    "id": "abedi-pele-1990",
+    "name": "Abedi Pelé",
+    "nation": "Ghana",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 1990,
+    "overall_rating": 87,
+    "era": "classic",
+    "fun_fact": "African great"
+  },
+  {
+    "id": "michael-essien-2006",
+    "name": "Michael Essien",
+    "nation": "Ghana",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2006,
+    "overall_rating": 86,
+    "era": "modern",
+    "fun_fact": "The Bison"
+  },
+  {
+    "id": "asamoah-gyan-2010",
+    "name": "Asamoah Gyan",
+    "nation": "Ghana",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2010,
+    "overall_rating": 84,
+    "era": "modern",
+    "fun_fact": "Africa's WC top scorer"
+  },
+  {
+    "id": "mohammed-kudus-2022",
+    "name": "Mohammed Kudus",
+    "nation": "Ghana",
+    "position": [
+      "CAM",
+      "RW"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "Tottenham Hotspur",
+    "fun_fact": "Dynamic playmaker"
+  },
+  {
+    "id": "thomas-partey-2022",
+    "name": "Thomas Partey",
+    "nation": "Ghana",
+    "position": [
+      "CDM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 83,
+    "era": "contemporary",
+    "club": "Villarreal",
+    "fun_fact": "Composed anchor"
+  },
+  {
+    "id": "sulley-muntari-2010",
+    "name": "Sulley Muntari",
+    "nation": "Ghana",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2010,
+    "overall_rating": 81,
+    "era": "modern",
+    "fun_fact": "Thunderous striker"
+  },
+  {
+    "id": "daniel-amartey-2022",
+    "name": "Daniel Amartey",
+    "nation": "Ghana",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 77,
+    "era": "contemporary",
+    "fun_fact": "Versatile defender"
+  },
+  {
+    "id": "richard-kingson-2010",
+    "name": "Richard Kingson",
+    "nation": "Ghana",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2010,
+    "overall_rating": 77,
+    "era": "modern",
+    "fun_fact": "Brave keeper"
+  },
+  {
+    "id": "erling-haaland-2026",
+    "name": "Erling Haaland",
+    "nation": "Norway",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 91,
+    "era": "contemporary",
+    "club": "Manchester City",
+    "fun_fact": "Unstoppable goal machine"
+  },
+  {
+    "id": "martin-degaard-2026",
+    "name": "Martin Ødegaard",
+    "nation": "Norway",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 87,
+    "era": "contemporary",
+    "club": "Arsenal",
+    "fun_fact": "Arsenal captain"
+  },
+  {
+    "id": "ole-gunnar-solskjr-1998",
+    "name": "Ole Gunnar Solskjær",
+    "nation": "Norway",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1998,
+    "overall_rating": 83,
+    "era": "modern",
+    "fun_fact": "Super-sub finisher"
+  },
+  {
+    "id": "tore-andre-flo-1998",
+    "name": "Tore André Flo",
+    "nation": "Norway",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1998,
+    "overall_rating": 80,
+    "era": "modern",
+    "fun_fact": "Lanky target man"
+  },
+  {
+    "id": "alexander-srloth-2026",
+    "name": "Alexander Sørloth",
+    "nation": "Norway",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 82,
+    "era": "contemporary",
+    "club": "Atlético Madrid",
+    "fun_fact": "Powerful forward"
+  },
+  {
+    "id": "antonio-nusa-2026",
+    "name": "Antonio Nusa",
+    "nation": "Norway",
+    "position": [
+      "LW"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "club": "RB Leipzig",
+    "fun_fact": "Direct teenage winger"
+  },
+  {
+    "id": "rjan-nyland-2026",
+    "name": "Ørjan Nyland",
+    "nation": "Norway",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 76,
+    "era": "contemporary",
+    "club": "Sevilla",
+    "fun_fact": "Reliable keeper"
+  },
+  {
+    "id": "kjetil-rekdal-1998",
+    "name": "Kjetil Rekdal",
+    "nation": "Norway",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 1998,
+    "overall_rating": 78,
+    "era": "modern",
+    "fun_fact": "Penalty sank Brazil"
+  },
+  {
+    "id": "mohamed-salah-2018",
+    "name": "Mohamed Salah",
+    "nation": "Egypt",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 89,
+    "era": "contemporary",
+    "club": "Liverpool",
+    "fun_fact": "The Egyptian King"
+  },
+  {
+    "id": "hossam-hassan-1990",
+    "name": "Hossam Hassan",
+    "nation": "Egypt",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 1990,
+    "overall_rating": 82,
+    "era": "classic",
+    "fun_fact": "Egypt's goal legend"
+  },
+  {
+    "id": "omar-marmoush-2026",
+    "name": "Omar Marmoush",
+    "nation": "Egypt",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 83,
+    "era": "contemporary",
+    "club": "Manchester City",
+    "fun_fact": "Pacey forward"
+  },
+  {
+    "id": "mohamed-elneny-2018",
+    "name": "Mohamed Elneny",
+    "nation": "Egypt",
+    "position": [
+      "CDM"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 78,
+    "era": "contemporary",
+    "fun_fact": "Tidy midfielder"
+  },
+  {
+    "id": "trezeguet-2018",
+    "name": "Trezeguet",
+    "nation": "Egypt",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 79,
+    "era": "contemporary",
+    "club": "Trabzonspor",
+    "fun_fact": "Direct winger"
+  },
+  {
+    "id": "ahmed-hegazi-2018",
+    "name": "Ahmed Hegazi",
+    "nation": "Egypt",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 78,
+    "era": "contemporary",
+    "fun_fact": "Aerial defender"
+  },
+  {
+    "id": "essam-el-hadary-2018",
+    "name": "Essam El-Hadary",
+    "nation": "Egypt",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 79,
+    "era": "contemporary",
+    "fun_fact": "Oldest World Cup player"
+  },
+  {
+    "id": "didier-drogba-2010",
+    "name": "Didier Drogba",
+    "nation": "Ivory Coast",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2010,
+    "overall_rating": 89,
+    "era": "modern",
+    "fun_fact": "Ivorian icon"
+  },
+  {
+    "id": "yaya-toure-2010",
+    "name": "Yaya Touré",
+    "nation": "Ivory Coast",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2010,
+    "overall_rating": 88,
+    "era": "modern",
+    "fun_fact": "Dominant midfielder"
+  },
+  {
+    "id": "kolo-toure-2010",
+    "name": "Kolo Touré",
+    "nation": "Ivory Coast",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2010,
+    "overall_rating": 83,
+    "era": "modern",
+    "fun_fact": "Fearless defender"
+  },
+  {
+    "id": "franck-kessie-2026",
+    "name": "Franck Kessié",
+    "nation": "Ivory Coast",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 82,
+    "era": "contemporary",
+    "club": "Al-Ahli",
+    "fun_fact": "Powerful box-to-box"
+  },
+  {
+    "id": "sebastien-haller-2026",
+    "name": "Sébastien Haller",
+    "nation": "Ivory Coast",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 81,
+    "era": "contemporary",
+    "club": "Utrecht",
+    "fun_fact": "Comeback striker"
+  },
+  {
+    "id": "gervinho-2014",
+    "name": "Gervinho",
+    "nation": "Ivory Coast",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 81,
+    "era": "contemporary",
+    "fun_fact": "Searing pace"
+  },
+  {
+    "id": "wilfried-zaha-2026",
+    "name": "Wilfried Zaha",
+    "nation": "Ivory Coast",
+    "position": [
+      "LW"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "club": "Charlotte FC",
+    "fun_fact": "Explosive dribbler"
+  },
+  {
+    "id": "boubacar-barry-2014",
+    "name": "Boubacar Barry",
+    "nation": "Ivory Coast",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 76,
+    "era": "contemporary",
+    "fun_fact": "AFCON-winning keeper"
+  },
+  {
+    "id": "sadio-mane-2018",
+    "name": "Sadio Mané",
+    "nation": "Senegal",
+    "position": [
+      "LW"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 88,
+    "era": "contemporary",
+    "club": "Al-Nassr",
+    "fun_fact": "Lions of Teranga star"
+  },
+  {
+    "id": "kalidou-koulibaly-2018",
+    "name": "Kalidou Koulibaly",
+    "nation": "Senegal",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "Al-Hilal",
+    "fun_fact": "Commanding defender"
+  },
+  {
+    "id": "el-hadji-diouf-2002",
+    "name": "El Hadji Diouf",
+    "nation": "Senegal",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2002,
+    "overall_rating": 84,
+    "era": "modern",
+    "fun_fact": "2002 quarter-final hero"
+  },
+  {
+    "id": "edouard-mendy-2022",
+    "name": "Édouard Mendy",
+    "nation": "Senegal",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 83,
+    "era": "contemporary",
+    "club": "Al-Ahli",
+    "fun_fact": "Champions League winner"
+  },
+  {
+    "id": "nicolas-jackson-2026",
+    "name": "Nicolas Jackson",
+    "nation": "Senegal",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 81,
+    "era": "contemporary",
+    "club": "Chelsea",
+    "fun_fact": "Mobile centre-forward"
+  },
+  {
+    "id": "idrissa-gueye-2018",
+    "name": "Idrissa Gueye",
+    "nation": "Senegal",
+    "position": [
+      "CDM"
+    ],
+    "world_cup_year": 2018,
+    "overall_rating": 81,
+    "era": "contemporary",
+    "club": "Everton",
+    "fun_fact": "Tireless ball-winner"
+  },
+  {
+    "id": "khalilou-fadiga-2002",
+    "name": "Khalilou Fadiga",
+    "nation": "Senegal",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2002,
+    "overall_rating": 80,
+    "era": "modern",
+    "fun_fact": "Creative spark"
+  },
+  {
+    "id": "ismaila-sarr-2022",
+    "name": "Ismaïla Sarr",
+    "nation": "Senegal",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "club": "Crystal Palace",
+    "fun_fact": "Rapid winger"
+  },
+  {
+    "id": "lucas-radebe-1998",
+    "name": "Lucas Radebe",
+    "nation": "South Africa",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 1998,
+    "overall_rating": 82,
+    "era": "modern",
+    "fun_fact": "Leeds captain, the Chief"
+  },
+  {
+    "id": "benni-mccarthy-2002",
+    "name": "Benni McCarthy",
+    "nation": "South Africa",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2002,
+    "overall_rating": 82,
+    "era": "modern",
+    "fun_fact": "Clinical finisher"
+  },
+  {
+    "id": "steven-pienaar-2010",
+    "name": "Steven Pienaar",
+    "nation": "South Africa",
+    "position": [
+      "CM",
+      "CAM"
+    ],
+    "world_cup_year": 2010,
+    "overall_rating": 80,
+    "era": "modern",
+    "fun_fact": "Tireless creator"
+  },
+  {
+    "id": "siphiwe-tshabalala-2010",
+    "name": "Siphiwe Tshabalala",
+    "nation": "South Africa",
+    "position": [
+      "LW"
+    ],
+    "world_cup_year": 2010,
+    "overall_rating": 79,
+    "era": "modern",
+    "fun_fact": "Scored the 2010 opener"
+  },
+  {
+    "id": "itumeleng-khune-2010",
+    "name": "Itumeleng Khune",
+    "nation": "South Africa",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2010,
+    "overall_rating": 78,
+    "era": "modern",
+    "fun_fact": "Sweeper-keeper"
+  },
+  {
+    "id": "aaron-mokoena-2010",
+    "name": "Aaron Mokoena",
+    "nation": "South Africa",
+    "position": [
+      "CDM"
+    ],
+    "world_cup_year": 2010,
+    "overall_rating": 76,
+    "era": "modern",
+    "fun_fact": "Combative anchor"
+  },
+  {
+    "id": "percy-tau-2026",
+    "name": "Percy Tau",
+    "nation": "South Africa",
+    "position": [
+      "RW",
+      "CAM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 78,
+    "era": "contemporary",
+    "club": "Qatar SC",
+    "fun_fact": "Skilful forward"
+  },
+  {
+    "id": "lyle-foster-2026",
+    "name": "Lyle Foster",
+    "nation": "South Africa",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 77,
+    "era": "contemporary",
+    "club": "Burnley",
+    "fun_fact": "Energetic striker"
+  },
+  {
+    "id": "chris-wood-2026",
+    "name": "Chris Wood",
+    "nation": "New Zealand",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "club": "Nottingham Forest",
+    "fun_fact": "Premier League striker"
+  },
+  {
+    "id": "winston-reid-2010",
+    "name": "Winston Reid",
+    "nation": "New Zealand",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2010,
+    "overall_rating": 79,
+    "era": "modern",
+    "fun_fact": "Last-gasp goal vs Slovakia"
+  },
+  {
+    "id": "ryan-nelsen-2010",
+    "name": "Ryan Nelsen",
+    "nation": "New Zealand",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2010,
+    "overall_rating": 78,
+    "era": "modern",
+    "fun_fact": "All Whites captain"
+  },
+  {
+    "id": "tommy-smith-2010",
+    "name": "Tommy Smith",
+    "nation": "New Zealand",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2010,
+    "overall_rating": 75,
+    "era": "modern",
+    "fun_fact": "Reliable defender"
+  },
+  {
+    "id": "marco-rojas-2026",
+    "name": "Marco Rojas",
+    "nation": "New Zealand",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 74,
+    "era": "contemporary",
+    "fun_fact": "Kiwi Messi"
+  },
+  {
+    "id": "matthew-garbett-2026",
+    "name": "Matthew Garbett",
+    "nation": "New Zealand",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 73,
+    "era": "contemporary",
+    "fun_fact": "Tidy midfielder"
+  },
+  {
+    "id": "ben-old-2026",
+    "name": "Ben Old",
+    "nation": "New Zealand",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 73,
+    "era": "contemporary",
+    "club": "St. Mirren",
+    "fun_fact": "Young winger"
+  },
+  {
+    "id": "stefan-marinovic-2026",
+    "name": "Stefan Marinovic",
+    "nation": "New Zealand",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 73,
+    "era": "contemporary",
+    "fun_fact": "Shot-stopper"
+  },
+  {
+    "id": "alphonso-davies-2022",
+    "name": "Alphonso Davies",
+    "nation": "Canada",
+    "position": [
+      "LB",
+      "LW"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 85,
+    "era": "contemporary",
+    "club": "Bayern Munich",
+    "fun_fact": "The Roadrunner"
+  },
+  {
+    "id": "jonathan-david-2022",
+    "name": "Jonathan David",
+    "nation": "Canada",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "Juventus",
+    "fun_fact": "Clinical finisher"
+  },
+  {
+    "id": "stephen-eustaquio-2022",
+    "name": "Stephen Eustáquio",
+    "nation": "Canada",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 79,
+    "era": "contemporary",
+    "club": "FC Porto",
+    "fun_fact": "Deep-lying creator"
+  },
+  {
+    "id": "cyle-larin-2022",
+    "name": "Cyle Larin",
+    "nation": "Canada",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 79,
+    "era": "contemporary",
+    "fun_fact": "Aerial threat"
+  },
+  {
+    "id": "tajon-buchanan-2022",
+    "name": "Tajon Buchanan",
+    "nation": "Canada",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 78,
+    "era": "contemporary",
+    "club": "Inter",
+    "fun_fact": "Direct winger"
+  },
+  {
+    "id": "alistair-johnston-2026",
+    "name": "Alistair Johnston",
+    "nation": "Canada",
+    "position": [
+      "RB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 78,
+    "era": "contemporary",
+    "club": "Celtic",
+    "fun_fact": "Energetic full-back"
+  },
+  {
+    "id": "atiba-hutchinson-2022",
+    "name": "Atiba Hutchinson",
+    "nation": "Canada",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 78,
+    "era": "contemporary",
+    "fun_fact": "Veteran captain"
+  },
+  {
+    "id": "milan-borjan-2022",
+    "name": "Milan Borjan",
+    "nation": "Canada",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 76,
+    "era": "contemporary",
+    "fun_fact": "Vocal keeper"
+  },
+  {
+    "id": "hakan-sukur-2002",
+    "name": "Hakan Şükür",
+    "nation": "Turkey",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2002,
+    "overall_rating": 85,
+    "era": "modern",
+    "fun_fact": "Fastest World Cup goal"
+  },
+  {
+    "id": "arda-guler-2026",
+    "name": "Arda Güler",
+    "nation": "Turkey",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "club": "Real Madrid",
+    "fun_fact": "Turkish prodigy"
+  },
+  {
+    "id": "hakan-calhanoglu-2026",
+    "name": "Hakan Çalhanoğlu",
+    "nation": "Turkey",
+    "position": [
+      "CM",
+      "CDM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 85,
+    "era": "contemporary",
+    "club": "Inter",
+    "fun_fact": "Deep-lying maestro"
+  },
+  {
+    "id": "rustu-recber-2002",
+    "name": "Rüştü Reçber",
+    "nation": "Turkey",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2002,
+    "overall_rating": 84,
+    "era": "modern",
+    "fun_fact": "Wall of 2002"
+  },
+  {
+    "id": "kenan-yldz-2026",
+    "name": "Kenan Yıldız",
+    "nation": "Turkey",
+    "position": [
+      "CAM",
+      "LW"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 82,
+    "era": "contemporary",
+    "club": "Juventus",
+    "fun_fact": "Silky forward"
+  },
+  {
+    "id": "merih-demiral-2026",
+    "name": "Merih Demiral",
+    "nation": "Turkey",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "club": "Al-Ahli",
+    "fun_fact": "Aerial defender"
+  },
+  {
+    "id": "ferdi-kadoglu-2026",
+    "name": "Ferdi Kadıoğlu",
+    "nation": "Turkey",
+    "position": [
+      "LB",
+      "RB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 79,
+    "era": "contemporary",
+    "club": "Brighton",
+    "fun_fact": "Two-way full-back"
+  },
+  {
+    "id": "chancel-mbemba-2026",
+    "name": "Chancel Mbemba",
+    "nation": "DR Congo",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "club": "Lille",
+    "fun_fact": "Commanding defender"
+  },
+  {
+    "id": "yoane-wissa-2026",
+    "name": "Yoane Wissa",
+    "nation": "DR Congo",
+    "position": [
+      "ST",
+      "LW"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 81,
+    "era": "contemporary",
+    "club": "Brentford",
+    "fun_fact": "Sharp finisher"
+  },
+  {
+    "id": "cedric-bakambu-2026",
+    "name": "Cédric Bakambu",
+    "nation": "DR Congo",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 79,
+    "era": "contemporary",
+    "club": "Real Betis",
+    "fun_fact": "Travelled goalscorer"
+  },
+  {
+    "id": "silas-katompa-2026",
+    "name": "Silas Katompa",
+    "nation": "DR Congo",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 79,
+    "era": "contemporary",
+    "club": "VfB Stuttgart",
+    "fun_fact": "Direct winger"
+  },
+  {
+    "id": "theo-bongonda-2026",
+    "name": "Théo Bongonda",
+    "nation": "DR Congo",
+    "position": [
+      "LW"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 77,
+    "era": "contemporary",
+    "club": "Spartak Moscow",
+    "fun_fact": "Tricky dribbler"
+  },
+  {
+    "id": "arthur-masuaku-2026",
+    "name": "Arthur Masuaku",
+    "nation": "DR Congo",
+    "position": [
+      "LB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 77,
+    "era": "contemporary",
+    "club": "Beşiktaş",
+    "fun_fact": "Attacking full-back"
+  },
+  {
+    "id": "samuel-moutoussamy-2026",
+    "name": "Samuel Moutoussamy",
+    "nation": "DR Congo",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 75,
+    "era": "contemporary",
+    "club": "Nantes",
+    "fun_fact": "Tidy midfielder"
+  },
+  {
+    "id": "lionel-mpasi-2026",
+    "name": "Lionel Mpasi",
+    "nation": "DR Congo",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 74,
+    "era": "contemporary",
+    "club": "Rodez",
+    "fun_fact": "Penalty hero"
+  },
+  {
+    "id": "younis-mahmoud-2007",
+    "name": "Younis Mahmoud",
+    "nation": "Iraq",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2007,
+    "overall_rating": 82,
+    "era": "modern",
+    "fun_fact": "Asian Cup-winning captain"
+  },
+  {
+    "id": "ali-adnan-2026",
+    "name": "Ali Adnan",
+    "nation": "Iraq",
+    "position": [
+      "LB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 77,
+    "era": "contemporary",
+    "fun_fact": "Attacking full-back"
+  },
+  {
+    "id": "aymen-hussein-2026",
+    "name": "Aymen Hussein",
+    "nation": "Iraq",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 76,
+    "era": "contemporary",
+    "fun_fact": "Target forward"
+  },
+  {
+    "id": "zidane-iqbal-2026",
+    "name": "Zidane Iqbal",
+    "nation": "Iraq",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 75,
+    "era": "contemporary",
+    "club": "Utrecht",
+    "fun_fact": "Press-resistant midfielder"
+  },
+  {
+    "id": "amir-al-ammari-2026",
+    "name": "Amir Al-Ammari",
+    "nation": "Iraq",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 74,
+    "era": "contemporary",
+    "club": "Halmstad",
+    "fun_fact": "Box-to-box runner"
+  },
+  {
+    "id": "rebin-sulaka-2026",
+    "name": "Rebin Sulaka",
+    "nation": "Iraq",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 73,
+    "era": "contemporary",
+    "fun_fact": "Aerial defender"
+  },
+  {
+    "id": "ibrahim-bayesh-2026",
+    "name": "Ibrahim Bayesh",
+    "nation": "Iraq",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 74,
+    "era": "contemporary",
+    "fun_fact": "Creative spark"
+  },
+  {
+    "id": "jalal-hassan-2026",
+    "name": "Jalal Hassan",
+    "nation": "Iraq",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 74,
+    "era": "contemporary",
+    "fun_fact": "Reliable keeper"
+  },
+  {
+    "id": "adalberto-carrasquilla-2026",
+    "name": "Adalberto Carrasquilla",
+    "nation": "Panama",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 78,
+    "era": "contemporary",
+    "club": "Houston Dynamo",
+    "fun_fact": "Tempo-setting midfielder"
+  },
+  {
+    "id": "anibal-godoy-2026",
+    "name": "Aníbal Godoy",
+    "nation": "Panama",
+    "position": [
+      "CDM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 76,
+    "era": "contemporary",
+    "club": "San Jose Earthquakes",
+    "fun_fact": "Veteran anchor"
+  },
+  {
+    "id": "michael-murillo-2026",
+    "name": "Michael Murillo",
+    "nation": "Panama",
+    "position": [
+      "RB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 77,
+    "era": "contemporary",
+    "club": "Olympique Marseille",
+    "fun_fact": "Energetic full-back"
+  },
+  {
+    "id": "jose-luis-rodriguez-2026",
+    "name": "José Luis Rodríguez",
+    "nation": "Panama",
+    "position": [
+      "LW"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 76,
+    "era": "contemporary",
+    "fun_fact": "Pacey winger"
+  },
+  {
+    "id": "ismael-diaz-2026",
+    "name": "Ismael Díaz",
+    "nation": "Panama",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 76,
+    "era": "contemporary",
+    "fun_fact": "Sharp forward"
+  },
+  {
+    "id": "fidel-escobar-2026",
+    "name": "Fidel Escobar",
+    "nation": "Panama",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 75,
+    "era": "contemporary",
+    "fun_fact": "Aerial defender"
+  },
+  {
+    "id": "orlando-mosquera-2026",
+    "name": "Orlando Mosquera",
+    "nation": "Panama",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 75,
+    "era": "contemporary",
+    "fun_fact": "Shot-stopper"
+  },
+  {
+    "id": "cecilio-waterman-2026",
+    "name": "Cecilio Waterman",
+    "nation": "Panama",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 74,
+    "era": "contemporary",
+    "fun_fact": "Hard-working striker"
+  },
+  {
+    "id": "akram-afif-2022",
+    "name": "Akram Afif",
+    "nation": "Qatar",
+    "position": [
+      "RW",
+      "CAM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 79,
+    "era": "contemporary",
+    "club": "Al-Sadd",
+    "fun_fact": "Asian Cup star"
+  },
+  {
+    "id": "almoez-ali-2022",
+    "name": "Almoez Ali",
+    "nation": "Qatar",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 78,
+    "era": "contemporary",
+    "club": "Al-Duhail",
+    "fun_fact": "Asian Cup record scorer"
+  },
+  {
+    "id": "hassan-al-haydos-2022",
+    "name": "Hassan Al-Haydos",
+    "nation": "Qatar",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 76,
+    "era": "contemporary",
+    "club": "Al-Sadd",
+    "fun_fact": "Long-serving captain"
+  },
+  {
+    "id": "abdelkarim-hassan-2022",
+    "name": "Abdelkarim Hassan",
+    "nation": "Qatar",
+    "position": [
+      "LB"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 75,
+    "era": "contemporary",
+    "club": "Al-Arabi",
+    "fun_fact": "Attacking full-back"
+  },
+  {
+    "id": "boualem-khoukhi-2022",
+    "name": "Boualem Khoukhi",
+    "nation": "Qatar",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 74,
+    "era": "contemporary",
+    "club": "Al-Sadd",
+    "fun_fact": "Set-piece threat"
+  },
+  {
+    "id": "karim-boudiaf-2022",
+    "name": "Karim Boudiaf",
+    "nation": "Qatar",
+    "position": [
+      "CDM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 73,
+    "era": "contemporary",
+    "club": "Al-Gharafa",
+    "fun_fact": "Defensive anchor"
+  },
+  {
+    "id": "saad-al-sheeb-2022",
+    "name": "Saad Al-Sheeb",
+    "nation": "Qatar",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 74,
+    "era": "contemporary",
+    "club": "Al-Sadd",
+    "fun_fact": "Experienced keeper"
+  },
+  {
+    "id": "edin-dzeko-2014",
+    "name": "Edin Džeko",
+    "nation": "Bosnia and Herzegovina",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 85,
+    "era": "contemporary",
+    "club": "Fenerbahçe",
+    "fun_fact": "Bosnian Diamond"
+  },
+  {
+    "id": "miralem-pjanic-2014",
+    "name": "Miralem Pjanić",
+    "nation": "Bosnia and Herzegovina",
+    "position": [
+      "CM",
+      "CAM"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 84,
+    "era": "contemporary",
+    "fun_fact": "Set-piece maestro"
+  },
+  {
+    "id": "sead-kolasinac-2014",
+    "name": "Sead Kolašinac",
+    "nation": "Bosnia and Herzegovina",
+    "position": [
+      "LB"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 79,
+    "era": "contemporary",
+    "club": "Atalanta",
+    "fun_fact": "Powerful wing-back"
+  },
+  {
+    "id": "asmir-begovic-2014",
+    "name": "Asmir Begović",
+    "nation": "Bosnia and Herzegovina",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "fun_fact": "Giant shot-stopper"
+  },
+  {
+    "id": "ermedin-demirovic-2026",
+    "name": "Ermedin Demirović",
+    "nation": "Bosnia and Herzegovina",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 79,
+    "era": "contemporary",
+    "club": "VfB Stuttgart",
+    "fun_fact": "Mobile forward"
+  },
+  {
+    "id": "amar-dedic-2026",
+    "name": "Amar Dedić",
+    "nation": "Bosnia and Herzegovina",
+    "position": [
+      "RB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 77,
+    "era": "contemporary",
+    "club": "Benfica",
+    "fun_fact": "Modern full-back"
+  },
+  {
+    "id": "senad-lulic-2014",
+    "name": "Senad Lulić",
+    "nation": "Bosnia and Herzegovina",
+    "position": [
+      "LW"
+    ],
+    "world_cup_year": 2014,
+    "overall_rating": 78,
+    "era": "contemporary",
+    "fun_fact": "Tireless runner"
+  },
+  {
+    "id": "frantzdy-pierrot-2026",
+    "name": "Frantzdy Pierrot",
+    "nation": "Haiti",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 77,
+    "era": "contemporary",
+    "club": "Gaziantep",
+    "fun_fact": "Powerful target man"
+  },
+  {
+    "id": "duckens-nazon-2026",
+    "name": "Duckens Nazon",
+    "nation": "Haiti",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 75,
+    "era": "contemporary",
+    "fun_fact": "Travelled goalscorer"
+  },
+  {
+    "id": "derrick-etienne-2026",
+    "name": "Derrick Etienne",
+    "nation": "Haiti",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 76,
+    "era": "contemporary",
+    "club": "Columbus Crew",
+    "fun_fact": "Direct winger"
+  },
+  {
+    "id": "danley-jean-jacques-2026",
+    "name": "Danley Jean Jacques",
+    "nation": "Haiti",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 75,
+    "era": "contemporary",
+    "club": "Lorient",
+    "fun_fact": "Combative midfielder"
+  },
+  {
+    "id": "zachary-herivaux-2026",
+    "name": "Zachary Herivaux",
+    "nation": "Haiti",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 73,
+    "era": "contemporary",
+    "fun_fact": "Tidy passer"
+  },
+  {
+    "id": "ricardo-ade-2026",
+    "name": "Ricardo Adé",
+    "nation": "Haiti",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 73,
+    "era": "contemporary",
+    "fun_fact": "Aerial defender"
+  },
+  {
+    "id": "andrew-jean-baptiste-2026",
+    "name": "Andrew Jean-Baptiste",
+    "nation": "Haiti",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 72,
+    "era": "contemporary",
+    "fun_fact": "Composed defender"
+  },
+  {
+    "id": "johny-placide-2026",
+    "name": "Johny Placide",
+    "nation": "Haiti",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 74,
+    "era": "contemporary",
+    "fun_fact": "Experienced keeper"
+  },
+  {
+    "id": "leandro-bacuna-2026",
+    "name": "Leandro Bacuna",
+    "nation": "Curaçao",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 76,
+    "era": "contemporary",
+    "fun_fact": "Versatile midfielder"
+  },
+  {
+    "id": "juninho-bacuna-2026",
+    "name": "Juninho Bacuna",
+    "nation": "Curaçao",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 75,
+    "era": "contemporary",
+    "club": "Birmingham City",
+    "fun_fact": "Box-to-box runner"
+  },
+  {
+    "id": "tahith-chong-2026",
+    "name": "Tahith Chong",
+    "nation": "Curaçao",
+    "position": [
+      "RW",
+      "CAM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 76,
+    "era": "contemporary",
+    "club": "Sheffield United",
+    "fun_fact": "Tricky winger"
+  },
+  {
+    "id": "jurgen-locadia-2026",
+    "name": "Jurgen Locadia",
+    "nation": "Curaçao",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 75,
+    "era": "contemporary",
+    "fun_fact": "Physical forward"
+  },
+  {
+    "id": "rangelo-janga-2026",
+    "name": "Rangelo Janga",
+    "nation": "Curaçao",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 73,
+    "era": "contemporary",
+    "fun_fact": "Mobile striker"
+  },
+  {
+    "id": "cuco-martina-2026",
+    "name": "Cuco Martina",
+    "nation": "Curaçao",
+    "position": [
+      "RB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 73,
+    "era": "contemporary",
+    "fun_fact": "Experienced full-back"
+  },
+  {
+    "id": "darryl-lachman-2026",
+    "name": "Darryl Lachman",
+    "nation": "Curaçao",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 73,
+    "era": "contemporary",
+    "fun_fact": "Aerial defender"
+  },
+  {
+    "id": "eloy-room-2026",
+    "name": "Eloy Room",
+    "nation": "Curaçao",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 74,
+    "era": "contemporary",
+    "club": "Columbus Crew",
+    "fun_fact": "Commanding keeper"
+  },
+  {
+    "id": "ryan-mendes-2026",
+    "name": "Ryan Mendes",
+    "nation": "Cape Verde",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 77,
+    "era": "contemporary",
+    "fun_fact": "Creative captain"
+  },
+  {
+    "id": "garry-rodrigues-2026",
+    "name": "Garry Rodrigues",
+    "nation": "Cape Verde",
+    "position": [
+      "LW"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 77,
+    "era": "contemporary",
+    "fun_fact": "Skilful winger"
+  },
+  {
+    "id": "jovane-cabral-2026",
+    "name": "Jovane Cabral",
+    "nation": "Cape Verde",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 76,
+    "era": "contemporary",
+    "fun_fact": "Direct forward"
+  },
+  {
+    "id": "bebe-2026",
+    "name": "Bebé",
+    "nation": "Cape Verde",
+    "position": [
+      "ST",
+      "LW"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 75,
+    "era": "contemporary",
+    "club": "Rayo Vallecano",
+    "fun_fact": "Powerful runner"
+  },
+  {
+    "id": "kenny-rocha-santos-2026",
+    "name": "Kenny Rocha Santos",
+    "nation": "Cape Verde",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 74,
+    "era": "contemporary",
+    "fun_fact": "Tidy midfielder"
+  },
+  {
+    "id": "roberto-lopes-2026",
+    "name": "Roberto Lopes",
+    "nation": "Cape Verde",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 76,
+    "era": "contemporary",
+    "club": "Shamrock Rovers",
+    "fun_fact": "Rock at the back"
+  },
+  {
+    "id": "stopira-2026",
+    "name": "Stopira",
+    "nation": "Cape Verde",
+    "position": [
+      "LB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 74,
+    "era": "contemporary",
+    "fun_fact": "Veteran full-back"
+  },
+  {
+    "id": "vozinha-2026",
+    "name": "Vozinha",
+    "nation": "Cape Verde",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 74,
+    "era": "contemporary",
+    "fun_fact": "Shot-stopper"
+  },
+  {
+    "id": "mousa-al-tamari-2026",
+    "name": "Mousa Al-Tamari",
+    "nation": "Jordan",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "club": "Montpellier",
+    "fun_fact": "Jordan's gem"
+  },
+  {
+    "id": "yazan-al-naimat-2026",
+    "name": "Yazan Al-Naimat",
+    "nation": "Jordan",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 76,
+    "era": "contemporary",
+    "fun_fact": "Sharp finisher"
+  },
+  {
+    "id": "ali-olwan-2026",
+    "name": "Ali Olwan",
+    "nation": "Jordan",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 75,
+    "era": "contemporary",
+    "fun_fact": "Mobile striker"
+  },
+  {
+    "id": "noor-al-rawabdeh-2026",
+    "name": "Noor Al-Rawabdeh",
+    "nation": "Jordan",
+    "position": [
+      "LW"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 74,
+    "era": "contemporary",
+    "fun_fact": "Energetic winger"
+  },
+  {
+    "id": "mahmoud-al-mardi-2026",
+    "name": "Mahmoud Al-Mardi",
+    "nation": "Jordan",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 73,
+    "era": "contemporary",
+    "fun_fact": "Combative midfielder"
+  },
+  {
+    "id": "ehsan-haddad-2026",
+    "name": "Ehsan Haddad",
+    "nation": "Jordan",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 73,
+    "era": "contemporary",
+    "fun_fact": "Aerial defender"
+  },
+  {
+    "id": "salem-al-ajalin-2026",
+    "name": "Salem Al-Ajalin",
+    "nation": "Jordan",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 72,
+    "era": "contemporary",
+    "fun_fact": "Composed defender"
+  },
+  {
+    "id": "yazeed-abulaila-2026",
+    "name": "Yazeed Abulaila",
+    "nation": "Jordan",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 73,
+    "era": "contemporary",
+    "fun_fact": "Reliable keeper"
+  },
+  {
+    "id": "eldor-shomurodov-2026",
+    "name": "Eldor Shomurodov",
+    "nation": "Uzbekistan",
+    "position": [
+      "ST"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "club": "Roma",
+    "fun_fact": "Talisman striker"
+  },
+  {
+    "id": "abdukodir-khusanov-2026",
+    "name": "Abdukodir Khusanov",
+    "nation": "Uzbekistan",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "club": "Manchester City",
+    "fun_fact": "Rising defender"
+  },
+  {
+    "id": "abbosbek-fayzullaev-2026",
+    "name": "Abbosbek Fayzullaev",
+    "nation": "Uzbekistan",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 78,
+    "era": "contemporary",
+    "club": "CSKA Moscow",
+    "fun_fact": "Young playmaker"
+  },
+  {
+    "id": "jaloliddin-masharipov-2026",
+    "name": "Jaloliddin Masharipov",
+    "nation": "Uzbekistan",
+    "position": [
+      "CAM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 76,
+    "era": "contemporary",
+    "fun_fact": "Creative winger"
+  },
+  {
+    "id": "otabek-shukurov-2026",
+    "name": "Otabek Shukurov",
+    "nation": "Uzbekistan",
+    "position": [
+      "CM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 75,
+    "era": "contemporary",
+    "fun_fact": "Deep-lying midfielder"
+  },
+  {
+    "id": "rustam-ashurmatov-2026",
+    "name": "Rustam Ashurmatov",
+    "nation": "Uzbekistan",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 74,
+    "era": "contemporary",
+    "fun_fact": "Composed defender"
+  },
+  {
+    "id": "oston-urunov-2026",
+    "name": "Oston Urunov",
+    "nation": "Uzbekistan",
+    "position": [
+      "RW"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 74,
+    "era": "contemporary",
+    "fun_fact": "Direct winger"
+  },
+  {
+    "id": "utkir-yusupov-2026",
+    "name": "Utkir Yusupov",
+    "nation": "Uzbekistan",
+    "position": [
+      "GK"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 73,
+    "era": "contemporary",
+    "fun_fact": "Shot-stopper"
+  },
+  {
+    "id": "sergino-dest-2022",
+    "name": "Sergiño Dest",
+    "nation": "United States",
+    "position": [
+      "RB"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 80,
+    "era": "contemporary",
+    "club": "PSV",
+    "fun_fact": "Attacking full-back"
+  },
+  {
+    "id": "vladimir-coufal-2026",
+    "name": "Vladimír Coufal",
+    "nation": "Czechia",
+    "position": [
+      "RB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 79,
+    "era": "contemporary",
+    "club": "West Ham United",
+    "fun_fact": "Tenacious full-back"
+  },
+  {
+    "id": "saeid-ezatolahi-2026",
+    "name": "Saeid Ezatolahi",
+    "nation": "Iran",
+    "position": [
+      "CDM"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 76,
+    "era": "contemporary",
+    "fun_fact": "Defensive anchor"
+  },
+  {
+    "id": "mohamed-kanno-2022",
+    "name": "Mohamed Kanno",
+    "nation": "Saudi Arabia",
+    "position": [
+      "CDM",
+      "CM"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 76,
+    "era": "contemporary",
+    "club": "Al-Hilal",
+    "fun_fact": "Box-to-box anchor"
+  },
+  {
+    "id": "harry-souttar-2022",
+    "name": "Harry Souttar",
+    "nation": "Australia",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2022,
+    "overall_rating": 79,
+    "era": "contemporary",
+    "club": "Sheffield United",
+    "fun_fact": "Towering defender"
+  },
+  {
+    "id": "william-troost-ekong-2026",
+    "name": "William Troost-Ekong",
+    "nation": "Nigeria",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 79,
+    "era": "contemporary",
+    "club": "Al-Kholood",
+    "fun_fact": "Commanding captain"
+  },
+  {
+    "id": "kristoffer-ajer-2026",
+    "name": "Kristoffer Ajer",
+    "nation": "Norway",
+    "position": [
+      "CB"
+    ],
+    "world_cup_year": 2026,
+    "overall_rating": 78,
+    "era": "contemporary",
+    "club": "Brentford",
+    "fun_fact": "Mobile defender"
+  }
 ]

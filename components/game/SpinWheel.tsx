@@ -20,6 +20,9 @@ export function SpinWheel({ onSpin, onLanded, disabled, label }: SpinWheelProps)
     const [rotation, setRotation] = React.useState(0);
     const [spinning, setSpinning] = React.useState(false);
     const segment = 360 / NATIONS.length;
+    // The full nation set is large, so shrink the flags as the wheel fills up.
+    const flagSize = NATIONS.length > 36 ? 'text-[10px]' : NATIONS.length > 20 ? 'text-xs' : 'text-lg';
+    const flagRadius = NATIONS.length > 20 ? 118 : 105;
 
     const handleSpin = () => {
         if (spinning || disabled) return;
@@ -63,9 +66,9 @@ export function SpinWheel({ onSpin, onLanded, disabled, label }: SpinWheelProps)
                         return (
                             <span
                                 key={nation.id}
-                                className="absolute left-1/2 top-1/2 text-lg"
+                                className={cn('absolute left-1/2 top-1/2', flagSize)}
                                 style={{
-                                    transform: `rotate(${angle}deg) translateY(-105px) rotate(-${angle}deg)`,
+                                    transform: `rotate(${angle}deg) translateY(-${flagRadius}px) rotate(-${angle}deg)`,
                                 }}
                                 aria-hidden
                             >

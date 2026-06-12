@@ -12,6 +12,8 @@ export interface Player {
     goals?: number;
     assists?: number;
     clean_sheets?: number;
+    /** Club/league context at the time — Twelve-style card detail. */
+    club?: string;
     era: Era;
     fun_fact?: string;
 }
