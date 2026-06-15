@@ -6,6 +6,7 @@ import { PitchView } from './PitchView';
 import { SpinWheel } from './SpinWheel';
 import { PlayerCard } from './PlayerCard';
 import { useGame } from '@/lib/game/store';
+import { playSound } from '@/lib/game/sound';
 import { getFormation } from '@/lib/game/formations';
 import {
     eligiblePlayers,
@@ -48,6 +49,7 @@ export function DraftScreen() {
     const handlePick = (player: Player) => {
         const fitting = fittingSlots(player, formation.slots, state.squad);
         if (fitting.length === 1) {
+            playSound('pick');
             dispatch({ type: 'pick', player, slotId: fitting[0].id });
         } else {
             setPlacing(player);
@@ -57,6 +59,7 @@ export function DraftScreen() {
     const handleSlotClick = (slotId: string) => {
         if (!placing) return;
         if (!placingSlots.some((s) => s.id === slotId)) return;
+        playSound('pick');
         dispatch({ type: 'pick', player: placing, slotId });
         setPlacing(null);
     };
@@ -68,6 +71,7 @@ export function DraftScreen() {
             return;
         }
         const slot = formation.slots.find((s) => s.id === g.slotId);
+        playSound('gamble');
         dispatch({ type: 'gamble', player: g.player, slotId: g.slotId, rngState: g.rngState });
         setGambleMsg(
             `🎲 Gambled — drafted ${g.player.name} (${g.player.overall_rating}) at ${slot?.label ?? 'an open slot'}.`,

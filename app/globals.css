@@ -92,6 +92,21 @@
     }
 }
 
+@layer base {
+    /* Respect the OS "reduce motion" setting: neutralise transitions and the
+       larger keyframe animations so nothing flies, pulses or spins. */
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.001ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.001ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+}
+
 @layer utilities {
     .scrollbar-hide::-webkit-scrollbar {
         display: none;

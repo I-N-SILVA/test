@@ -4,6 +4,7 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { cn, triggerHaptic } from '@/lib/utils';
 import { useGame } from '@/lib/game/store';
+import { playSound } from '@/lib/game/sound';
 import { ROUNDS, QUALIFICATION_POINTS, groupPoints } from '@/lib/game/engine';
 
 export function SimScreen() {
@@ -19,9 +20,16 @@ export function SimScreen() {
     const lostMatch = !!last && (last.outcome === 'loss' || last.wonOnPens === false);
 
     React.useEffect(() => {
-        if (last?.outcome === 'win') triggerHaptic('success');
-        if (last?.outcome === 'loss') triggerHaptic('error');
-    }, [last]);
+        if (!last) return;
+        const won = last.outcome === 'win' || last.wonOnPens === true;
+        if (won) {
+            triggerHaptic('success');
+            playSound('win');
+        } else if (lostMatch) {
+            triggerHaptic('error');
+            playSound('lose');
+        }
+    }, [last, lostMatch]);
 
     return (
         <div className="mx-auto flex w-full max-w-xl flex-col items-center gap-8">
@@ -76,12 +84,12 @@ export function SimScreen() {
                 >
                     <div className="flex flex-col items-center gap-4 p-8">
                         <p className="caption-mono text-white/50">{last.round}</p>
-                        <div className="flex items-baseline gap-5">
-                            <span className="text-xl font-semibold">YOU</span>
-                            <span className="display-caps animate-score-pop text-6xl text-flame-1">
+                        <div className="flex flex-wrap items-baseline justify-center gap-x-4 gap-y-1">
+                            <span className="text-base font-semibold sm:text-xl">YOU</span>
+                            <span className="display-caps animate-score-pop text-5xl text-flame-1 sm:text-6xl">
                                 {last.goalsFor}–{last.goalsAgainst}
                             </span>
-                            <span className="text-xl font-semibold">
+                            <span className="text-base font-semibold sm:text-xl">
                                 {last.opponentFlag} {last.opponent}
                             </span>
                         </div>

@@ -7,6 +7,8 @@ import { useGame } from '@/lib/game/store';
 import { getFormation } from '@/lib/game/formations';
 import { isPerfectRun, squadAverage, starRating } from '@/lib/game/engine';
 import { renderShareCard } from '@/lib/game/shareCard';
+import { playSound } from '@/lib/game/sound';
+import { burstConfetti } from '@/lib/game/confetti';
 
 export function ResultsScreen() {
     const { state, dispatch } = useGame();
@@ -29,6 +31,18 @@ export function ResultsScreen() {
             return acc;
         }, {});
     const bestPlayer = Object.entries(motmCounts).sort((a, b) => b[1] - a[1])[0]?.[0] ?? '–';
+    const bestPlayerId = players.find((p) => p.name === bestPlayer)?.id;
+
+    // Celebrate a championship / Perfect Run once, on arrival.
+    const celebrated = React.useRef(false);
+    React.useEffect(() => {
+        if (celebrated.current) return;
+        celebrated.current = true;
+        if (perfect || state.champion) {
+            playSound('fanfare');
+            burstConfetti(perfect ? 3200 : 2600);
+        }
+    }, [perfect, state.champion]);
 
     const headline = perfect
         ? 'THE PERFECT RUN'
@@ -164,7 +178,18 @@ export function ResultsScreen() {
                 </p>
             </div>
 
-            <PitchView formation={formation} squad={state.squad} showRatings className="max-w-sm" />
+            <div className="flex w-full flex-col items-center gap-2">
+                <PitchView
+                    formation={formation}
+                    squad={state.squad}
+                    showRatings
+                    highlightPlayerId={bestPlayerId}
+                    className="max-w-sm"
+                />
+                {bestPlayerId && (
+                    <p className="caption-mono text-white/40">★ best player of the run</p>
+                )}
+            </div>
 
             <dl className="grid w-full grid-cols-2 gap-px overflow-hidden rounded-lg border border-white/15 bg-white/15 sm:grid-cols-4">
                 {[

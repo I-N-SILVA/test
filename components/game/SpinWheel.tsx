@@ -1,7 +1,8 @@
 'use client';
 
 import * as React from 'react';
-import { cn, triggerHaptic } from '@/lib/utils';
+import { cn, prefersReducedMotion, triggerHaptic } from '@/lib/utils';
+import { playSound } from '@/lib/game/sound';
 
 export interface WheelSegment {
     id: string;
@@ -32,6 +33,8 @@ const SEGMENT_COLORS = ['#0A0A0A', '#1C1C1C', '#101010', '#262626'];
 export function SpinWheel<T>({ segments, onSpin, onLanded, disabled, label }: SpinWheelProps<T>) {
     const [rotation, setRotation] = React.useState(0);
     const [spinning, setSpinning] = React.useState(false);
+    // Snap the spin short when the user prefers reduced motion.
+    const spinMs = React.useMemo(() => (prefersReducedMotion() ? 350 : 3000), []);
     const count = Math.max(segments.length, 1);
     const segment = 360 / count;
     // Scale the label as the wheel fills up; few segments get readable text.
@@ -57,12 +60,14 @@ export function SpinWheel<T>({ segments, onSpin, onLanded, disabled, label }: Sp
             360 * (4 + Math.floor(Math.random() * 3)) + (360 - index * segment - segment / 2);
         setSpinning(true);
         triggerHaptic('light');
+        playSound('spin');
         setRotation((prev) => prev + target - (prev % 360));
         window.setTimeout(() => {
             setSpinning(false);
             triggerHaptic('success');
+            playSound('land');
             onLanded(res.payload);
-        }, 3000);
+        }, spinMs);
     };
 
     return (
@@ -75,7 +80,7 @@ export function SpinWheel<T>({ segments, onSpin, onLanded, disabled, label }: Sp
                     style={{
                         transform: `rotate(${rotation}deg)`,
                         transition: spinning
-                            ? 'transform 3s cubic-bezier(0.12, 0.8, 0.2, 1)'
+                            ? `transform ${spinMs}ms cubic-bezier(0.12, 0.8, 0.2, 1)`
                             : 'none',
                         background: `conic-gradient(${segments
                             .map(

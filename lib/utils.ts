@@ -20,3 +20,9 @@ export function triggerHaptic(type: 'light' | 'medium' | 'heavy' | 'success' | '
     };
     navigator.vibrate(patterns[type]);
 }
+
+/** True when the user has asked the OS to minimise animation. */
+export function prefersReducedMotion(): boolean {
+    if (typeof window === 'undefined' || !window.matchMedia) return false;
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}

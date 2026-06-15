@@ -9,6 +9,8 @@ interface PitchViewProps {
     squad: Record<string, Player>;
     showRatings: boolean;
     highlightSlotIds?: string[];
+    /** Player to mark with a star (e.g. the run's best player). */
+    highlightPlayerId?: string;
     onSlotClick?: (slotId: string) => void;
     className?: string;
 }
@@ -19,6 +21,7 @@ export function PitchView({
     squad,
     showRatings,
     highlightSlotIds = [],
+    highlightPlayerId,
     onSlotClick,
     className,
 }: PitchViewProps) {
@@ -39,6 +42,7 @@ export function PitchView({
             {formation.slots.map((slot) => {
                 const player = squad[slot.id];
                 const highlighted = highlightSlotIds.includes(slot.id);
+                const isStar = !!highlightPlayerId && player?.id === highlightPlayerId;
                 return (
                     <button
                         key={slot.id}
@@ -60,6 +64,8 @@ export function PitchView({
                                     : 'border-dashed border-white/30 bg-white/[0.03] text-white/50',
                                 highlighted &&
                                     'animate-pulse border-flame-1 ring-2 ring-flame-1/60',
+                                isStar &&
+                                    'border-flame-1 ring-2 ring-flame-1 ring-offset-2 ring-offset-[#0a0a0a]',
                             )}
                         >
                             {player ? (
@@ -71,8 +77,12 @@ export function PitchView({
                         {player && (
                             <span
                                 title={player.name}
-                                className="max-w-[84px] truncate rounded-sm bg-black/80 px-1.5 py-px font-mono text-[9px] text-white sm:text-[10px]"
+                                className={cn(
+                                    'max-w-[84px] truncate rounded-sm bg-black/80 px-1.5 py-px font-mono text-[9px] text-white sm:text-[10px]',
+                                    isStar && 'text-flame-1',
+                                )}
                             >
+                                {isStar && '★ '}
                                 {player.name.split(' ').slice(-1)[0]}
                                 {showRatings && (
                                     <span className="ml-1 text-flame-1">{player.overall_rating}</span>
