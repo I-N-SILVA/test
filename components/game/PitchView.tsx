@@ -69,7 +69,10 @@ export function PitchView({
                             )}
                         </span>
                         {player && (
-                            <span className="max-w-[76px] truncate rounded-sm bg-black/80 px-1.5 py-px font-mono text-[9px] text-white sm:text-[10px]">
+                            <span
+                                title={player.name}
+                                className="max-w-[84px] truncate rounded-sm bg-black/80 px-1.5 py-px font-mono text-[9px] text-white sm:text-[10px]"
+                            >
                                 {player.name.split(' ').slice(-1)[0]}
                                 {showRatings && (
                                     <span className="ml-1 text-flame-1">{player.overall_rating}</span>

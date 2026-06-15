@@ -1,5 +1,6 @@
 'use client';
 
+import * as React from 'react';
 import Link from 'next/link';
 import { GameProvider, useGame } from '@/lib/game/store';
 import { SetupScreen } from '@/components/game/SetupScreen';
@@ -17,6 +18,7 @@ const PHASES: { id: string; label: string }[] = [
 function GameFlow() {
     const { state, dispatch } = useGame();
     const phaseIndex = PHASES.findIndex((p) => p.id === state.phase);
+    const [confirmAbandon, setConfirmAbandon] = React.useState(false);
 
     return (
         <div className="dark min-h-screen bg-obsidian bg-grid-ink text-white">
@@ -69,15 +71,39 @@ function GameFlow() {
                         <span className="caption-mono text-flame-1 sm:hidden">
                             {PHASES[phaseIndex]?.label}
                         </span>
-                        {state.phase !== 'setup' && (
-                            <button
-                                type="button"
-                                onClick={() => dispatch({ type: 'reset' })}
-                                className="caption-mono rounded-full border border-white/20 px-3 py-1.5 transition-colors hover:border-flame-3 hover:text-flame-3"
-                            >
-                                Abandon
-                            </button>
-                        )}
+                        {state.phase !== 'setup' &&
+                            (confirmAbandon ? (
+                                <span className="flex items-center gap-2">
+                                    <span className="caption-mono hidden text-white/60 sm:inline">
+                                        Lose this run?
+                                    </span>
+                                    <button
+                                        type="button"
+                                        onClick={() => {
+                                            dispatch({ type: 'reset' });
+                                            setConfirmAbandon(false);
+                                        }}
+                                        className="caption-mono rounded-full border border-flame-3 bg-flame-3/10 px-3 py-1.5 text-flame-3 transition-colors hover:bg-flame-3 hover:text-white"
+                                    >
+                                        Abandon
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={() => setConfirmAbandon(false)}
+                                        className="caption-mono rounded-full border border-white/20 px-3 py-1.5 transition-colors hover:border-white/50"
+                                    >
+                                        Keep playing
+                                    </button>
+                                </span>
+                            ) : (
+                                <button
+                                    type="button"
+                                    onClick={() => setConfirmAbandon(true)}
+                                    className="caption-mono rounded-full border border-white/20 px-3 py-1.5 transition-colors hover:border-flame-3 hover:text-flame-3"
+                                >
+                                    Abandon
+                                </button>
+                            ))}
                     </div>
                 </div>
             </header>

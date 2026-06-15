@@ -19,10 +19,15 @@ export function ResultsScreen() {
     const goalsFor = state.matches.reduce((s, m) => s + m.goalsFor, 0);
     const cleanSheets = state.matches.filter((m) => m.goalsAgainst === 0).length;
     const avgRating = Math.round(squadAverage(players));
-    const motmCounts = state.matches.reduce<Record<string, number>>((acc, m) => {
-        acc[m.motm] = (acc[m.motm] ?? 0) + 1;
-        return acc;
-    }, {});
+    // Only matches you didn't lose award one of your players MOTM (a defeat's
+    // standout belongs to the opposition), so the run's best player is drawn
+    // from wins and draws.
+    const motmCounts = state.matches
+        .filter((m) => m.outcome !== 'loss' && m.wonOnPens !== false)
+        .reduce<Record<string, number>>((acc, m) => {
+            acc[m.motm] = (acc[m.motm] ?? 0) + 1;
+            return acc;
+        }, {});
     const bestPlayer = Object.entries(motmCounts).sort((a, b) => b[1] - a[1])[0]?.[0] ?? '–';
 
     const headline = perfect

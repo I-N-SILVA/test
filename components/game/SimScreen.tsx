@@ -4,7 +4,7 @@ import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { cn, triggerHaptic } from '@/lib/utils';
 import { useGame } from '@/lib/game/store';
-import { ROUNDS, groupPoints } from '@/lib/game/engine';
+import { ROUNDS, QUALIFICATION_POINTS, groupPoints } from '@/lib/game/engine';
 
 export function SimScreen() {
     const { state, dispatch } = useGame();
@@ -12,6 +12,11 @@ export function SimScreen() {
     const nextRound = ROUNDS[state.matches.length];
     const runOver = state.eliminated || state.champion;
     const inGroup = state.matches.length < 3;
+    const points = groupPoints(state.matches);
+    const qualified = points >= QUALIFICATION_POINTS;
+    // A defeat (or a knockout draw lost on penalties) belongs to the opposition,
+    // not your XI — so the standout goes to the team that beat you.
+    const lostMatch = !!last && (last.outcome === 'loss' || last.wonOnPens === false);
 
     React.useEffect(() => {
         if (last?.outcome === 'win') triggerHaptic('success');
@@ -55,8 +60,12 @@ export function SimScreen() {
 
             {inGroup && state.matches.length > 0 && (
                 <p className="caption-mono text-white/50">
-                    Group points <span className="text-white">{groupPoints(state.matches)}</span> ·
-                    need 4 to qualify
+                    Group points <span className="text-white">{points}</span> ·{' '}
+                    {qualified ? (
+                        <span className="text-flame-1">qualified ✓</span>
+                    ) : (
+                        `need ${QUALIFICATION_POINTS} to qualify`
+                    )}
                 </p>
             )}
 
@@ -90,7 +99,10 @@ export function SimScreen() {
                             {last.flavour}
                         </p>
                         <p className="caption-mono rounded-full border border-white/20 px-4 py-1.5">
-                            MOTM · <span className="text-flame-1">{last.motm}</span>
+                            MOTM ·{' '}
+                            <span className="text-flame-1">
+                                {lostMatch ? `${last.opponentFlag} ${last.opponent}` : last.motm}
+                            </span>
                         </p>
                     </div>
                 </div>

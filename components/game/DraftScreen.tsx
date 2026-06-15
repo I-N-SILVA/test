@@ -27,6 +27,14 @@ export function DraftScreen() {
 
     // Player chosen but with several fitting slots → user picks where they play.
     const [placing, setPlacing] = React.useState<Player | null>(null);
+    // Transient confirmation of what the last gamble drafted.
+    const [gambleMsg, setGambleMsg] = React.useState<string | null>(null);
+
+    React.useEffect(() => {
+        if (!gambleMsg) return;
+        const t = window.setTimeout(() => setGambleMsg(null), 4000);
+        return () => window.clearTimeout(t);
+    }, [gambleMsg]);
 
     const candidates = state.spunNation
         ? eligiblePlayers(state.spunNation, formation.slots, state)
@@ -55,7 +63,15 @@ export function DraftScreen() {
 
     const handleGamble = () => {
         const g = rollGamble(state, formation.slots);
-        if (g) dispatch({ type: 'gamble', player: g.player, slotId: g.slotId, rngState: g.rngState });
+        if (!g) {
+            setGambleMsg('No eligible players left to gamble on.');
+            return;
+        }
+        const slot = formation.slots.find((s) => s.id === g.slotId);
+        dispatch({ type: 'gamble', player: g.player, slotId: g.slotId, rngState: g.rngState });
+        setGambleMsg(
+            `🎲 Gambled — drafted ${g.player.name} (${g.player.overall_rating}) at ${slot?.label ?? 'an open slot'}.`,
+        );
     };
 
     const spunNationMeta = state.spunNation ? getNation(state.spunNation) : null;
@@ -68,7 +84,7 @@ export function DraftScreen() {
             onClick={handleGamble}
             className="caption-mono rounded-full border border-white/20 px-4 py-2 text-white/70 transition-colors hover:border-flame-2 hover:text-flame-1"
         >
-            🎲 Gamble · double or nothing ({state.gambles})
+            🎲 Gamble · random auto-draft ({state.gambles})
         </button>
     );
 
@@ -107,7 +123,7 @@ export function DraftScreen() {
                         Choose a highlighted slot for {placing.name}, or{' '}
                         <button
                             type="button"
-                            className="underline underline-offset-4"
+                            className="font-semibold underline underline-offset-4 transition-colors hover:text-white"
                             onClick={() => setPlacing(null)}
                         >
                             cancel
@@ -117,6 +133,14 @@ export function DraftScreen() {
             </div>
 
             <div className="order-1 flex flex-col items-center gap-4 lg:order-2">
+                {gambleMsg && (
+                    <p
+                        role="status"
+                        className="w-full animate-slide-up rounded-md border border-flame-2/40 bg-flame-2/10 px-4 py-2 text-center text-sm text-flame-1"
+                    >
+                        {gambleMsg}
+                    </p>
+                )}
                 {/* Spin a nation */}
                 {!state.spunNation && !placing && (
                     <>

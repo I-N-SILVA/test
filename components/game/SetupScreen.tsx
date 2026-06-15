@@ -153,8 +153,8 @@ export function SetupScreen() {
                     ))}
                 </div>
                 <p className="mt-2 text-xs text-white/50">
-                    Plus 2 🎲 gamble tokens per run — auto-draft a fully random player, double or
-                    nothing.
+                    Plus 2 🎲 gamble tokens per run — auto-draft a fully random player. Could be a
+                    legend, could be a journeyman.
                 </p>
             </section>
 
