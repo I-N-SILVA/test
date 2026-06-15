@@ -66,13 +66,30 @@ export default function LandingPage() {
             {/* Nav */}
             <header className="border-b border-black/10">
                 <nav className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4">
-                    <span className="text-lg font-bold uppercase tracking-display">
-                        Perfect<span className="text-flame-2">.</span>Run
-                    </span>
+                    <div className="flex items-center gap-3">
+                        <span className="text-lg font-bold uppercase tracking-display">
+                            Perfect<span className="text-flame-2">.</span>Run
+                        </span>
+                        <span aria-hidden className="h-4 w-px bg-black/15" />
+                        <a
+                            href="https://plyaz.net"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="caption-mono flex items-center gap-1.5 text-graphite transition-colors hover:text-flame-2"
+                        >
+                            <span className="hidden sm:inline">by</span>
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src="/plyaz/plyaz-wordmark-dark.png"
+                                alt="PLYAZ"
+                                className="h-3.5 w-auto"
+                            />
+                        </a>
+                    </div>
                     <div className="flex items-center gap-6">
                         <Link
                             href="/game"
-                            className="caption-mono text-graphite transition-colors hover:text-flame-2"
+                            className="caption-mono hidden text-graphite transition-colors hover:text-flame-2 sm:block"
                         >
                             Play
                         </Link>
