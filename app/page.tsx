@@ -1,6 +1,28 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { PitchView } from '@/components/game/PitchView';
+import { getFormation } from '@/lib/game/formations';
 import { NATIONS, PLAYERS } from '@/lib/game/wheel';
+import type { Player } from '@/lib/game/types';
+
+const SITE_URL = 'https://test-mauve-three-70.vercel.app';
+
+// A showcase XI (best fit per slot) for the hero — shows the game, not just type.
+function showcaseSquad(): Record<string, Player> {
+    const slots = getFormation('4-3-3').slots;
+    const used = new Set<string>();
+    const squad: Record<string, Player> = {};
+    for (const slot of slots) {
+        const pick = PLAYERS.filter(
+            (p) => !used.has(p.id) && p.position.some((pos) => slot.accepts.includes(pos)),
+        ).sort((a, b) => b.overall_rating - a.overall_rating)[0];
+        if (pick) {
+            squad[slot.id] = pick;
+            used.add(pick.id);
+        }
+    }
+    return squad;
+}
 
 const HOW_TO_PLAY = [
     {
@@ -61,8 +83,49 @@ export default function LandingPage() {
         ['8', 'matches between you and history'],
     ];
 
+    const formation = getFormation('4-3-3');
+    const heroSquad = showcaseSquad();
+
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@graph': [
+            {
+                '@type': 'VideoGame',
+                name: 'Perfect Run',
+                url: SITE_URL,
+                description:
+                    'A free browser game: spin a wheel of World Cup nations, draft an all-time XI from 1930 to 2026, and simulate the 2026 World Cup. The Perfect Run is 8 wins from 8 matches with nothing conceded.',
+                genre: ['Sports', 'Strategy', 'Simulation'],
+                gamePlatform: 'Web Browser',
+                applicationCategory: 'GameApplication',
+                operatingSystem: 'Any (web browser)',
+                inLanguage: 'en',
+                offers: {
+                    '@type': 'Offer',
+                    price: '0',
+                    priceCurrency: 'USD',
+                    availability: 'https://schema.org/InStock',
+                },
+                author: { '@type': 'Organization', name: 'PLYAZ', url: 'https://plyaz.net' },
+                publisher: { '@type': 'Organization', name: 'PLYAZ', url: 'https://plyaz.net' },
+            },
+            {
+                '@type': 'FAQPage',
+                mainEntity: FAQS.map((f) => ({
+                    '@type': 'Question',
+                    name: f.q,
+                    acceptedAnswer: { '@type': 'Answer', text: f.a },
+                })),
+            },
+        ],
+    };
+
     return (
         <div className="bg-paper text-obsidian">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             {/* Nav */}
             <header className="border-b border-black/10">
                 <nav className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4">
@@ -108,23 +171,42 @@ export default function LandingPage() {
 
             {/* Hero */}
             <section className="bg-grid-paper border-b border-black/10">
-                <div className="mx-auto w-full max-w-6xl px-4 py-20 sm:py-28">
-                    <p className="caption-mono text-stone">Unofficial fan draft game · 1930–2026</p>
-                    <h1 className="display-caps mt-6 text-6xl sm:text-8xl lg:text-9xl">
-                        The <span className="serif-accent normal-case">perfect</span>
-                        <br />
-                        run.
-                    </h1>
-                    <p className="mt-8 max-w-xl text-lg leading-relaxed text-charcoal">
-                        Spin the wheel. Draft World Cup legends. Simulate all 8 matches of a 2026
-                        World Cup. Win every one of them and concede nothing, and you join the club
-                        that does not exist yet.
-                    </p>
-                    <div className="mt-10 flex flex-wrap items-center gap-4">
-                        <Button asChild variant="flame" size="xl">
-                            <Link href="/game">Start a new run →</Link>
-                        </Button>
-                        <p className="caption-mono text-stone">No account · saves in your browser</p>
+                <div className="mx-auto grid w-full max-w-6xl items-center gap-12 px-4 py-20 sm:py-28 lg:grid-cols-[1.05fr_0.95fr]">
+                    <div>
+                        <p className="caption-mono text-stone">
+                            Unofficial fan draft game · 1930–2026
+                        </p>
+                        <h1 className="display-caps mt-6 text-6xl sm:text-8xl lg:text-8xl">
+                            The <span className="serif-accent normal-case">perfect</span>
+                            <br />
+                            run.
+                        </h1>
+                        <p className="mt-8 max-w-xl text-lg leading-relaxed text-charcoal">
+                            Spin the wheel. Draft World Cup legends. Simulate all 8 matches of a 2026
+                            World Cup. Win every one of them and concede nothing, and you join the
+                            club that does not exist yet.
+                        </p>
+                        <div className="mt-10 flex flex-wrap items-center gap-4">
+                            <Button asChild variant="flame" size="xl">
+                                <Link href="/game">Start a new run →</Link>
+                            </Button>
+                            <p className="caption-mono text-stone">
+                                No account · saves in your browser
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* The game itself: a showcase XI on the blueprint pitch. */}
+                    <div className="relative mx-auto w-full max-w-[280px] lg:max-w-sm">
+                        <div className="dark rounded-lg border border-black/10 bg-obsidian p-4 shadow-3">
+                            <div className="mb-3 flex items-center justify-between">
+                                <span className="caption-mono text-white/50">Sample XI · 4-3-3</span>
+                                <span className="font-mono text-xs tracking-[0.2em] text-flame-1">
+                                    ★★★★★
+                                </span>
+                            </div>
+                            <PitchView formation={formation} squad={heroSquad} showRatings />
+                        </div>
                     </div>
                 </div>
             </section>

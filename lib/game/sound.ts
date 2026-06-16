@@ -9,6 +9,8 @@ export type SoundName =
     | 'land'
     | 'pick'
     | 'gamble'
+    | 'goal'
+    | 'miss'
     | 'win'
     | 'lose'
     | 'fanfare';
@@ -123,6 +125,13 @@ export function playSound(name: SoundName): void {
             tone(c, 300, 0, 0.05, 'square', 0.06);
             tone(c, 450, 0.07, 0.05, 'square', 0.06);
             tone(c, 620, 0.14, 0.09, 'square', 0.06);
+            break;
+        case 'goal':
+            tone(c, 880, 0, 0.1, 'triangle', 0.12);
+            tone(c, 1320, 0.05, 0.12, 'triangle', 0.08);
+            break;
+        case 'miss':
+            tone(c, 196, 0, 0.2, 'sine', 0.1);
             break;
         case 'win':
             arpeggio(c, [523, 659, 784, 1047], 0.07, 0.18);

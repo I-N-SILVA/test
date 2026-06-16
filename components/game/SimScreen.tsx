@@ -2,14 +2,33 @@
 
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
-import { cn, triggerHaptic } from '@/lib/utils';
+import { cn, prefersReducedMotion, triggerHaptic } from '@/lib/utils';
 import { useGame } from '@/lib/game/store';
 import { playSound } from '@/lib/game/sound';
 import { ROUNDS, QUALIFICATION_POINTS, groupPoints } from '@/lib/game/engine';
 
+// The engine only stores who won the shootout, so synthesise a believable
+// 5-kick scoreline for the reveal (cosmetic only — never affects the result).
+function fabricatePens(youWon: boolean): { you: boolean[]; opp: boolean[] } {
+    const gen = () => Array.from({ length: 5 }, () => Math.random() < 0.72);
+    const makes = (a: boolean[]) => a.filter(Boolean).length;
+    let you = gen();
+    let opp = gen();
+    let guard = 0;
+    while (
+        guard++ < 50 &&
+        ((youWon && makes(you) <= makes(opp)) || (!youWon && makes(opp) <= makes(you)))
+    ) {
+        you = gen();
+        opp = gen();
+    }
+    return { you, opp };
+}
+
 export function SimScreen() {
     const { state, dispatch } = useGame();
     const last = state.matches[state.matches.length - 1];
+    const matchKey = state.matches.length;
     const nextRound = ROUNDS[state.matches.length];
     const runOver = state.eliminated || state.champion;
     const inGroup = state.matches.length < 3;
@@ -19,17 +38,83 @@ export function SimScreen() {
     // not your XI — so the standout goes to the team that beat you.
     const lostMatch = !!last && (last.outcome === 'loss' || last.wonOnPens === false);
 
+    // Animated reveal of the latest scoreline + shootout.
+    const [reveal, setReveal] = React.useState({ for: 0, against: 0 });
+    const [pens, setPens] = React.useState<{ you: boolean[]; opp: boolean[] } | null>(null);
+    const [pensShown, setPensShown] = React.useState(0);
+
     React.useEffect(() => {
         if (!last) return;
+        const reduced = prefersReducedMotion();
+        const penData =
+            last.wonOnPens !== undefined ? fabricatePens(last.wonOnPens === true) : null;
         const won = last.outcome === 'win' || last.wonOnPens === true;
-        if (won) {
-            triggerHaptic('success');
-            playSound('win');
-        } else if (lostMatch) {
-            triggerHaptic('error');
-            playSound('lose');
+        const lost = last.outcome === 'loss' || last.wonOnPens === false;
+
+        const verdict = () => {
+            if (won) {
+                triggerHaptic('success');
+                playSound('win');
+            } else if (lost) {
+                triggerHaptic('error');
+                playSound('lose');
+            }
+        };
+
+        if (reduced) {
+            setReveal({ for: last.goalsFor, against: last.goalsAgainst });
+            setPens(penData);
+            setPensShown(penData ? 5 : 0);
+            verdict();
+            return;
         }
-    }, [last, lostMatch]);
+
+        setReveal({ for: 0, against: 0 });
+        setPens(penData);
+        setPensShown(0);
+
+        const timers: number[] = [];
+        let t = 350;
+        const STEP = 360;
+        for (let i = 1; i <= last.goalsFor; i++) {
+            const n = i;
+            timers.push(
+                window.setTimeout(() => {
+                    setReveal((r) => ({ ...r, for: n }));
+                    playSound('goal');
+                    triggerHaptic('light');
+                }, t),
+            );
+            t += STEP;
+        }
+        for (let i = 1; i <= last.goalsAgainst; i++) {
+            const n = i;
+            timers.push(
+                window.setTimeout(() => {
+                    setReveal((r) => ({ ...r, against: n }));
+                    playSound('miss');
+                }, t),
+            );
+            t += STEP;
+        }
+        if (penData) {
+            t += 200;
+            for (let i = 1; i <= 5; i++) {
+                const n = i;
+                timers.push(
+                    window.setTimeout(() => {
+                        setPensShown(n);
+                        playSound(penData.you[n - 1] || penData.opp[n - 1] ? 'goal' : 'miss');
+                    }, t),
+                );
+                t += 450;
+            }
+        }
+        timers.push(window.setTimeout(verdict, t + 150));
+
+        return () => timers.forEach((id) => window.clearTimeout(id));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [matchKey]);
 
     return (
         <div className="mx-auto flex w-full max-w-xl flex-col items-center gap-8">
@@ -80,24 +165,63 @@ export function SimScreen() {
             {last && (
                 <div
                     className="w-full animate-slide-up rounded-lg border border-white/15 bg-white/[0.03]"
-                    key={state.matches.length}
+                    key={matchKey}
                 >
                     <div className="flex flex-col items-center gap-4 p-8">
                         <p className="caption-mono text-white/50">{last.round}</p>
                         <div className="flex flex-wrap items-baseline justify-center gap-x-4 gap-y-1">
                             <span className="text-base font-semibold sm:text-xl">YOU</span>
-                            <span className="display-caps animate-score-pop text-5xl text-flame-1 sm:text-6xl">
-                                {last.goalsFor}–{last.goalsAgainst}
+                            <span
+                                key={`${reveal.for}-${reveal.against}`}
+                                className="display-caps animate-score-pop text-5xl text-flame-1 sm:text-6xl"
+                            >
+                                {reveal.for}–{reveal.against}
                             </span>
                             <span className="text-base font-semibold sm:text-xl">
                                 {last.opponentFlag} {last.opponent}
                             </span>
                         </div>
-                        {last.wonOnPens !== undefined && (
-                            <p className="caption-mono">
-                                {last.wonOnPens ? 'Won on penalties' : 'Lost on penalties'}
-                            </p>
+
+                        {pens && (
+                            <div className="flex flex-col items-center gap-1.5">
+                                <p className="caption-mono text-white/50">Penalties</p>
+                                {(
+                                    [
+                                        ['YOU', pens.you],
+                                        [last.opponent, pens.opp],
+                                    ] as const
+                                ).map(([label, kicks]) => (
+                                    <div key={label} className="flex items-center gap-2">
+                                        <span className="w-16 truncate text-right font-mono text-[10px] text-white/60">
+                                            {label}
+                                        </span>
+                                        <span className="flex gap-1">
+                                            {kicks.map((made, i) => (
+                                                <span
+                                                    key={i}
+                                                    className={cn(
+                                                        'flex h-5 w-5 items-center justify-center rounded-full border text-[10px]',
+                                                        i >= pensShown
+                                                            ? 'border-white/15 text-transparent'
+                                                            : made
+                                                              ? 'border-flame-2 bg-flame-2/15 text-flame-1'
+                                                              : 'border-white/30 text-white/40',
+                                                    )}
+                                                >
+                                                    {i >= pensShown ? '·' : made ? '✓' : '✗'}
+                                                </span>
+                                            ))}
+                                        </span>
+                                    </div>
+                                ))}
+                                {pensShown >= 5 && (
+                                    <p className="caption-mono mt-1 text-flame-1">
+                                        {last.wonOnPens ? 'Won on penalties' : 'Lost on penalties'}
+                                    </p>
+                                )}
+                            </div>
                         )}
+
                         {last.scorers.length > 0 && (
                             <p className="text-center font-mono text-sm text-white/60">
                                 ⚽ {last.scorers.join(', ')}
