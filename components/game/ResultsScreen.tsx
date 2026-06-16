@@ -9,6 +9,7 @@ import { isPerfectRun, squadAverage, starRating } from '@/lib/game/engine';
 import { renderShareCard } from '@/lib/game/shareCard';
 import { playSound } from '@/lib/game/sound';
 import { burstConfetti } from '@/lib/game/confetti';
+import { recordRun } from '@/lib/game/career';
 
 export function ResultsScreen() {
     const { state, dispatch } = useGame();
@@ -33,16 +34,14 @@ export function ResultsScreen() {
     const bestPlayer = Object.entries(motmCounts).sort((a, b) => b[1] - a[1])[0]?.[0] ?? '–';
     const bestPlayerId = players.find((p) => p.name === bestPlayer)?.id;
 
-    // Celebrate a championship / Perfect Run once, on arrival.
-    const celebrated = React.useRef(false);
-    React.useEffect(() => {
-        if (celebrated.current) return;
-        celebrated.current = true;
-        if (perfect || state.champion) {
-            playSound('fanfare');
-            burstConfetti(perfect ? 3200 : 2600);
-        }
-    }, [perfect, state.champion]);
+    // Longest streak of consecutive wins (pens count) in this run.
+    let longestStreak = 0;
+    let currentStreak = 0;
+    for (const m of state.matches) {
+        const won = m.outcome === 'win' || m.wonOnPens === true;
+        currentStreak = won ? currentStreak + 1 : 0;
+        longestStreak = Math.max(longestStreak, currentStreak);
+    }
 
     const headline = perfect
         ? 'THE PERFECT RUN'
@@ -59,6 +58,33 @@ export function ResultsScreen() {
           : last
             ? `${last.goalsFor}–${last.goalsAgainst} vs ${last.opponent}. Football is cruel.`
             : '';
+
+    // Fold this run into the career totals once (idempotent per run), and flag a
+    // new personal best so we can celebrate it.
+    const finishScore = perfect ? 6 : state.champion ? 5 : stars;
+    const [newBest, setNewBest] = React.useState(false);
+    const recorded = React.useRef(false);
+    React.useEffect(() => {
+        if (recorded.current) return;
+        recorded.current = true;
+        if (perfect || state.champion) {
+            playSound('fanfare');
+            burstConfetti(perfect ? 3200 : 2600);
+        }
+        if (state.matches.length === 0) return;
+        const { isNewBest } = recordRun({
+            runId: `${state.seed}:${state.matches.length}:${goalsFor}:${finishScore}`,
+            score: finishScore,
+            stars,
+            champion: state.champion,
+            perfect,
+            finishLabel: headline,
+            goals: goalsFor,
+            streak: longestStreak,
+        });
+        setNewBest(isNewBest);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const seedTag =
         state.mode === 'daily'
@@ -176,6 +202,11 @@ export function ResultsScreen() {
                     {'★'.repeat(stars)}
                     <span className="text-white/25">{'★'.repeat(5 - stars)}</span>
                 </p>
+                {newBest && (
+                    <p className="caption-mono mt-3 inline-block rounded-full border border-flame-1 bg-flame-2/10 px-3 py-1 text-flame-1">
+                        ✦ New personal best
+                    </p>
+                )}
             </div>
 
             <div className="flex w-full flex-col items-center gap-2">

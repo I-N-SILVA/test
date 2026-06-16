@@ -8,6 +8,7 @@ import { PlayerCard } from './PlayerCard';
 import { useGame } from '@/lib/game/store';
 import { playSound } from '@/lib/game/sound';
 import { getFormation } from '@/lib/game/formations';
+import { chemistryPercent } from '@/lib/game/engine';
 import {
     eligiblePlayers,
     fittingSlots,
@@ -23,8 +24,10 @@ export function DraftScreen() {
     const { state, dispatch } = useGame();
     const formation = getFormation(state.formationId);
     const showRatings = state.showRatings;
-    const drafted = Object.keys(state.squad).length;
+    const squadPlayers = Object.values(state.squad);
+    const drafted = squadPlayers.length;
     const total = formation.slots.length;
+    const chem = chemistryPercent(squadPlayers);
 
     // Player chosen but with several fitting slots → user picks where they play.
     const [placing, setPlacing] = React.useState<Player | null>(null);
@@ -99,8 +102,16 @@ export function DraftScreen() {
                     <span className="text-white/70">
                         {drafted}/{total} drafted
                     </span>
-                    <span className="text-white/50">
-                        Rerolls <span className="text-flame-1">{state.rerolls}</span>
+                    <span className="flex items-center gap-3 text-white/50">
+                        <span title="Squad chemistry — sharing nations (and eras) lifts your whole team">
+                            Chem{' '}
+                            <span className={chem > 0 ? 'text-flame-1' : 'text-white/40'}>
+                                {chem}%
+                            </span>
+                        </span>
+                        <span>
+                            Rerolls <span className="text-flame-1">{state.rerolls}</span>
+                        </span>
                     </span>
                 </div>
                 <div
@@ -201,6 +212,9 @@ export function DraftScreen() {
                                     key={player.id}
                                     player={player}
                                     showRating={showRatings}
+                                    nationLinks={
+                                        squadPlayers.filter((p) => p.nation === player.nation).length
+                                    }
                                     onPick={() => handlePick(player)}
                                 />
                             ))}

@@ -8,6 +8,8 @@ import type { Player } from '@/lib/game/types';
 interface PlayerCardProps {
     player: Player;
     showRating: boolean;
+    /** How many of the current squad share this player's nation (chemistry). */
+    nationLinks?: number;
     onPick?: () => void;
 }
 
@@ -17,7 +19,7 @@ const ERA_LABELS: Record<string, string> = {
     contemporary: 'Contemporary',
 };
 
-export function PlayerCard({ player, showRating, onPick }: PlayerCardProps) {
+export function PlayerCard({ player, showRating, nationLinks = 0, onPick }: PlayerCardProps) {
     const isGk = player.position[0] === 'GK';
     const hasStat = isGk
         ? player.clean_sheets != null
@@ -58,6 +60,14 @@ export function PlayerCard({ player, showRating, onPick }: PlayerCardProps) {
                     </Badge>
                 ))}
                 <Badge variant="secondary">{ERA_LABELS[player.era]}</Badge>
+                {nationLinks > 0 && (
+                    <span
+                        title={`Shares a nation with ${nationLinks} of your squad — boosts chemistry`}
+                        className="font-mono text-xs text-flame-1"
+                    >
+                        🔗 +{nationLinks} chem
+                    </span>
+                )}
                 {hasStat && (
                     <span className="ml-auto font-mono text-xs text-white/70">{keyStat}</span>
                 )}

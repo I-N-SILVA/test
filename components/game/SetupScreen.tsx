@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 import { FormationPicker } from './FormationPicker';
 import { useGame, REROLLS_BY_DIFFICULTY } from '@/lib/game/store';
 import { dailyLabel, dailySeed, randomSeed, seedFromString } from '@/lib/game/rng';
+import { loadCareer, type CareerStats } from '@/lib/game/career';
 import type { Difficulty, EraFilter, GameMode } from '@/lib/game/types';
 
 const DIFFICULTIES: { id: Difficulty; name: string; blurb: string }[] = [
@@ -34,6 +35,9 @@ export function SetupScreen() {
     const [mode, setMode] = React.useState<GameMode>('free');
     // A ?seed= link pins a specific seed so a friend replays your exact run.
     const [customSeed, setCustomSeed] = React.useState<{ seed: number; label: string } | null>(null);
+    const [career, setCareer] = React.useState<CareerStats | null>(null);
+
+    React.useEffect(() => setCareer(loadCareer()), []);
 
     React.useEffect(() => {
         const raw = new URLSearchParams(window.location.search).get('seed');
@@ -79,6 +83,27 @@ export function SetupScreen() {
                     Eleven spins, eleven picks, eight matches. Choose your shape first.
                 </p>
             </div>
+
+            {career && career.runs > 0 && (
+                <section className="rounded-lg border border-white/15 bg-white/[0.03] p-4">
+                    <p className="caption-mono mb-3 text-white/50">Your career</p>
+                    <dl className="grid grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-4">
+                        {[
+                            ['Runs', String(career.runs)],
+                            ['Best finish', career.bestFinish || '—'],
+                            ['Perfect runs', String(career.perfectRuns)],
+                            ['Longest streak', `${career.longestStreak}W`],
+                        ].map(([label, value]) => (
+                            <div key={label}>
+                                <dt className="caption-mono text-white/40">{label}</dt>
+                                <dd className="mt-1 truncate font-mono text-sm text-white" title={value}>
+                                    {value}
+                                </dd>
+                            </div>
+                        ))}
+                    </dl>
+                </section>
+            )}
 
             <section>
                 <SectionLabel>Mode</SectionLabel>

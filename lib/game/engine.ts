@@ -112,6 +112,11 @@ export function chemistryBonus(players: Player[]): number {
     return 1 + TUNING.chemistryMax * (score / pairs);
 }
 
+/** Squad chemistry as a 0–100% display value (0 = no shared links). */
+export function chemistryPercent(players: Player[]): number {
+    return Math.round(((chemistryBonus(players) - 1) / TUNING.chemistryMax) * 100);
+}
+
 function pickScorers(rng: Rng, players: Player[], count: number): string[] {
     const attackers = players.filter((p) => p.position[0] !== 'GK');
     const weighted = attackers.flatMap((p) => {

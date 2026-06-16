@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
     ROUNDS,
     chemistryBonus,
+    chemistryPercent,
     groupPoints,
     isChampion,
     isPerfectRun,
@@ -70,6 +71,19 @@ describe('chemistryBonus', () => {
         }));
         // Some era pairs still match across 11 players, so just assert it's tiny.
         expect(chemistryBonus(players)).toBeLessThan(1.01);
+    });
+});
+
+describe('chemistryPercent', () => {
+    it('is 0 for an empty squad and ~100 for a fully nation-stacked one', () => {
+        expect(chemistryPercent([])).toBe(0);
+        expect(chemistryPercent(squad(85, 'Brazil'))).toBe(100);
+    });
+
+    it('rises as more players share a nation', () => {
+        const mixed = squad(85).map((p, i) => ({ ...p, nation: `Nation${i}` }));
+        const half = mixed.map((p, i) => ({ ...p, nation: i < 6 ? 'Brazil' : p.nation }));
+        expect(chemistryPercent(half)).toBeGreaterThan(chemistryPercent(mixed));
     });
 });
 
