@@ -10,6 +10,7 @@ import { renderShareCard } from '@/lib/game/shareCard';
 import { playSound } from '@/lib/game/sound';
 import { burstConfetti } from '@/lib/game/confetti';
 import { recordRun } from '@/lib/game/career';
+import { recordDaily } from '@/lib/game/daily';
 
 export function ResultsScreen() {
     const { state, dispatch } = useGame();
@@ -83,6 +84,17 @@ export function ResultsScreen() {
             streak: longestStreak,
         });
         setNewBest(isNewBest);
+        if (state.mode === 'daily' && state.seedLabel) {
+            recordDaily({
+                date: state.seedLabel,
+                stars,
+                score: finishScore,
+                finishLabel: headline,
+                goals: goalsFor,
+                champion: state.champion,
+                perfect,
+            });
+        }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 

@@ -29,7 +29,7 @@ export function FormationPicker({ value, onChange }: FormationPickerProps) {
                         type="button"
                         onClick={() => onChange(formation.id)}
                         className={cn(
-                            'flex flex-col items-center gap-2 rounded-md border p-3 transition-all duration-300 ease-expo',
+                            'flex flex-col items-center gap-2 rounded-md border p-3 transition-all duration-300 ease-expo focus-ring',
                             value === formation.id
                                 ? 'border-flame-1 bg-flame-2/10'
                                 : 'border-white/15 bg-white/[0.03] hover:border-white/40',

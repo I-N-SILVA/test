@@ -116,6 +116,11 @@
         scrollbar-width: none;
     }
 
+    /* Visible keyboard focus for the custom (non-Button) selection controls. */
+    .focus-ring {
+        @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame-1 focus-visible:ring-offset-2 focus-visible:ring-offset-obsidian;
+    }
+
     /* The Plyaz Gradient. Used surgically: CTAs and hot moments only. */
     .bg-flame-gradient {
         background: linear-gradient(135deg, #ffa132 0%, #ff4d00 100%);

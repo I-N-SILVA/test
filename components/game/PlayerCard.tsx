@@ -33,7 +33,7 @@ export function PlayerCard({ player, showRating, nationLinks = 0, onPick }: Play
             type="button"
             onClick={onPick}
             className={cn(
-                'group flex w-full flex-col gap-2.5 rounded-md border border-white/15 bg-white/[0.03] p-4 text-left transition-all duration-300 ease-expo animate-slide-up',
+                'group flex w-full flex-col gap-2.5 rounded-md border border-white/15 bg-white/[0.03] p-4 text-left transition-all duration-300 ease-expo animate-slide-up focus-ring',
                 'hover:border-flame-1 hover:bg-flame-2/[0.06]',
             )}
         >

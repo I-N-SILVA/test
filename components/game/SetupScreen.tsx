@@ -7,6 +7,7 @@ import { FormationPicker } from './FormationPicker';
 import { useGame, REROLLS_BY_DIFFICULTY } from '@/lib/game/store';
 import { dailyLabel, dailySeed, randomSeed, seedFromString } from '@/lib/game/rng';
 import { loadCareer, type CareerStats } from '@/lib/game/career';
+import { loadDailyHistory, dailyStreak, type DailyEntry } from '@/lib/game/daily';
 import type { Difficulty, EraFilter, GameMode } from '@/lib/game/types';
 
 const DIFFICULTIES: { id: Difficulty; name: string; blurb: string }[] = [
@@ -36,8 +37,12 @@ export function SetupScreen() {
     // A ?seed= link pins a specific seed so a friend replays your exact run.
     const [customSeed, setCustomSeed] = React.useState<{ seed: number; label: string } | null>(null);
     const [career, setCareer] = React.useState<CareerStats | null>(null);
+    const [daily, setDaily] = React.useState<DailyEntry[]>([]);
 
-    React.useEffect(() => setCareer(loadCareer()), []);
+    React.useEffect(() => {
+        setCareer(loadCareer());
+        setDaily(loadDailyHistory());
+    }, []);
 
     React.useEffect(() => {
         const raw = new URLSearchParams(window.location.search).get('seed');
@@ -130,7 +135,7 @@ export function SetupScreen() {
                             onClick={() => setMode(m.id)}
                             aria-pressed={mode === m.id}
                             className={cn(
-                                'rounded-md border p-4 text-left transition-all duration-300 ease-expo',
+                                'rounded-md border p-4 text-left transition-all duration-300 ease-expo focus-ring',
                                 mode === m.id
                                     ? 'border-flame-1 bg-flame-2/10'
                                     : 'border-white/15 bg-white/[0.03] hover:border-white/40',
@@ -145,6 +150,40 @@ export function SetupScreen() {
                     <p className="mt-2 text-xs text-white/50">
                         Same wheel and same opponents for every player today — compare your run.
                     </p>
+                )}
+                {mode === 'daily' && daily.length > 0 && (
+                    <div className="mt-3 rounded-md border border-white/15 bg-white/[0.03] p-4">
+                        <div className="flex items-center justify-between">
+                            <p className="caption-mono text-white/50">Your daily results</p>
+                            <p className="caption-mono text-flame-1">
+                                🔥 {dailyStreak(daily)}-day streak
+                            </p>
+                        </div>
+                        <ul className="mt-3 space-y-1.5">
+                            {daily.slice(0, 5).map((e) => (
+                                <li
+                                    key={e.date}
+                                    className="flex items-center justify-between text-sm"
+                                >
+                                    <span className="font-mono text-white/70">
+                                        {e.date}
+                                        {e.date === dailyLabel() && (
+                                            <span className="ml-2 text-flame-1">today</span>
+                                        )}
+                                    </span>
+                                    <span
+                                        className="font-mono text-flame-1"
+                                        title={e.finishLabel}
+                                    >
+                                        {'★'.repeat(e.stars)}
+                                        <span className="text-white/25">
+                                            {'★'.repeat(5 - e.stars)}
+                                        </span>
+                                    </span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 )}
             </section>
 
@@ -166,7 +205,7 @@ export function SetupScreen() {
                             }}
                             aria-pressed={difficulty === d.id}
                             className={cn(
-                                'rounded-md border p-4 text-left transition-all duration-300 ease-expo',
+                                'rounded-md border p-4 text-left transition-all duration-300 ease-expo focus-ring',
                                 difficulty === d.id
                                     ? 'border-flame-1 bg-flame-2/10'
                                     : 'border-white/15 bg-white/[0.03] hover:border-white/40',
@@ -196,7 +235,7 @@ export function SetupScreen() {
                             onClick={() => setShowRatings(opt.value)}
                             aria-pressed={showRatings === opt.value}
                             className={cn(
-                                'rounded-md border p-4 text-left transition-all duration-300 ease-expo',
+                                'rounded-md border p-4 text-left transition-all duration-300 ease-expo focus-ring',
                                 showRatings === opt.value
                                     ? 'border-flame-1 bg-flame-2/10'
                                     : 'border-white/15 bg-white/[0.03] hover:border-white/40',
@@ -219,7 +258,7 @@ export function SetupScreen() {
                             onClick={() => setEraFilter(era.id)}
                             aria-pressed={eraFilter === era.id}
                             className={cn(
-                                'rounded-full border px-4 py-2 text-sm font-semibold transition-colors duration-300 ease-expo',
+                                'rounded-full border px-4 py-2 text-sm font-semibold transition-colors duration-300 ease-expo focus-ring',
                                 eraFilter === era.id
                                     ? 'border-transparent bg-flame-gradient text-white'
                                     : 'border-white/20 hover:border-white/50',
